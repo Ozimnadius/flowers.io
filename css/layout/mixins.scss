@@ -1,0 +1,103 @@
+//variables
+$vh: 1080;
+
+@function rem($size) {
+  $remSize: $size / $font-size;
+  @return $remSize * 1rem;
+}
+
+@mixin fz($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+@function lh($size1, $size2) {
+  $lh: $size2 / $size1;
+  @return $lh;
+}
+
+@function vh($size) {
+  @return $size/$vh *100*1vh;
+}
+
+@mixin content() {
+  ul {
+    margin: 1em 0;
+    padding-left: 40px;
+    li {
+      list-style: disc;
+    }
+  }
+
+  h1 {
+    margin: 0.67em 0;
+  }
+  h2 {
+    margin: 0.83em 0;
+  }
+  h3 {
+    margin: 1em 0;
+  }
+  h4 {
+    margin: 1.33em 0;
+  }
+  h5 {
+    margin: 1.67em 0;
+  }
+  h6 {
+    margin: 2.33em 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: lh(16,21);
+  }
+  a{
+    color: $purple3;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    line-height: 130%;
+    padding-bottom: 3px;
+    border-bottom: 3px dotted $purple3;
+    @include tr;
+
+    &:hover{
+      color: $red;
+      border-bottom-color: $red;
+    }
+  }
+
+  @include headers;
+}
+
+@mixin headers() {
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 46px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+@mixin tr(){
+  transition: .3s;
+}

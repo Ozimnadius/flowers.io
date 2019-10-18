@@ -1,0 +1,66 @@
+//variables
+//fonts
+$font: 'Proxima Nova', Arial, sans-serif;
+
+//colors
+$white4: #ededed;
+$white3: #fefefe;
+$y5: #f7f267;
+$green: #5c9f27;
+$bg: #ffffff;
+$blue: #41b4e6;
+$black: #000000;
+$grey5: #9e9e9e;
+$grey1: #ab9fb9;
+$grey9: #6c6c6c;
+$purple3: #654a83;
+$y4: #f9f868;
+$red2: #ff5f80;
+$grey2: #696969;
+$y2: #efd063;
+$red3: #f4baba;
+$purple5: #6b2ac4;
+$purple8: #7b35dc;
+$blue2: #0091c8;
+$black3: #242629;
+$white5: #d3d3d3;
+$green2: #55cd6c;
+$purple8: #7632d5;
+$grey7: #d2d2d7;
+$beige: #f9f3e5;
+$purple1: #9043fa;
+$grey8: #b9b9be;
+$y3: #f6ee67;
+$purple6: #9045fa;
+$grey6: #c4c4c4;
+$y6: #807c3b;
+$purple4: #6e2cc8;
+$purple2: #6828c1;
+$text: #605353;
+$text2: #332f38;
+$white: #d7d7d7;
+$black2: #444041;
+$purple7: #9f46e1;
+$y1: #fafd69;
+$red: #eb3a5f;
+
+//another
+$font-size: 16px;
+
+//layout
+@import "layout/mixins";
+@import "layout/fonts";
+@import "layout/smart-grid";
+@import "layout/adjustment";
+@import "layout/common";
+
+//sections
+@import "sections/header";
+@import "sections/footer";
+
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}
