@@ -30,7 +30,8 @@
   &__img {
     position: relative;
     z-index: 20;
-    margin-right: 7px;
+    margin-right: 0;
+    margin-top: 3px;
   }
 
   &__txt{
@@ -197,15 +198,47 @@
 
   &__img {
     margin-right: 14px;
+    position: relative;
+    z-index: 20;
+  }
+
+  &__pic{
+    display: block;
+
+    &_h{
+      display: none;
+    }
+  }
+
+  &__count{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid $y5;
+    background-color: $red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: $bg;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    position: absolute;
+    right: -8px;
+    bottom: -3px;
   }
 
   &__txt{
-    text-shadow: 0 1px 0 $black;
     color: $text2;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 3px;
+    position: relative;
+    z-index: 20;
     @include tr;
   }
 
@@ -221,6 +254,53 @@
       &__txt{
         color: $bg;
       }
+
+      &__pic{
+        display: none;
+        &_h{
+          display: block;
+        }
+      }
+
+      &__count {
+        border: 1px solid $bg;
+      }
     }
+  }
+}
+
+.socials{
+  display: flex;
+  align-items: center;
+}
+
+.social{
+  margin-right: 22px;
+  @include tr;
+  &:last-child{
+    margin-right: 0;
+  }
+
+  &:hover{
+    @include op;
+  }
+}
+
+.tel{
+  color: $red;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: lh(24,33.6);
+  @include tr;
+
+  &:hover{
+    @include op;
+  }
+
+  &_g {
+    text-shadow: 0 1px 0 #fff964;
+    color: $purple3;
+    font-size: 25px;
+    font-weight: 700;
   }
 }

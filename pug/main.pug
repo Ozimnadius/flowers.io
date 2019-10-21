@@ -23,9 +23,90 @@ html(lang="ru")
         .wrapper
             //- heeader
             header.header
-                nav.nav
-                    each val in menu
-                        .nav__item= val
+                //- top
+                .header__top
+                    .container
+                        .header__top-row
+                            //- left
+                            .header__top-left
+                                //- nav
+                                .hnav
+                                    each i in headerNav
+                                        a(href=i.href).hnav__item= i.title
+
+                            //- right
+                            .header__top-right
+                                //- socials
+                                .socials
+                                    each i in socials
+                                        a(href=i.href).social
+                                            +image('images/icons/'+i.icon+'.svg','','social__svg')
+
+
+                //- middle
+                .header__middle
+                    .container
+                        .header__middle-row
+                            //- left
+                            .header__middle-left
+                                //- logo
+                                a(href='/').header__logo
+                                    +image('images/icons/logo.svg','','header__logo-img')
+                                    span.header__logo-title
+                                        | Интернет-магазин
+                                        br
+                                        | цветов и подарков
+
+                            //- right
+                            .header__middle-right
+                                //- contacts
+                                .header__contacts
+                                    //- tel
+                                    a(href='tel:8(800)984-12-12').header__tel.tel 8 (800) 984-12-12
+                                    //- callback
+                                    a(href='#').btn
+                                        span.btn__img
+                                            +image('images/icons/tel.png', '', '')
+                                        span.btn__txt Обратный звонок
+
+
+                //- bottom
+                .header__bottom
+                    .container
+                        .header__bottom-row
+                            //- left
+                            .header__bottom-left
+                                //- menu
+                                .header__menu
+                                    .menu
+                                        each i in menu
+                                            .menu__item
+                                                a(href='catalog.html').menu__link
+                                                    span.menu__link-title= i.title
+                                                    +icon('triangle','menu__link-svg')
+                                                .submenu
+                                                    each j in i.submenu
+                                                        a(href='catalog.html').submenu__item
+                                                            .submenu__item-title= j
+
+
+                                //- link
+                                a(href='/').header__link
+                                    +image('images/icons/teddy.png', '','header__link-img')
+                                    span.header__link-title добавить к букету
+
+
+                            //- right
+                            .header__bottom-right
+                                //- controls
+                                .hcontrols
+                                    each i in headerControls
+                                        .hcontrols__item
+                                            a(href=i.href).hcontrol
+                                                +icon(i.icon,'hcontrol__svg')
+                                                if i.count
+                                                    span.hcontrol__count= i.count
+
 
             //- pages
             .page
@@ -33,6 +114,88 @@ html(lang="ru")
 
             //- footer
             footer.footer
+                //- banner
+                .footer__banner
+                    .fbanner
+                        .container
+                            .fbanner__row
+                                .fbanner__title В вашей корзине уже лежит бесплатная открытка от нас!
+                                a(href='#').fbanner__btn.btn4
+                                    span.btn4__img
+                                        +image('images/icons/basket.png','','btn4__pic')
+                                        +image('images/icons/basket-hover.png','','btn4__pic btn4__pic_h')
+                                        span.btn4__count 1
+                                    span.btn4__txt Забрать подарок
+
+
+                //- top
+                .footer__top
+                    .container
+                        .row
+                            //- left
+                            .footer__left
+                                a(href='/').footer__logo
+                                    +image('images/icons/logo.svg','','footer__logo-img')
+                                    span.footer__logo-title
+                                        | Интернет-магазин
+                                        | цветов и подарков
+
+
+                            //- menu
+                            .footer__menu
+                                .fmenu
+                                    .row
+                                        each col in footerMenu
+                                            .fmenu__col
+                                                .fmenu__title= col.title
+                                                .fmenu__list
+                                                    each i in col.list
+                                                        a(href=i.href).fmenu__item= i.title
+
+                            //- contacts
+                            .footer__contacts
+                                .fcontacts
+                                    a(href='https://yandex.ru/maps/-/CGDz5P2Y' target='_blank').fcontact
+                                        span.fcontact__icon
+                                            +icon('pin','fcontact__svg')
+                                        span.fcontact__val
+                                            .fcontact__val-title г. Москва, ул.2-ая Прядильная, д.1
+                                    a(href='mailto:flowers@gmail.com' ).fcontact
+                                        span.fcontact__icon
+                                            +icon('mail','fcontact__svg')
+                                        span.fcontact__val
+                                            .fcontact__val-mail flowers@gmail.com
+                                    span.fcontact
+                                        span.fcontact__icon
+                                            +icon('time','fcontact__svg')
+                                        span.fcontact__val
+                                            span.fcontact__val-text График работы:
+                                            span.fcontact__val-time пн-вс: 9:00 - 18:00
+
+
+                            //- right
+                            .footer__right
+                                //- tel
+                                a(href='tel:8(800)984-12-12').footer__tel.tel.tel_g 8 (800) 984-12-12
+                                //- socials
+                                .footer__socials
+                                    .socials
+                                        each i in socials
+                                            a(href=i.href).social
+                                                +image('images/icons/' + i.icon + '.svg','','social__svg')
+
+
+                                a(href='#').footer__btn.btn3
+                                    span.btn3__txt заказазать звонок
+                //- bottom
+                .footer__bottom
+                    .container
+                        .footer__bottom-row
+                            .footer__copy Copyright 2019 © Все права защищены
+                            .footer__dev
+                                .footer__dev-title Разработано
+                                +image('images/icons/dev.png','','footer__dev-img')
+
 
     .debug
         div

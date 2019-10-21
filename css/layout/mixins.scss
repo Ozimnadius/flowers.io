@@ -101,3 +101,7 @@ $vh: 1080;
 @mixin tr(){
   transition: .3s;
 }
+
+@mixin op(){
+  opacity: .7;
+}

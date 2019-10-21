@@ -1,3 +1,363 @@
 .header {
 
+  &__top {
+    border-bottom: 1px solid $grey1;
+
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__middle {
+    padding: 20px 0;
+
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      margin-right: 30px;
+    }
+
+    &-title {
+      color: $red;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: lh(18, 23.4);
+    }
+
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__tel {
+    margin-bottom: 5px;
+  }
+
+  &__bottom {
+    background-image: linear-gradient(90deg, #fe5b3a 0%, #8f43fe 100%);
+
+    &-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+  }
+
+  &__menu {
+    margin-right: 30px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 94px;
+    padding-right: 22px;
+
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: url("/images/bg/line.png") 0 0;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    &-img {
+      position: absolute;
+      bottom: -5px;
+      left: 22px;
+    }
+
+    &-title {
+      color: $bg;
+      font-weight: 700;
+      text-transform: uppercase;
+      @include tr;
+    }
+
+    &:hover{
+      .header__link-title{
+        color: $y1;
+      }
+    }
+  }
+
+}
+
+.hnav {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: 50px;
+    padding: 18px 0;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    @include tr;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $red;
+      border-bottom-color: $red;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__item {
+    position: relative;
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 10px;
+    }
+
+    &:hover {
+      .menu {
+        &__link {
+          background: $y3;
+
+          &:after {
+            opacity: 1;
+          }
+
+          &-title {
+            color: $purple3;
+          }
+
+          &-svg {
+            fill: $purple3;
+          }
+        }
+      }
+
+      .submenu {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 16px 30px;
+    background: transparent;
+    position: relative;
+    @include tr;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url("/images/bg/pattern.svg") 0 0;
+      opacity: 0;
+      @include tr;
+    }
+
+
+    &-title {
+      color: $bg;
+      font-weight: 700;
+      line-height: lh(16, 22.5);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 20;
+      @include tr;
+    }
+
+    &-svg {
+      width: 10px;
+      height: 7px;
+      fill: $bg;
+      margin-left: 7px;
+      @include tr;
+      position: relative;
+      z-index: 20;
+    }
+  }
+
+}
+
+.submenu {
+  display: none;
+  width: 209px;
+  position: absolute;
+  top: calc(100% + 5px);
+
+  &__item {
+    display: block;
+
+    padding: 12px 20px;
+    background: $y3;
+    @include tr;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url("/images/bg/pattern.svg") 0 0;
+      opacity: 1;
+      @include tr;
+    }
+
+    &-title {
+      color: $purple3;
+      font-weight: 600;
+      line-height: lh(16, 22.5);
+      position: relative;
+      z-index: 20;
+      @include tr;
+    }
+
+    &:hover {
+      background-color: $red;
+      color: $bg;
+      &:after{
+        opacity: .25;
+      }
+
+      .submenu{
+        &__item{
+
+          &-title{
+            color: $bg;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.hcontrols {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    padding: 0 25px;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: radial-gradient(27.63% 74.29% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      &:after {
+        background: transparent;
+      }
+    }
+  }
+
+}
+
+.hcontrol {
+  display: block;
+  position: relative;
+  width: 33px;
+  height: 33px;
+
+  &:hover{
+    .hcontrol{
+      &__svg{
+        fill:$y3;
+      }
+    }
+  }
+
+
+  &__svg {
+    max-width: 100%;
+    max-height: 100%;
+    fill: $bg;
+    @include tr;
+  }
+
+  &__count {
+    width: 19px;
+    height: 19px;
+    border: 1px solid $purple7;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, $y1 0%, $y2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $text2;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+  }
+
 }
