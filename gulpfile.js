@@ -29,12 +29,21 @@ const moduleJS = [
 const vendorJs = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+    'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+    'node_modules/selectize/dist/js/standalone/selectize.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+    'node_modules/swiper/dist/js/swiper.js',
 ];
 
 
 const vendorCss = [
     'node_modules/font-awesome/css/font-awesome.css',
     'node_modules/normalize.css/normalize.css',
+    'node_modules/ion-rangeslider/css/ion.rangeSlider.css',
+    'node_modules/selectize/dist/css/selectize.default.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css',
+    'node_modules/swiper/dist/css/swiper.css',
 ];
 
 

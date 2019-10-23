@@ -231,6 +231,7 @@
   display: none;
   width: 209px;
   position: absolute;
+  z-index: 90;
   top: calc(100% + 5px);
 
   &__item {

@@ -1,0 +1,473 @@
+.catalog {
+
+  &__item {
+    @include col;
+    @include size(6);
+    margin-bottom: 20px;
+
+    .item{
+      height: 100%;
+    }
+  }
+}
+
+.filters {
+
+}
+
+.filter {
+  @include col;
+  @include size(24/5);
+  position: relative;
+  z-index: 80;
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    top: 50%;
+    margin-top: -6px;
+    left: calc(100% + 9px);
+    background: url("/images/icons/seporate.png") 0 0;
+  }
+
+  &:last-child{
+    &:after{
+      display: none;
+    }
+  }
+
+  .jq-selectbox {
+    width: 100%;
+
+    .placeholder {
+      color: $black2;
+    }
+
+    &.opened{
+      .jq-selectbox__select{
+        border-radius: 6px 6px 0 0;
+      }
+
+      .jq-selectbox__trigger-arrow{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .jq-selectbox__select {
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid $grey1;
+    background: $bg;
+    padding: 13px 21px;
+    padding-right: 34px;
+
+    color: $black2;
+    font-size: 16px;
+    font-weight: 400;
+    //line-height: lh(16,17.81);
+    //font-family: "Proxima Nova";
+    box-shadow: none;
+    font: 16px "Proxima Nova";
+    text-shadow: none;
+  }
+
+  .jq-selectbox__trigger {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .jq-selectbox__trigger-arrow {
+    width: 13px;
+    height: 7px;
+    border: none;
+    background: url("/images/icons/angle.svg") 0 0 no-repeat;
+    position: static;
+  }
+
+  .jq-selectbox__dropdown{
+    border: 1px solid $grey1;
+    border-radius: 0 0 6px 6px;
+    background-color: $bg;
+    top: calc(100% - 1px) !important;
+    margin: 0;
+    box-shadow: none;
+    padding: 10px 0;
+
+    color: $black2;
+    font-weight: 400;
+    font: 16px "Proxima Nova";
+    width: 100% !important;
+  }
+
+  .jq-selectbox li{
+    padding: 10px 21px;
+    white-space: normal;
+    &:hover{
+      background-color: rgba($purple5,.1);
+      color: $black2;
+    }
+  }
+
+}
+
+.range {
+
+  &__fields {
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+  }
+
+  &__label {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: calc(50% - 30px);
+    text-align: center;
+  }
+
+  &__input {
+    margin-top: 6px;
+    width: 100%;
+    height: 32px;
+    border-radius: 86px;
+    border: 1px solid $white;
+    text-align: center;
+    color: rgba($text, .8);
+    font-size: 14px;
+  }
+
+  .irs-line {
+    border-radius: 15px;
+    background-color: #dadada;
+  }
+
+  .irs-bar {
+    background-image: linear-gradient(90deg, #fe5b3a 0%, #8f43fe 100%);
+  }
+
+  .irs-handle {
+    width: 23px;
+    height: 23px;
+    border: 6px solid #f75946;
+    outline: 2px solid $bg;
+    box-shadow: none;
+
+    &.to {
+      border: 6px solid $purple7;
+    }
+  }
+}
+
+.item {
+  position: relative;
+  display: block;
+
+  &_bdw{
+
+  }
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: inherit;
+    background-image: linear-gradient(113.58deg, #fe5b3a 0%, #8f43fe 100%);
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    opacity: 0;
+    @include tr;
+  }
+
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+
+    .item__visible{
+      border: 1px solid transparent;
+      z-index: 100;
+      &:after{
+        opacity: 1;
+      }
+    }
+
+    .item__hidden{
+      top: calc(100% - 60px);
+      z-index: 90;
+    }
+
+    .item__control{
+      border-color: $purple6;
+    }
+
+
+  }
+
+  &__visible {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $white;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    position: relative;
+    z-index: 20;
+    padding-top: 57px;
+    padding-bottom: 40px;
+    background: $bg;
+    @include tr;
+    background-clip: padding-box;
+    overflow: hidden;
+    height: 100%;
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url("/images/bg/pattern-item.png") center 0;
+      opacity: 0;
+      @include tr;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    z-index: 10;
+    top: 14px;
+    left: 10px;
+  }
+
+  &__controls {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    right: 0;
+    display: block;
+  }
+
+  &__control {
+    width: 47px;
+    height: 42px;
+    border: 1px solid $white;
+    background-color: $bg;
+    border-radius: 50% 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+    margin-bottom: 8px;
+    border-right: none;
+    @include tr;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &:hover{
+      background-color: $red;
+      border-color: $red !important;
+
+      .item__control-svg{
+        fill: $bg;
+      }
+    }
+
+
+    &-svg {
+      width: 24px;
+      height: 24px;
+      fill: $grey1;
+      @include tr;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    height: 215px;
+
+    &-img {
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    text-align: center;
+    color: $text2;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: lh(22,30.94);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__prices{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  &__price{
+    margin-right: 12px;
+  }
+
+  &__hidden {
+    position: absolute;
+    z-index: 10;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    background-image: linear-gradient(113.58deg, #fe5b3a 0%, #8f43fe 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    box-shadow: 0 3px 0 #7e256b;
+    @include tr;
+  }
+
+  &__buy {
+    width: 100%;
+    height: 54px;
+    margin-bottom: 20px;
+
+    &:hover{
+      background-color: $bg;
+      box-shadow: 0 3px 0 #AB9FB9, 0px 20px 9px -10px rgba($black, 0.6);
+
+      .btn4__txt{
+        color: $text2;
+      }
+    }
+
+    &.btn4{
+      background-image: url("/images/bg/pattern-item.png");
+
+      &__txt{
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__one{
+    display: flex;
+    align-items: center;
+    position: relative;
+    @include tr;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: url("/images/bg/line-w.png") 0 0;
+      opacity: 1;
+      @include tr;
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: url("/images/bg/line-y.png") 0 0;
+      opacity: 0;
+      @include tr;
+    }
+
+    &:hover{
+      &:after{
+        opacity: 0;
+      }
+      &:before{
+        opacity: 1;
+      }
+
+      .item__one{
+        &-svg{
+          fill: #EFD063;
+        }
+        &-txt{
+          color: #EFD063;
+        }
+      }
+    }
+
+    &-svg{
+      width: 13px;
+      height: 13px;
+      fill: $bg;
+      margin-right: 9px;
+      @include tr;
+    }
+
+    &-txt{
+      color: $bg;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      @include tr;
+    }
+  }
+
+}
+
+.price{
+  color: $red;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &_old{
+    opacity: 0.6;
+    color: $black2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+  }
+
+}

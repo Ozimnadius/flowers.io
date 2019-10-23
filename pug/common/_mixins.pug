@@ -12,3 +12,47 @@ mixin image(imagePath, imageAlt, imageClass)
   else
     - var alt = imageAlt
   img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+
+mixin item(icon,src,title,dopClass)
+  a(href='product.html' data-id=img class=dopClass).item
+    //- visible
+    span.item__visible
+      //- icon
+      if icon
+        +image('images/content/catalog/icon.svg','','item__icon')
+
+      //- img
+      span.item__img
+        +image(src,'','item__img-img')
+
+
+      //- controls
+      span.item__controls
+        button(type='button').item__control.jsFavorites
+          +icon('heart','item__control-svg')
+        button(type='btn').item__control.jsCompare
+          +icon('compare','item__control-svg')
+
+      //- title
+      span.item__title= title
+
+      //- prices
+      span.item__prices
+        span.item__price.price
+          span.price__val 2 295&nbsp;
+          span.price__cur руб.
+        span.item__oldprice.price.price_old
+          span.price__val -3 140&nbsp;
+          span.price__cur руб.
+
+
+    //- hidden
+    span.item__hidden
+      //- buy
+      button(type='button').btn4.item__buy.jsBuy
+        span.btn4__txt В корзину
+
+      //- one
+      button(type='button').item__one.jsOne
+        +icon('arrow','item__one-svg')
+        span.item__one-txt Купить в 1 клик

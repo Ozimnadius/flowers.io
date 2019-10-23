@@ -3,6 +3,16 @@ function getNumber(str) {
     return parseInt(str.replace(/\s/g, ''));
 }
 
+function imageResize(src, cls) {
+    if (cls){
+        $(cls).not('.logo__img').attr('src', src);
+    } else {
+        $('img').not('.logo__img').attr('src', src);
+    }
+
+}
+// imageResize('https://loremflickr.com/440/440','.item__img-img');
+
 function number_format(number, decimals, dec_point, thousands_sep) {
     var i, j, kw, kd, km;
     if (isNaN(decimals = Math.abs(decimals))) {
@@ -26,4 +36,20 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     return km + kw + kd;
 }
 
+function prettify(num) {
+    var n = num.toString();
+    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
+}
+
 const wWidth = $(window).width();
+
+$('.jsBuy,.jsOne,.jsFavorites,.jsCompare').on('click', function (e) {
+    e.preventDefault();
+});
+
+$('input[type=tel]').mask('+7 (999) 999-99-99');
+
+
+
+
+

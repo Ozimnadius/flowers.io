@@ -27,9 +27,12 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "ion-rangeslider": "^2.3.0",
     "jquery": "^3.4.1",
+    "jquery-form-styler": "^2.0.2",
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^7.0.0",
+    "selectize": "^0.12.6",
     "smart-grid": "^2.1.2",
     "swiper": "^4.5.1"
   }

@@ -4,5 +4,190 @@ block variables
     - var title = 'Главная'
 
 block content
-    .container
+    main.index
+        //- banner
+        section(style='background-image:url(/images/content/index/banner/bg.png)').index__banner.ibanner
+            .container
+                .row
+                    .ibanner__wrap
+                        //- img
+                        .ibanner__img
+                            +image('images/content/index/banner/img.png','','ibanner__pic')
+                        //- content
+                        .ibanner__content
+                            .ibanner__title
+                                | Доставка свежих
+                                br
+                                | цветов и подарков
+                            .ibanner__sub в Москве и области
+                            a(href='#').btn2.ibanner__btn
+                                +image('images/icons/flowers.png','','btn2__img')
+                                span.btn2__txt Подобрать букет
+                        //- list
+                        .ibanner__list
+                            each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка','Индивидуальный <br> подход']
+                                .ibanner__item
+                                    .ibanner__item-block
+                                        .ibanner__item-wrap
+                                            .ibanner__item-img
+                                                +image('images/content/index/banner/' + (x + 1) + '.svg','','ibanner__item-pic')
+                                    .ibanner__item-title!=i
+        //- pop
+        section.index__pop
+            form.ipop
+                .container
+                    //- title
+                    .ipop__title Популярные букеты
+                    //- filters
+                    .ipop__filters
+                        .filters
+                            .row
+                                //- price
+                                .filter
+                                    .fprice
+                                        //- top
+                                        .fprice__top
+                                            .fprice__title Цена
+                                            +icon('angle','fprice__angle')
+                                        //- bottom
+                                        .fprice__bottom
+                                            .range
+                                                //- fields
+                                                .range__fields
+                                                    label.range__label От
+                                                        input(type='text' name='from' value='390').range__input.range__input_from
+                                                    label.range__label До
+                                                        input(type='text' name='to' value='237 990').range__input.range__input_to
+                                                //- slider
+                                                input(type='text' name='range' value='' data-type='double' data-min='390' data-max='300000' data-from='390' data-to='237990').range__slider
+                                //- name
+                                .filter
+                                    select(data-placeholder='Цветы' name='flowers').select.filter__select
+                                        option
+                                        option Все
+                                        option Lorem1
+                                        option Lorem2
+                                        option Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
+                                        option Lorem4
+                                //- sex
+                                .filter
+                                    select(data-placeholder='Кому' name='sex').select.filter__select
+                                        option
+                                        option Все
+                                        option Мужчина
+                                        option Женщина
+                                        option Другое
+                                //- event
+                                .filter
+                                    select(data-placeholder='Событие' name='event').select.filter__select
+                                        option
+                                        option Все
+                                        option Lorem1
+                                        option Lorem2
+                                        option Lorem3
+                                //- style
+                                .filter
+                                    select(data-placeholder='Стиль' name='style').select.filter__select
+                                        option
+                                        option Все
+                                        option Lorem1
+                                        option Lorem2
+                                        option Lorem3
+                    //- items
+                    .ipop__items.catalog__items
+                        .row
+                            each i,x in indexPop
+                                .ipop__item.catalog__item
+                                    +item(i.icon,i.src,i.title)
+                    //- more
+                    button(type='button').ipop__more.btn3
+                        +icon('load', 'btn3__img')
+                        .btn3__txt Загрузить еще (15)
+        //- gifts
+        section.index__gifts
+            .slider
+                .container
+                    //- top
+                    .slider__top
+                        .slider__title
+                            +image('images/icons/gift.svg','','slider__title-img')
+                            .slider__title-txt Популярные подарки
+                        .slider__text Усильте впечатление от букета
+
+
+                    //- bottom
+                    .slider__bottom
+                        //- swiper
+                        .slider__container.swiper-container
+                            .swiper-wrapper
+                                each i in indexGifts
+                                    .swiper-slide.slider__slide
+                                        +item(false,i.src,i.title,'item_bdw')
+                        //- nav
+                        .slider__nav
+                            //- prev
+                            button(type='button').slider__prev.slider__arr
+                                +icon('prev','slider__arr-svg')
+                            //- scrollbar
+                            .slider__scrollbar
+                                .slider__scrollbar-wrap.swiper-scrollbar
+                            //- next
+                            button(type='button').slider__next.slider__arr
+                                +icon('next','slider__arr-svg')
+                        //- look
+                        .slider__look
+                            a(href='catalog.html').slider__link
+                                span.slider__link-title Смотреть все подарки
+                                +icon('present','slider__link-svg')
+        //- feed
+        section.index__feed
+            .container
+                form.feed
+                    .row
+                        .feed__col
+                            //- title
+                            .feed__title Не нашли идеальный букет в каталоге?
+                            //- sub
+                            .feed__sub Оставьте заявку, мы перезвоним и придумаем для вас авторский букет!
+                            //- row
+                            .feed__row
+                                .row
+                                    .feed__field
+                                        .feed__label *Как к вам обращаться?
+                                        input(type='text' name='name' placeholder='Например Иван Иванов').feed__input
+                                    .feed__field
+                                        .feed__label *Телефон
+                                        input(type='tel' name='tel' placeholder='+7 ___-___-__-__').feed__input
+                            //- agree
+                            .feed__agree
+                                label.agree
+                                    input(type='checkbox' name='agree' checked=true).agree__input
+                                    span.agree__fake
+                                    span.agree__txt Я даю согласие на обработку персональных данных
+                            //- submit
+                            button(type='submit').agree__submit.btn4
+                                span.btn4__txt оставить заявку
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
