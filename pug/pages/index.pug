@@ -167,6 +167,70 @@ block content
                             //- submit
                             button(type='submit').agree__submit.btn4
                                 span.btn4__txt оставить заявку
+        //- wow
+        section.index__wow
+            .iwow
+                //- img
+                .iwow__img
+                    +image('images/content/index/wow/img.png','','iwow__img-img')
+                .container
+                    .iwow__list
+                        .iwow__row
+                            .iwow__item
+                                .iwow__item-img
+                                    +image('images/content/index/wow/1.png','','iwow__item-pic')
+                                    a(href='product.html').iwow__link.btn4
+                                        span.btn4__txt хочу такой букет
+                            .iwow__item
+                                .iwow__item-img
+                                    +image('images/content/index/wow/2.png','','iwow__item-pic')
+                                    a(href='product.html').iwow__link.btn4
+                                        span.btn4__txt хочу такой букет
+
+                        .iwow__row
+                            .iwow__item
+                                .iwow__item-img
+                                    +image('images/content/index/wow/3.png','','iwow__item-pic')
+                                    a(href='product.html').iwow__link.btn4
+                                        span.btn4__txt хочу такой букет
+                            .iwow__item
+                                .iwow__item-title
+                                    | Доставленные букеты
+                                    | для наших счастливчиков
+                                .iwow__item-img
+                                    +image('images/content/index/wow/4.png','','iwow__item-pic')
+                                    a(href='product.html').iwow__link.btn4
+                                        span.btn4__txt хочу такой букет
+        //- bottom
+        section.index__bottom
+            .ibottom
+                .container
+                    .ibottom__row
+                        each col in ibottom
+                            .ibottom__col
+                                //- title
+                                div(class='ibottom__title_' + col.title.cls).ibottom__title= col.title.val
+
+                                //- list
+                                .ibottom__list
+                                    .row
+                                        each i in col.list
+                                            a(href='article.html').ibottom__item
+                                                span.ibottom__item-top
+                                                    +image(i.src,'','ibottom__item-img')
+                                                span.ibottom__item-bottom
+                                                    span.ibottom__item-title= i.title
+                                                    span.ibottom__item-txt
+                                                        | 14 февраля – прекрасный праздник, который отмечают влюбленные во многих странах...
+                                                    span.ibottom__item-date 25 мая
+
+                                //- link
+                                a(href='news.html' class='link_' + col.title.cls).ibottom__link.link= col.link
+
+
+
+
+
 
 
 
