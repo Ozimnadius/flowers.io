@@ -21,8 +21,9 @@ $vh: 1080;
 }
 
 @mixin content() {
+  $mb: 17px;
   ul {
-    margin: 1em 0;
+    margin-bottom: $mb;
     padding-left: 40px;
     li {
       list-style: disc;
@@ -30,29 +31,31 @@ $vh: 1080;
   }
 
   h1 {
-    margin: 0.67em 0;
+    margin-bottom: $mb;
   }
   h2 {
-    margin: 0.83em 0;
+    margin-bottom: $mb;
   }
   h3 {
-    margin: 1em 0;
+    margin-bottom: $mb;
   }
   h4 {
-    margin: 1.33em 0;
+    margin-bottom: 15px;
   }
   h5 {
-    margin: 1.67em 0;
+    margin-bottom: $mb;
   }
   h6 {
-    margin: 2.33em 0;
+    margin-bottom: $mb;
   }
   p {
     font-size: 16px;
     font-weight: 400;
     line-height: lh(16,21);
+    margin-bottom: $mb;
   }
   a{
+    display: inline-block;
     color: $purple3;
     font-weight: 600;
     position: relative;
@@ -104,4 +107,86 @@ $vh: 1080;
 
 @mixin op(){
   opacity: .7;
+}
+
+@mixin select(){
+  .jq-selectbox {
+    width: 100%;
+
+    .placeholder {
+      color: $black2;
+    }
+
+    &.opened{
+      .jq-selectbox__select{
+        border-radius: 6px 6px 0 0;
+      }
+
+      .jq-selectbox__trigger-arrow{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .jq-selectbox__select {
+    height: 46px;
+    border-radius: 6px;
+    border: 1px solid $grey1;
+    background: $bg;
+    padding: 13px 21px;
+    padding-right: 34px;
+
+    color: $black2;
+    font-size: 16px;
+    font-weight: 400;
+    //line-height: lh(16,17.81);
+    //font-family: "Proxima Nova";
+    box-shadow: none;
+    font: 16px "Proxima Nova";
+    text-shadow: none;
+  }
+
+  .jq-selectbox__trigger {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .jq-selectbox__trigger-arrow {
+    width: 13px;
+    height: 7px;
+    border: none;
+    background: url("/images/icons/angle.svg") 0 0 no-repeat;
+    position: static;
+  }
+
+  .jq-selectbox__dropdown{
+    border: 1px solid $grey1;
+    border-radius: 0 0 6px 6px;
+    background-color: $bg;
+    top: calc(100% - 1px) !important;
+    margin: 0;
+    box-shadow: none;
+    padding: 10px 0;
+
+    color: $black2;
+    font-weight: 400;
+    font: 16px "Proxima Nova";
+    width: 100% !important;
+  }
+
+  .jq-selectbox li{
+    padding: 10px 21px;
+    white-space: normal;
+    &:hover{
+      background-color: rgba($purple5,.1);
+      color: $black2;
+    }
+  }
+
+  .jq-selectbox li.selected{
+    background-color: rgba($purple5,.1);
+    color: $black2;
+  }
 }

@@ -40,59 +40,7 @@ block content
                     .ipop__title Популярные букеты
                     //- filters
                     .ipop__filters
-                        .filters
-                            .row
-                                //- price
-                                .filter
-                                    .fprice
-                                        //- top
-                                        .fprice__top
-                                            .fprice__title Цена
-                                            +icon('angle','fprice__angle')
-                                        //- bottom
-                                        .fprice__bottom
-                                            .range
-                                                //- fields
-                                                .range__fields
-                                                    label.range__label От
-                                                        input(type='text' name='from' value='390').range__input.range__input_from
-                                                    label.range__label До
-                                                        input(type='text' name='to' value='237 990').range__input.range__input_to
-                                                //- slider
-                                                input(type='text' name='range' value='' data-type='double' data-min='390' data-max='300000' data-from='390' data-to='237990').range__slider
-                                //- name
-                                .filter
-                                    select(data-placeholder='Цветы' name='flowers').select.filter__select
-                                        option(value='')
-                                        option(value='Все') Все
-                                        option(value='Lorem1') Lorem1
-                                        option(value='Lorem2') Lorem2
-                                        option(value='Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf') Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
-                                        option(value='Lorem4') Lorem4
-                                //- sex
-                                .filter
-                                    select(data-placeholder='Кому' name='sex').select.filter__select
-                                        option(value='')
-                                        option(value='Все') Все
-                                        option(value='Мужчина') Мужчина
-                                        option(value='Женщина') Женщина
-                                        option(value='Другое') Другое
-                                //- event
-                                .filter
-                                    select(data-placeholder='Событие' name='event').select.filter__select
-                                        option(value='')
-                                        option(value='Все') Все
-                                        option(value='Lorem1') Lorem1
-                                        option(value='Lorem2') Lorem2
-                                        option(value='Lorem3') Lorem3
-                                //- style
-                                .filter
-                                    select(data-placeholder='Стиль' name='style').select.filter__select
-                                        option(value='')
-                                        option(value='Все') Все
-                                        option(value='Lorem1') Lorem1
-                                        option(value='Lorem2') Lorem2
-                                        option(value='Lorem3') Lorem3
+                        +filters
                     //- items
                     .ipop__items.catalog__items
                         .row
@@ -105,40 +53,7 @@ block content
                         span.btn3__txt Загрузить еще (15)
         //- gifts
         section.index__gifts
-            .slider
-                .container
-                    //- top
-                    .slider__top
-                        .slider__title
-                            +image('images/icons/gift.svg','','slider__title-img')
-                            .slider__title-txt Популярные подарки
-                        .slider__text Усильте впечатление от букета
-
-
-                    //- bottom
-                    .slider__bottom
-                        //- swiper
-                        .slider__container.swiper-container
-                            .swiper-wrapper
-                                each i in indexGifts
-                                    .swiper-slide.slider__slide
-                                        +item(false,i.src,i.title,'item_bdw')
-                        //- nav
-                        .slider__nav
-                            //- prev
-                            button(type='button').slider__prev.slider__arr
-                                +icon('prev','slider__arr-svg')
-                            //- scrollbar
-                            .slider__scrollbar
-                                .slider__scrollbar-wrap.swiper-scrollbar
-                            //- next
-                            button(type='button').slider__next.slider__arr
-                                +icon('next','slider__arr-svg')
-                        //- look
-                        .slider__look
-                            a(href='catalog.html').slider__link
-                                span.slider__link-title Смотреть все подарки
-                                +icon('present','slider__link-svg')
+            +slider
         //- feed
         section.index__feed
             .container

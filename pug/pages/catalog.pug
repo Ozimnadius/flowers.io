@@ -1,0 +1,119 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.catalog
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Каталог
+
+
+        //- form
+        section.catalog__main
+            .container
+                form.catalog__form
+                    //- top
+                    .catalog__top
+                        //- title
+                        .catalog__title.title большие букеты
+
+                        //- controls
+                        .catalog__controls
+                            //- sort
+                            .catalog__sort.csort
+                                .csort__title Сортировать по
+                                .csort__select
+                                    select(name='sort').select
+                                        option Популярности
+                                        option Более дешевые
+                                        option Более дорогие
+                                        option Акции
+
+                            //- type
+                            .catalog__types
+                                button(type='button' data-type='blocks').catalog__type.active
+                                    +icon('blocks','catalog__type-svg')
+                                button(type='button' data-type='list').catalog__type
+                                    +icon('list','catalog__type-svg')
+
+                    //- filters
+                    .catalog__filters
+                        +filters
+
+                    //-items
+                    .catalog__items
+                        .row
+                            each i,x in indexPop
+                                .catalog__item
+                                    +item(i.icon,i.src,i.title)
+
+                    //- pag
+                    .catalog__pag
+                        .pag
+                            a(href='/').pag__arr
+                                +icon('angle-l','pag__svg')
+                            .pag__items
+                                a(href='/').pag__item
+                                    .pag__item-val 1
+                                a(href='/').pag__item
+                                    .pag__item-val 2
+                                a(href='/').pag__item.active
+                                    .pag__item-val 3
+                                a(href='/').pag__item
+                                    .pag__item-val ...
+                                a(href='/').pag__item
+                                    .pag__item-val 23
+                            a(href='/').pag__arr
+                                +icon('angle-r','pag__svg')
+
+        //- gifts
+        section.catalog__gifts
+            +slider
+        //- content
+        section.catalog__content
+            .container
+                .content
+                    h4 Широкий ассортимент и высокое качество
+                    p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового
+                    h6 Выгодный шоппинг
+                    p Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового
+                    a(href='/') Читать далее
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -119,55 +119,42 @@
         </div>
       </header>
       <div class="page">
-        <main class="index">
-          <section class="index__banner ibanner" style="background-image:url(/images/content/index/banner/bg.png)">
+        <main class="catalog">
+          <div class="bread">
+            <div class="container"><a class="bread__item" href="/">Главная   /&nbsp;&nbsp;&nbsp;</a><span class="bread__item active">Каталог</span></div>
+          </div>
+          <section class="catalog__main">
             <div class="container">
-              <div class="row">
-                <div class="ibanner__wrap">
-                  <div class="ibanner__img"><img class="ibanner__pic" src="images/content/index/banner/img.png" alt=""/>
-                  </div>
-                  <div class="ibanner__content">
-                    <div class="ibanner__title">Доставка свежих<br>цветов и подарков</div>
-                    <div class="ibanner__sub">в Москве и области</div><a class="btn2 ibanner__btn" href="#"><img class="btn2__img" src="images/icons/flowers.png" alt=""/><span class="btn2__txt">Подобрать букет</span></a>
-                  </div>
-                  <div class="ibanner__list">
-                    <div class="ibanner__item">
-                      <div class="ibanner__item-block">
-                        <div class="ibanner__item-wrap">
-                          <div class="ibanner__item-img"><img class="ibanner__item-pic" src="images/content/index/banner/1.svg" alt=""/>
-                          </div>
-                        </div>
+              <form class="catalog__form">
+                <div class="catalog__top">
+                  <div class="catalog__title title">большие букеты</div>
+                  <div class="catalog__controls">
+                    <div class="catalog__sort csort">
+                      <div class="csort__title">Сортировать по</div>
+                      <div class="csort__select">
+                        <select class="select" name="sort">
+                          <option>Популярности</option>
+                          <option>Более дешевые</option>
+                          <option>Более дорогие</option>
+                          <option>Акции</option>
+                        </select>
                       </div>
-                      <div class="ibanner__item-title">Прямая поставка <br> из теплиц</div>
                     </div>
-                    <div class="ibanner__item">
-                      <div class="ibanner__item-block">
-                        <div class="ibanner__item-wrap">
-                          <div class="ibanner__item-img"><img class="ibanner__item-pic" src="images/content/index/banner/2.svg" alt=""/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="ibanner__item-title">Быстрая доставка</div>
-                    </div>
-                    <div class="ibanner__item">
-                      <div class="ibanner__item-block">
-                        <div class="ibanner__item-wrap">
-                          <div class="ibanner__item-img"><img class="ibanner__item-pic" src="images/content/index/banner/3.svg" alt=""/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="ibanner__item-title">Индивидуальный <br> подход</div>
+                    <div class="catalog__types">
+                      <button class="catalog__type active" type="button" data-type="blocks">
+                        <svg class="catalog__type-svg">
+                          <use xlink:href="/images/icons/sprite.svg#blocks"></use>
+                        </svg>
+                      </button>
+                      <button class="catalog__type" type="button" data-type="list">
+                        <svg class="catalog__type-svg">
+                          <use xlink:href="/images/icons/sprite.svg#list"></use>
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-          <section class="index__pop">
-            <form class="ipop">
-              <div class="container">
-                <div class="ipop__title">Популярные букеты</div>
-                <div class="ipop__filters">
+                <div class="catalog__filters">
                   <div class="filters">
                     <div class="row">
                       <div class="filter">
@@ -233,9 +220,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="ipop__items catalog__items">
+                <div class="catalog__items">
                   <div class="row">
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/1.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/1.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -246,7 +233,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/2.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/2.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -257,7 +244,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/3.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/3.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -268,7 +255,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/4.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/4.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -279,7 +266,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/5.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/5.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -290,7 +277,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/6.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/6.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -301,7 +288,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/7.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/7.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -312,7 +299,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/8.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/8.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -323,7 +310,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/9.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/9.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -334,7 +321,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/10.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/10.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -345,7 +332,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/11.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/11.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -356,7 +343,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/12.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/12.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -367,7 +354,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/13.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/13.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -378,7 +365,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/14.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/14.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -389,7 +376,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/15.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><span class="item__img"><img class="item__img-img" src="images/content/catalog/15.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -400,7 +387,7 @@
                               <use xlink:href="/images/icons/sprite.svg#arrow"></use>
                             </svg><span class="item__one-txt">Купить в 1 клик</span></span></span></a>
                     </div>
-                    <div class="ipop__item catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/16.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
+                    <div class="catalog__item"><a class="item" href="product.html"><span class="item__visible"><img class="item__icon" src="images/content/catalog/icon.svg" alt=""/><span class="item__img"><img class="item__img-img" src="images/content/catalog/16.png" alt=""/></span><span class="item__controls"><span class="item__control jsFavorites">
                               <svg class="item__control-svg">
                                 <use xlink:href="/images/icons/sprite.svg#heart"></use>
                               </svg></span><span class="item__control jsCompare">
@@ -413,15 +400,26 @@
                     </div>
                   </div>
                 </div>
-                <button class="ipop__more btn3" type="button">
-                  <svg class="btn3__img">
-                    <use xlink:href="/images/icons/sprite.svg#load"></use>
-                  </svg><span class="btn3__txt">Загрузить еще (15)</span>
-                </button>
-              </div>
-            </form>
+                <div class="catalog__pag">
+                  <div class="pag"><a class="pag__arr" href="/">
+                      <svg class="pag__svg">
+                        <use xlink:href="/images/icons/sprite.svg#angle-l"></use>
+                      </svg></a>
+                    <div class="pag__items"><a class="pag__item" href="/">
+                        <div class="pag__item-val">1</div></a><a class="pag__item" href="/">
+                        <div class="pag__item-val">2</div></a><a class="pag__item active" href="/">
+                        <div class="pag__item-val">3</div></a><a class="pag__item" href="/">
+                        <div class="pag__item-val">...</div></a><a class="pag__item" href="/">
+                        <div class="pag__item-val">23</div></a></div><a class="pag__arr" href="/">
+                      <svg class="pag__svg">
+                        <use xlink:href="/images/icons/sprite.svg#angle-r"></use>
+                      </svg></a>
+                  </div>
+                </div>
+              </form>
+            </div>
           </section>
-          <section class="index__gifts">
+          <section class="catalog__gifts">
             <div class="slider">
               <div class="container">
                 <div class="slider__top">
@@ -546,89 +544,13 @@
               </div>
             </div>
           </section>
-          <section class="index__feed">
+          <section class="catalog__content">
             <div class="container">
-              <form class="feed">
-                <div class="row">
-                  <div class="feed__col">
-                    <div class="feed__title">Не нашли идеальный букет в каталоге?</div>
-                    <div class="feed__sub">Оставьте заявку, мы перезвоним и придумаем для вас авторский букет!</div>
-                    <div class="feed__row">
-                      <div class="row">
-                        <div class="feed__field">
-                          <div class="feed__label">*Как к вам обращаться?</div>
-                          <input class="feed__input" type="text" name="name" placeholder="Например Иван Иванов">
-                        </div>
-                        <div class="feed__field">
-                          <div class="feed__label">*Телефон</div>
-                          <input class="feed__input" type="tel" name="tel" placeholder="+7 ___-___-__-__">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="feed__agree">
-                      <label class="agree">
-                        <input class="agree__input" type="checkbox" name="agree" checked><span class="agree__fake"></span><span class="agree__txt">Я даю согласие на обработку персональных данных</span>
-                      </label>
-                    </div>
-                    <button class="agree__submit btn4" type="submit"><span class="btn4__txt">оставить заявку</span></button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
-          <section class="index__wow">
-            <div class="iwow">
-              <div class="iwow__img"><img class="iwow__img-img" src="images/content/index/wow/img.png" alt=""/>
-              </div>
-              <div class="container">
-                <div class="iwow__list">
-                  <div class="iwow__row">
-                    <div class="iwow__item">
-                      <div class="iwow__item-img"><img class="iwow__item-pic" src="images/content/index/wow/1.png" alt=""/><a class="iwow__link btn4" href="product.html"><span class="btn4__txt">хочу такой букет</span></a>
-                      </div>
-                    </div>
-                    <div class="iwow__item">
-                      <div class="iwow__item-img"><img class="iwow__item-pic" src="images/content/index/wow/2.png" alt=""/><a class="iwow__link btn4" href="product.html"><span class="btn4__txt">хочу такой букет</span></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="iwow__row">
-                    <div class="iwow__item">
-                      <div class="iwow__item-img"><img class="iwow__item-pic" src="images/content/index/wow/3.png" alt=""/><a class="iwow__link btn4" href="product.html"><span class="btn4__txt">хочу такой букет</span></a>
-                      </div>
-                    </div>
-                    <div class="iwow__item">
-                      <div class="iwow__item-title">
-                        Доставленные букеты
-                        для наших счастливчиков
-                      </div>
-                      <div class="iwow__item-img"><img class="iwow__item-pic" src="images/content/index/wow/4.png" alt=""/><a class="iwow__link btn4" href="product.html"><span class="btn4__txt">хочу такой букет</span></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="index__bottom">
-            <div class="ibottom">
-              <div class="container">
-                <div class="ibottom__row">
-                  <div class="ibottom__col">
-                    <div class="ibottom__title_red ibottom__title">Новости</div>
-                    <div class="ibottom__list">
-                      <div class="row"><a class="ibottom__item" href="article.html"><span class="ibottom__item-top"><img class="ibottom__item-img" src="images/content/index/bottom/1.jpg" alt=""/></span><span class="ibottom__item-bottom"><span class="ibottom__item-title">День влюбленных, подарки любимым!</span><span class="ibottom__item-txt">14 февраля – прекрасный праздник, который отмечают влюбленные во многих странах...</span><span class="ibottom__item-date">25 мая</span></span></a><a class="ibottom__item" href="article.html"><span class="ibottom__item-top"><img class="ibottom__item-img" src="images/content/index/bottom/2.jpg" alt=""/></span><span class="ibottom__item-bottom"><span class="ibottom__item-title">Как продлить свежесть букета?</span><span class="ibottom__item-txt">14 февраля – прекрасный праздник, который отмечают влюбленные во многих странах...</span><span class="ibottom__item-date">25 мая</span></span></a>
-                      </div>
-                    </div><a class="link_red ibottom__link link" href="news.html">Смотреть все новости</a>
-                  </div>
-                  <div class="ibottom__col">
-                    <div class="ibottom__title_white ibottom__title">Статьи</div>
-                    <div class="ibottom__list">
-                      <div class="row"><a class="ibottom__item" href="article.html"><span class="ibottom__item-top"><img class="ibottom__item-img" src="images/content/index/bottom/3.jpg" alt=""/></span><span class="ibottom__item-bottom"><span class="ibottom__item-title">Важность оформления букета</span><span class="ibottom__item-txt">14 февраля – прекрасный праздник, который отмечают влюбленные во многих странах...</span><span class="ibottom__item-date">25 мая</span></span></a><a class="ibottom__item" href="article.html"><span class="ibottom__item-top"><img class="ibottom__item-img" src="images/content/index/bottom/4.jpg" alt=""/></span><span class="ibottom__item-bottom"><span class="ibottom__item-title">Какие цветы дарить при помолвке</span><span class="ibottom__item-txt">14 февраля – прекрасный праздник, который отмечают влюбленные во многих странах...</span><span class="ibottom__item-date">25 мая</span></span></a>
-                      </div>
-                    </div><a class="link_white ibottom__link link" href="news.html">Смотреть все статьи</a>
-                  </div>
-                </div>
+              <div class="content">
+                <h4>Широкий ассортимент и высокое качество</h4>
+                <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового</p>
+                <h6>Выгодный шоппинг</h6>
+                <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового</p><a href="/">Читать далее</a>
               </div>
             </div>
           </section>

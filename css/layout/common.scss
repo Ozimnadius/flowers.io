@@ -328,3 +328,25 @@
     }
   }
 }
+
+.bread{
+  padding: 55px 0 20px 0;
+  &__item{
+    color: $text;
+    font-size: 14px;
+    &.active{
+      color: #b19b9b;
+    }
+  }
+}
+
+.title{
+  font-size: 46px;
+  font-weight: 700;
+  line-height: lh(46,59.8);
+  text-transform: uppercase;
+  background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

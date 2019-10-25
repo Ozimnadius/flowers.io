@@ -1,18 +1,136 @@
 .catalog {
+  padding-bottom: 90px;
+
+  &__main {
+    margin-bottom: 80px;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+
+  &__sort {
+    margin-right: 40px;
+  }
+
+  &__types {
+    display: flex;
+  }
+
+  &__type {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      .catalog__type-svg {
+        fill: $red;
+      }
+    }
+
+    &-svg {
+      width: 18px;
+      height: 18px;
+      fill: #b4b4b4;
+      @include tr;
+    }
+  }
+
+  &__items {
+    margin-bottom: 20px;
+  }
 
   &__item {
     @include col;
     @include size(6);
     margin-bottom: 20px;
 
-    .item{
+    .item {
       height: 100%;
     }
+  }
+
+  &__filters {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: $beige;
+    border-radius: 16px;
+  }
+
+  &__pag {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__gifts{
+    margin-bottom: 80px;
   }
 }
 
 .filters {
 
+}
+
+.fprice {
+  position: relative;
+
+  &.opened {
+    .fprice__top {
+      border-radius: 6px 6px 0 0;
+    }
+
+    .fprice__bottom {
+      display: block;
+    }
+
+    .fprice__angle {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__top {
+    border-radius: 6px;
+    border: 1px solid $grey1;
+    padding: 13px 21px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: $bg;
+  }
+
+  &__title {
+    color: $black2;
+  }
+
+  &__angle {
+    width: 13px;
+    height: 7px;
+    fill: $black2;
+  }
+
+  &__bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% - 1px);
+    border: 1px solid $grey1;
+    background-color: $bg;
+    border-radius: 0 0 6px 6px;
+    padding: 20px;
+    display: none;
+  }
 }
 
 .filter {
@@ -21,7 +139,7 @@
   position: relative;
   z-index: 80;
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -33,86 +151,14 @@
     background: url("/images/icons/seporate.png") 0 0;
   }
 
-  &:last-child{
-    &:after{
+  &:last-child {
+    &:after {
       display: none;
     }
   }
 
-  .jq-selectbox {
-    width: 100%;
+  @include select;
 
-    .placeholder {
-      color: $black2;
-    }
-
-    &.opened{
-      .jq-selectbox__select{
-        border-radius: 6px 6px 0 0;
-      }
-
-      .jq-selectbox__trigger-arrow{
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
-  .jq-selectbox__select {
-    height: 46px;
-    border-radius: 6px;
-    border: 1px solid $grey1;
-    background: $bg;
-    padding: 13px 21px;
-    padding-right: 34px;
-
-    color: $black2;
-    font-size: 16px;
-    font-weight: 400;
-    //line-height: lh(16,17.81);
-    //font-family: "Proxima Nova";
-    box-shadow: none;
-    font: 16px "Proxima Nova";
-    text-shadow: none;
-  }
-
-  .jq-selectbox__trigger {
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .jq-selectbox__trigger-arrow {
-    width: 13px;
-    height: 7px;
-    border: none;
-    background: url("/images/icons/angle.svg") 0 0 no-repeat;
-    position: static;
-  }
-
-  .jq-selectbox__dropdown{
-    border: 1px solid $grey1;
-    border-radius: 0 0 6px 6px;
-    background-color: $bg;
-    top: calc(100% - 1px) !important;
-    margin: 0;
-    box-shadow: none;
-    padding: 10px 0;
-
-    color: $black2;
-    font-weight: 400;
-    font: 16px "Proxima Nova";
-    width: 100% !important;
-  }
-
-  .jq-selectbox li{
-    padding: 10px 21px;
-    white-space: normal;
-    &:hover{
-      background-color: rgba($purple5,.1);
-      color: $black2;
-    }
-  }
 
 }
 
@@ -168,11 +214,11 @@
   position: relative;
   display: block;
 
-  &_bdw{
+  &_bdw {
 
   }
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -191,25 +237,26 @@
     @include tr;
   }
 
-  &:hover{
-    &:after{
+  &:hover {
+    &:after {
       opacity: 1;
     }
 
-    .item__visible{
+    .item__visible {
       border: 1px solid transparent;
       z-index: 100;
-      &:after{
+
+      &:after {
         opacity: 1;
       }
     }
 
-    .item__hidden{
+    .item__hidden {
       top: calc(100% - 60px);
       z-index: 90;
     }
 
-    .item__control{
+    .item__control {
       border-color: $purple6;
     }
 
@@ -234,7 +281,7 @@
     overflow: hidden;
     height: 100%;
 
-    &:after{
+    &:after {
       content: '';
       display: block;
       position: absolute;
@@ -278,15 +325,15 @@
     border-right: none;
     @include tr;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
 
-    &:hover{
+    &:hover {
       background-color: $red;
       border-color: $red !important;
 
-      .item__control-svg{
+      .item__control-svg {
         fill: $bg;
       }
     }
@@ -323,12 +370,12 @@
     color: $text2;
     font-size: 22px;
     font-weight: 600;
-    line-height: lh(22,30.94);
+    line-height: lh(22, 30.94);
     text-transform: uppercase;
     margin-bottom: 10px;
   }
 
-  &__prices{
+  &__prices {
     position: relative;
     z-index: 2;
     display: flex;
@@ -337,7 +384,7 @@
     margin-top: auto;
   }
 
-  &__price{
+  &__price {
     margin-right: 12px;
   }
 
@@ -368,31 +415,31 @@
     height: 54px;
     margin-bottom: 20px;
 
-    &:hover{
+    &:hover {
       background-color: $bg;
       box-shadow: 0 3px 0 #AB9FB9, 0px 20px 9px -10px rgba($black, 0.6);
 
-      .btn4__txt{
+      .btn4__txt {
         color: $text2;
       }
     }
 
-    &.btn4{
+    &.btn4 {
       background-image: url("/images/bg/pattern-item.png");
 
-      &__txt{
+      &__txt {
         font-size: 18px;
       }
     }
   }
 
-  &__one{
+  &__one {
     display: flex;
     align-items: center;
     position: relative;
     @include tr;
 
-    &:after{
+    &:after {
       content: '';
       position: absolute;
       top: 100%;
@@ -404,7 +451,7 @@
       @include tr;
     }
 
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       top: 100%;
@@ -416,25 +463,27 @@
       @include tr;
     }
 
-    &:hover{
-      &:after{
+    &:hover {
+      &:after {
         opacity: 0;
       }
-      &:before{
+
+      &:before {
         opacity: 1;
       }
 
-      .item__one{
-        &-svg{
+      .item__one {
+        &-svg {
           fill: #EFD063;
         }
-        &-txt{
+
+        &-txt {
           color: #EFD063;
         }
       }
     }
 
-    &-svg{
+    &-svg {
       width: 13px;
       height: 13px;
       fill: $bg;
@@ -442,7 +491,7 @@
       @include tr;
     }
 
-    &-txt{
+    &-txt {
       color: $bg;
       font-size: 16px;
       font-weight: 600;
@@ -453,14 +502,14 @@
 
 }
 
-.price{
+.price {
   color: $red;
   font-size: 22px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
 
-  &_old{
+  &_old {
     opacity: 0.6;
     color: $black2;
     font-size: 14px;
@@ -471,3 +520,104 @@
   }
 
 }
+
+.csort {
+  display: flex;
+  align-items: center;
+
+  &__title {
+    color: $grey2;
+    margin-right: 30px;
+  }
+
+  &__select {
+    width: 282px;
+    position: relative;
+    z-index: 81;
+    @include select;
+
+    .jq-selectbox__select {
+      border-radius: 0;
+    }
+
+    .jq-selectbox.opened .jq-selectbox__select {
+      border-radius: 0;
+    }
+
+    .jq-selectbox__trigger {
+      width: 21px;
+    }
+
+    .jq-selectbox__trigger-arrow {
+      width: 0;
+      height: 0;
+      border-top: 5px solid $black3;
+      border-right: 2.5px solid transparent;
+      border-left: 2.5px solid transparent;
+
+      background: none;
+      position: static;
+    }
+
+  }
+
+}
+
+.pag {
+  display: flex;
+  align-items: center;
+
+  &__svg {
+    width: 12px;
+    height: 21px;
+    fill: $text;
+    @include tr;
+  }
+
+  &__items {
+    margin: 0 40px;
+    display: flex;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    margin-right: 20px;
+    font-size: 22px;
+
+    &-val {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $grey1;
+      border-radius: 50%;
+      margin-right: 20px;
+      background: $bg;
+      @include tr;
+    }
+
+    &.active {
+      background: linear-gradient(to right, rgba(254, 91, 58, 1) 0%, rgba(143, 67, 254, 1) 100%);
+      padding: 3px;
+      font-weight: 700;
+
+      .pag__item-val{
+        border-color: transparent;
+      }
+    }
+
+    &:hover{
+      //font-weight: 700;
+    }
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+

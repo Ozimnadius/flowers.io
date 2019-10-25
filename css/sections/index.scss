@@ -125,56 +125,6 @@
 
 }
 
-.fprice {
-  position: relative;
-
-  &.opened {
-    .fprice__top {
-      border-radius: 6px 6px 0 0;
-    }
-
-    .fprice__bottom {
-      display: block;
-    }
-
-    .fprice__angle {
-      transform: rotate(-180deg);
-    }
-  }
-
-  &__top {
-    border-radius: 6px;
-    border: 1px solid $grey1;
-    padding: 13px 21px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  &__title {
-    color: $black2;
-  }
-
-  &__angle {
-    width: 13px;
-    height: 7px;
-    fill: $black2;
-  }
-
-  &__bottom {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% - 1px);
-    border: 1px solid $grey1;
-    background-color: $bg;
-    border-radius: 0 0 6px 6px;
-    padding: 20px;
-    display: none;
-  }
-}
-
 .ipop {
 
   &__title {
@@ -233,7 +183,7 @@
 
 .slider {
   padding-top: 420px;
-  padding-bottom: 110px;
+  padding-bottom: 115px;
   margin-top: -380px;
   background-image: url("/images/content/slider/bg.jpg");
   background-position: 45% 0;
