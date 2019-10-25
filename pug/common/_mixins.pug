@@ -28,9 +28,9 @@ mixin item(icon,src,title,dopClass)
 
       //- controls
       span.item__controls
-        button(type='button').item__control.jsFavorites
+        span.item__control.jsFavorites
           +icon('heart','item__control-svg')
-        button(type='btn').item__control.jsCompare
+        span.item__control.jsCompare
           +icon('compare','item__control-svg')
 
       //- title
@@ -49,10 +49,10 @@ mixin item(icon,src,title,dopClass)
     //- hidden
     span.item__hidden
       //- buy
-      button(type='button').btn4.item__buy.jsBuy
+      span.btn4.item__buy.jsBuy
         span.btn4__txt В корзину
 
       //- one
-      button(type='button').item__one.jsOne
+      span.item__one.jsOne
         +icon('arrow','item__one-svg')
         span.item__one-txt Купить в 1 клик

@@ -63,36 +63,36 @@ block content
                                 //- name
                                 .filter
                                     select(data-placeholder='Цветы' name='flowers').select.filter__select
-                                        option
-                                        option Все
-                                        option Lorem1
-                                        option Lorem2
-                                        option Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
-                                        option Lorem4
+                                        option(value='')
+                                        option(value='Все') Все
+                                        option(value='Lorem1') Lorem1
+                                        option(value='Lorem2') Lorem2
+                                        option(value='Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf') Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
+                                        option(value='Lorem4') Lorem4
                                 //- sex
                                 .filter
                                     select(data-placeholder='Кому' name='sex').select.filter__select
-                                        option
-                                        option Все
-                                        option Мужчина
-                                        option Женщина
-                                        option Другое
+                                        option(value='')
+                                        option(value='Все') Все
+                                        option(value='Мужчина') Мужчина
+                                        option(value='Женщина') Женщина
+                                        option(value='Другое') Другое
                                 //- event
                                 .filter
                                     select(data-placeholder='Событие' name='event').select.filter__select
-                                        option
-                                        option Все
-                                        option Lorem1
-                                        option Lorem2
-                                        option Lorem3
+                                        option(value='')
+                                        option(value='Все') Все
+                                        option(value='Lorem1') Lorem1
+                                        option(value='Lorem2') Lorem2
+                                        option(value='Lorem3') Lorem3
                                 //- style
                                 .filter
                                     select(data-placeholder='Стиль' name='style').select.filter__select
-                                        option
-                                        option Все
-                                        option Lorem1
-                                        option Lorem2
-                                        option Lorem3
+                                        option(value='')
+                                        option(value='Все') Все
+                                        option(value='Lorem1') Lorem1
+                                        option(value='Lorem2') Lorem2
+                                        option(value='Lorem3') Lorem3
                     //- items
                     .ipop__items.catalog__items
                         .row
@@ -102,7 +102,7 @@ block content
                     //- more
                     button(type='button').ipop__more.btn3
                         +icon('load', 'btn3__img')
-                        .btn3__txt Загрузить еще (15)
+                        span.btn3__txt Загрузить еще (15)
         //- gifts
         section.index__gifts
             .slider
