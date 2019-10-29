@@ -59,7 +59,7 @@ mixin item(icon,src,title,dopClass)
         span.item__visible
             //- icon
             if icon
-                +image('images/content/catalog/icon.svg','','item__icon')
+                +image('images/icons/stick.svg','','item__icon')
 
             //- img
             span.item__img
@@ -152,14 +152,14 @@ mixin filters
                     option(value='Lorem2') Lorem2
                     option(value='Lorem3') Lorem3
 
-mixin slider()
+mixin slider(title)
     .slider
         .container
             //- top
             .slider__top
                 .slider__title
                     +image('images/icons/gift.svg','','slider__title-img')
-                    .slider__title-txt Популярные подарки
+                    .slider__title-txt= title
                 .slider__text Усильте впечатление от букета
 
 

@@ -11,7 +11,8 @@ function imageResize(src, cls) {
     }
 
 }
-// imageResize('https://loremflickr.com/440/440','.item__img-img');
+// imageResize('https://loremflickr.com/200/200','.product__img-img');
+
 
 function number_format(number, decimals, dec_point, thousands_sep) {
     var i, j, kw, kd, km;

@@ -1,0 +1,158 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.product
+        //- main
+        section.product__main
+            //- bread
+            .bread
+                .container
+                    a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                    a(href='/').bread__item Каталог &nbsp;&nbsp;/&nbsp;&nbsp;
+                    span.bread__item.active Название букета
+
+            .container.product__container
+                //- title
+                .product__title
+                    .product__title-top Потрясающий букет
+                    .product__title-bottom «Настоящее чувство»
+
+                .row
+                    //- left
+                    .product__left
+                        //- status
+                        .product__status Есть в наличии
+                        //.product__status.product__status_not Нет в наличии
+
+                        //- chars
+                        .product__chars
+                            .product__char
+                                .product__char-name Размеры:
+                                .product__char-val
+                                    | Высота: 50 см
+                                    br
+                                    | Диаметр: 45 см
+                            .product__char
+                                .product__char-name Состав:
+                                .product__char-val
+                                    | Благородный букет из бронзовых
+                                    br
+                                    |орхидей, пионовидных роз, каркадэ
+
+
+
+                        //- postcard
+                        .product__postcard
+                            +image('images/content/product/postcard.png','','product__postcard-img')
+                            .product__postcard-txt
+                                |Авторская открытка
+                                br
+                                |в подарок!
+
+                        //- list
+                        .product__list
+                            each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка']
+                                .product__item
+                                    .product__item-img
+                                        +image('images/content/product/'+(x+1)+'.svg','','product__item-pic')
+                                    .product__item-txt!=i
+
+                    //- center
+                    .product__center
+                        .product__img
+                            .product__img-wrap
+                                +image('images/content/product/image.jpg', '','product__img-img')
+                            +image('images/content/product/stick.svg','','product__img-stick')
+                            .product__controls
+                                button(type='button').product__control.jsFavorites
+                                    +icon('heart','product__control-svg')
+                                    span.product__control-txt В избранное
+                                button(type='button').product__control.jsCompare
+                                    +icon('compare','product__control-svg')
+                                    span.product__control-txt В сравнение
+
+                        .product__images
+                            each i in [1,2,3]
+                                div(data-src='images/content/product/image.jpg' class=i==2?'active':'').product__image
+                                    .product__image-wrap
+                                        +image('images/content/product/'+i+'.jpg','','product__image-img')
+                    //- right
+                    .product__right
+                        //- prices
+                        .product__prices
+                            .product__price
+                                .price
+                                    span.price__val 2 295&nbsp;
+                                    span.price__cur руб./ шт.
+                            .product__oldprice
+                                .price.price_old
+                                    span.price__val -3 140&nbsp;
+                                    span.price__cur руб.
+                        //- notice
+                        .product__notice * Цена букета “Премиум”
+                        //- vars
+                        .product__vars
+                            each i,x in productPrices
+                                label(data-id=x+1).product__var
+                                    input(type='radio' name='price' checked=i.active).product__var-input
+                                    span.product__var-wrap
+                                        span.product__var-left
+                                            span.product__var-fake
+                                            span.product__var-title= i.title
+                                            span.product__var-count= i.count
+                                        span.product__var-right
+                                            span.product__var-price= i.price
+                        //- btns
+                        .product__btns
+                            button(type='button').product__buy.btn4.btn4_r.jsBuy
+                                span.btn4__txt Заказать букет
+                            button(type='button').product__one.jsOne
+                                +icon('arrow','product__one-svg')
+                                span.product__one-txt Купить в 1 клик
+        //- gifts
+        section.product__gifts
+            +slider('добавьте незабываемый подарок')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
