@@ -4,12 +4,12 @@ block variables
     - var title = 'Главная'
 
 block content
-    main.catalog
+    main(style='background-image:url(images/content/catalog/bg.jpg)').catalog
         //- bread
         .bread
             .container
                 a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
-                span.bread__item.active Каталог
+                span.bread__item.active Красные розы
 
 
         //- form
@@ -19,7 +19,7 @@ block content
                     //- top
                     .catalog__top
                         //- title
-                        .catalog__title.title большие букеты
+                        .catalog__title.title красные розы
 
                         //- controls
                         .catalog__controls
