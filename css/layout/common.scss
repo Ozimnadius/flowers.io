@@ -379,3 +379,9 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
+#gardient{
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}

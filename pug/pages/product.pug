@@ -115,6 +115,32 @@ block content
         //- gifts
         section.product__gifts
             +slider('добавьте незабываемый подарок')
+        //- pop
+        section.product__pop
+            .pop
+                .container
+                    //- title
+                    .pop__title Популярные букеты
+
+                    //- bottom
+                    .pop__bottom
+                        //- swiper
+                        .pop__container.swiper-container
+                            .swiper-wrapper
+                                each i in indexGifts
+                                    .swiper-slide.pop__slide
+                                        +item(false,i.src,i.title,'item_bdw')
+                        //- nav
+                        .pop__nav
+                            //- prev
+                            button(type='button').pop__prev.pop__arr
+                                +icon('prev','pop__arr-svg')
+                            //- scrollbar
+                            .pop__scrollbar
+                                .pop__scrollbar-wrap.swiper-scrollbar
+                            //- next
+                            button(type='button').pop__next.pop__arr
+                                +icon('next','pop__arr-svg')
 
 
 
