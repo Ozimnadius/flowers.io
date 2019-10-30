@@ -1,0 +1,156 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.basket
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                span.bread__item.active Корзина
+
+
+        //- form
+        section.basket__main
+            .container
+                form.basket__form
+                    //- title
+                    .basket__title.title Корзина
+
+                    .basket__row.row
+                        //- left
+                        .basket__left
+                            .btable
+                                //- top
+                                .btable__head
+                                    .row
+                                        .btable__col.btable__col_1
+                                            .btable__th.btable__th_left Товар
+                                        .btable__col.btable__col_2
+                                            .btable__th Количество
+                                        .btable__col.btable__col_3
+                                            .btable__th Стоимость
+                                        .btable__col.btable__col_4
+                                            .btable__th.btable__th_right Удалить
+
+
+                                //- bottom
+                                .btable__body
+                                    each i in [4,3,2,1]
+                                        .btable__item
+                                            .row.btable__item-row
+                                                //- img/title
+                                                .btable__col.btable__col_1
+                                                    a(href='product.html').btable__td.btable__td_left
+                                                        //- img
+                                                        span.btable__img
+                                                            +image('images/content/catalog/'+i+'.png','','btable__img-img')
+                                                        //- title
+                                                        span.btable__title
+                                                            |Творческий
+                                                            br
+                                                            |микс
+
+                                                //- count
+                                                .btable__col.btable__col_2
+                                                    .btable__td
+                                                        .bcount
+                                                            .bcount__wrap
+                                                                button(type='button').bcount__btn.bcount__minus
+                                                                    +icon('minus','bcount__btn-svg')
+                                                                input(type='text' name='count[1]' value='1' readonly=true).bcount__input
+                                                                button(type='button').bcount__btn.bcount__plus
+                                                                    +icon('plus','bcount__btn-svg')
+
+                                                //- prices
+                                                .btable__col.btable__col_3
+                                                    .btable__td
+                                                        .btable__prices
+                                                            .btable__price
+                                                                .price
+                                                                    span.price__val 2 295&nbsp;
+                                                                    span.price__cur руб.
+                                                            .btable__oldprice
+                                                                .price.price_old
+                                                                    span.price__val -3 140&nbsp;
+                                                                    span.price__cur руб.
+
+                                                //- delete
+                                                .btable__col.btable__col_4
+                                                    .btable__td.btable__td_right
+                                                        button(type='button').btable__del
+                                                            +icon('delete','btable__del-svg')
+
+
+                        //- right
+                        .basket__right
+                            .btotal
+                                //- top
+                                .btotal__top
+                                    .btotal__promo
+                                        .btotal__promo-title
+                                            | Введите промокод
+                                            br
+                                            | и получите&nbsp;
+                                            b 5% скидку
+                                        input(type='text' name='promo' placeholder='Промокод').btotal__promo-input
+
+                                //- bottom
+                                .btotal__bottom
+                                    //- title
+                                    .btotal__title Итого:
+                                    //- price
+                                    .btotal__price
+                                        span.btotal__price-val 15 295
+                                        span.btotal__price-cur &nbsp;руб.
+                                    //- buy
+                                    button(type='button').btotal__buy.btn4.btn4_r
+                                        span.btn4__txt Оформить заказ
+                                    //- one
+                                    button(type='button').btotal__one
+                                        +icon('arrow', 'btotal__one-svg')
+                                        span.btotal__one-txt Купить в 1 клик
+
+
+
+
+        //- gifts
+        section.basket__gifts
+            +slider('добавьте незабываемый подарок','slider_2')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

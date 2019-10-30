@@ -1,0 +1,300 @@
+.basket {
+
+  &__main{
+    margin-bottom: 220px;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+  }
+
+  &__left {
+    @include col;
+    @include size(18);
+  }
+
+  &__right {
+    @include col;
+    @include size(6);
+  }
+}
+
+.btable {
+  $w: 1017;
+
+  &__head {
+    border-radius: 102px;
+    border: 1px solid $grey1;
+    padding: 16px 0;
+  }
+
+  &__col {
+    @include col;
+
+    &_1 {
+      @include size(370/$w*24);
+    }
+
+    &_2 {
+      @include size(185/$w*24);
+    }
+
+    &_3 {
+      @include size(308/$w*24);
+    }
+
+    &_4 {
+      @include size(152/$w*24);
+    }
+  }
+
+  &__th {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+
+    &_left {
+      text-align: left;
+      padding-left: 75px;
+    }
+
+    &_right {
+      padding-right: 56px;
+    }
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid $grey1;
+
+    &-row{
+      align-items: center;
+    }
+  }
+
+  &__td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_left {
+      justify-content: flex-start;
+    }
+
+
+    &_right {
+      padding-right: 56px;
+    }
+  }
+
+  &__img {
+    width: 185px;
+    height: 120px;
+    padding: 0 30px;
+  }
+
+  &__title {
+    color: $text2;
+    font-weight: 600;
+    line-height: lh(16, 22.5);
+    text-transform: uppercase;
+  }
+
+  &__prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  &__price{
+    margin-bottom: 5px;
+
+    .price {
+      font-size: 20px;
+    }
+  }
+
+  &__oldprice{
+    .price{
+      font-size: 14px;
+    }
+  }
+
+  &__del{
+    &-svg{
+      width: 38px;
+      height: 38px;
+      fill: $grey1;
+    }
+  }
+
+}
+
+.bcount {
+  position: relative;
+  border-radius: 52px;
+  padding: 1px;
+  overflow: hidden;
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+    border-radius: 52px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    background: $bg;
+    border-radius: 52px;
+    padding: 2px;
+  }
+
+  &__input{
+    width: calc(100% - 74px);
+    flex-grow: 1;
+    text-align: center;
+    opacity: 0.6;
+    color: $black;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  &__btn {
+    min-width: 37px;
+    width: 37px;
+    height: 37px;
+    box-shadow: 0 3px 5px rgba(122, 52, 170, 0.5);
+    background-image: linear-gradient(90deg, #fe5b3a 0%, #8f43fe 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover{
+      background: $red;
+      box-shadow: none;
+    }
+
+    &-svg {
+      width: 21px;
+      height: 21px;
+      fill: $bg;
+    }
+  }
+}
+
+.btotal {
+  border-radius: 16px;
+  border: 1px solid #ddd9e3;
+  background-color: $bg;
+
+  &__top {
+    padding: 25px 22px 35px 22px;
+    border-bottom: 1px solid #ddd9e3;
+    background-image: url("/images/bg/pattern-item.png");
+  }
+
+  &__promo{
+
+    &-title{
+      text-align: center;
+      font-size: 22px;
+      line-height: lh(22,28.6);
+      margin-bottom: 18px;
+
+      b{
+        color: $red;
+        font-weight: 700;
+      }
+    }
+
+    &-input{
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid $grey1;
+      padding: 14px 20px;
+      color: $black2;
+      background: $bg;
+    }
+  }
+
+  &__bottom {
+    padding: 30px 22px;
+    background-color: $beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  &__price{
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $black;
+    text-align: center;
+    margin-bottom: 25px;
+
+    background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__buy {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 23px;
+  }
+
+  &__one{
+    display: flex;
+    align-items: center;
+    border-bottom: 3px dotted $text2;
+    padding-bottom: 2px;
+    @include tr;
+
+    &:hover{
+      border-bottom-color: $red;
+
+      .btotal__one{
+        &-svg{
+          fill: $red;
+        }
+        &-txt{
+          color: $red;
+        }
+      }
+    }
+
+    &-svg{
+      width: 13px;
+      height: 13px;
+      fill: $text2;
+      margin-right: 10px;
+      @include tr;
+    }
+
+    &-txt{
+      color: $text2;
+      font-weight: 600;
+      text-transform: uppercase;
+      @include tr;
+    }
+  }
+}
