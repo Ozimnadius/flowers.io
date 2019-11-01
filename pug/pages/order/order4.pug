@@ -1,0 +1,84 @@
+extends ../order
+
+block variables
+    - var activeIndex = 3
+
+block order
+    //- wrap
+    .order__wrap.order__wrap_img
+
+        //- row
+        .row.order__row
+           .order__col
+               .order__field.ofield.ofield_select.ofield_2
+                   .ofield__name Способ оплаты:
+                   .ofield__field
+                       select(name='payment').select.ofield__select
+                           option(value='Оплата картой') Оплата картой
+                           option(value='Наличными') Наличными
+               .order__field.ofield.ofield_2
+                   .ofield__name Сумма оплаты:
+                   .ofield__field
+                       input(type='text' name='price' placeholder='' value='13 560 руб.').ofield__input.ofield__input_price
+               .order__field.ofield.ofield_2
+                   .ofield__name Имя платильщика:
+                   .ofield__field
+                       input(type='text' name='name' placeholder='Как к вам обращаться' value='Александр').ofield__input
+               .order__field.ofield.ofield_2
+                   .ofield__name Адрес доставки:
+                   .ofield__field
+                       input(type='text' name='addr' placeholder='Укажите ваш адрес' value='г. Москва, метро Строгино').ofield__input
+               .order__field.ofield.ofield_2
+                   .ofield__name Телефон:
+                   .ofield__field
+                       input(type='tel' name='tel' placeholder='+7 ___-___-__-__' value='+7 (916) 566-54-67').ofield__input
+               .order__personal
+                    label.agree
+                        input(type='checkbox' name='personal' checked=true).agree__input
+                        span.agree__fake
+                        span.agree__txt Я даю согласие на обработку персональных данных
+               a(href='order4.html').btn5.order__finish
+                   span.btn5__txt оплатить
+
+
+
+    //- note
+    .order__note * После оплаты Вы получите все чеки и возможность возврата платежа!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -187,3 +187,30 @@ mixin slider(title,dopClass)
                     a(href='catalog.html').slider__link
                         span.slider__link-title Смотреть все подарки
                         +icon('present','slider__link-svg')
+
+mixin feed(title, subtitle, btn)
+    form.feed
+        .row
+            .feed__col
+                //- title
+                .feed__title= title
+                //- sub
+                .feed__sub= subtitle
+                //- row
+                .feed__row
+                    .row
+                        .feed__field
+                            .feed__label *Как к вам обращаться?
+                            input(type='text' name='name' placeholder='Например Иван Иванов').feed__input
+                        .feed__field
+                            .feed__label *Телефон
+                            input(type='tel' name='tel' placeholder='+7 ___-___-__-__').feed__input
+                //- agree
+                .feed__agree
+                    label.agree
+                        input(type='checkbox' name='agree' checked=true).agree__input
+                        span.agree__fake
+                        span.agree__txt Я даю согласие на обработку персональных данных
+                //- submit
+                button(type='submit' class=btn).feed__submit
+                    span(class=btn+'__txt') оставить заявку

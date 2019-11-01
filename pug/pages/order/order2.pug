@@ -1,0 +1,88 @@
+extends ../order
+
+block variables
+    - var activeIndex = 1
+
+block order
+    //- wrap
+    .order__wrap
+        //- row
+        .row.order__row
+            .order__col
+                .order__field.ofield
+                    .ofield__name Дата доставки:
+                    .ofield__field.ofield__field_date
+                        +icon('date', 'ofield__svg ofield__svg_date')
+                        input(type='text' name='date' placeholder='13.09.2019' autocomplete="off" readonly=true).ofield__input.ofield__input_date.ofield__datepicker
+            .order__col
+                .order__field.ofield.ofield_select
+                    .ofield__name Время доставки:
+                    .ofield__field
+                        +icon('clock', 'ofield__svg ofield__svg_clock')
+                        select(name='time').select.ofield__select
+                            option(value='Согласовать с получателем') Согласовать с получателем
+                            option(value='7-9') 7-9
+                            option(value='9-11') 9-11
+                            option(value='11-13') 11-13
+                            option(value='13-15') 13-15
+                            option(value='15-17') 15-17
+            .order__col
+                .order__field.ofield
+                    .ofield__name Комментарий к заказу:
+                    .ofield__field
+                        +icon('comment', 'ofield__svg ofield__svg_area')
+                        textarea(name='comment' placeholder='Введите сообщение').ofield__input.ofield__input_area
+            .order__col
+                .order__field.ofield
+                    .ofield__name Текст для вашей открытки:
+                    .ofield__field
+                        +icon('comment', 'ofield__svg ofield__svg_area')
+                        textarea(name='text' placeholder='Введите текст').ofield__input.ofield__input_area
+        //- bottom
+        .order__bottom
+            .order__remind
+                label.agree
+                    input(type='checkbox' name='agree' checked=true).agree__input
+                    span.agree__fake
+                    span.agree__txt Напомнить мне об этом через год
+
+            a(href='order3.html').btn5.order__next
+                span.btn5__txt на шаг №3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

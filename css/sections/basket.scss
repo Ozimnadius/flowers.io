@@ -17,6 +17,10 @@
     @include col;
     @include size(6);
   }
+
+  &__gifts{
+    margin-bottom: 120px;
+  }
 }
 
 .btable {

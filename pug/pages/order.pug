@@ -1,0 +1,86 @@
+extends ../main
+
+block variables
+    - var title = 'Оформление'
+
+block content
+    main.order
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                span.bread__item.active Оформление заказа
+
+
+        //- form
+        section.order__main
+            .container
+                form.order__form
+                    //- title
+                    .order__title.title Оформление заказа в 4 шага
+
+                    //- btns
+                    .order__btns
+                        .row
+                            each i,x in ['Адрес доставки','Данные получателя','Время доставки','Оплата']
+                                a(href='order'+(x+1)+'.html' class=x==activeIndex?'active':'').order__btn
+                                    span.order__btn-wrap
+                                        span.order__btn-img
+                                            span.order__btn-imgwrap
+                                                +image('images/content/order/'+(x+1)+'.png','','order__btn-pic')
+                                        span.order__btn-txt= i
+
+                    //- content
+                    .order__content
+                        block order
+                    //- items
+                    .order__list
+                        each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка','Индивидуальный <br> подход']
+                            .order__item
+                                .order__item-block
+                                    .order__item-wrap
+                                        .order__item-img
+                                            +image('images/content/order/' + (x + 1) + '.svg','','order__item-pic')
+                                .order__item-title!=i
+
+        //- feed
+        section.order__feed
+            .container
+                +feed('форма обратной связи', 'Нужна помощь в оформлении? Оставьте заявку и мы перезвоним','btn3')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

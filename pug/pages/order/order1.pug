@@ -1,0 +1,81 @@
+extends ../order
+
+block variables
+   - var activeIndex = 0;
+
+block order
+   //- wrap
+   .order__wrap
+      //- row
+      .row.order__row
+         .order__col
+            .order__field.ofield
+               .ofield__name Имя:
+               .ofield__field
+                  +icon('people', 'ofield__svg ofield__svg_name')
+                  input(type='text' name='name' placeholder='Как к вам обращаться').ofield__input
+         .order__col
+            .order__field.ofield
+               .ofield__name Телефон:
+               .ofield__field
+                  +icon('phone', 'ofield__svg ofield__svg_tel')
+                  input(type='tel' name='tel' placeholder='+7 ___-___-__-__').ofield__input
+         .order__col
+            .order__field.ofield
+               .ofield__name Почта:
+               .ofield__field
+                  +icon('email', 'ofield__svg ofield__svg_email')
+                  input(type='email' name='email' placeholder='ivanov@mail.ru').ofield__input
+         .order__col
+            .order__agree
+               label.agree
+                  input(type='checkbox' name='agree' checked=true).agree__input
+                  span.agree__fake
+                  span.agree__txt
+                     |Зарегистрироваться как постоянный покупатель и
+                     b.red &nbsp;получить скидку 5%
+      //- bottom
+      .order__bottom
+         a(href='order2.html').btn5.order__next
+            span.btn5__txt на шаг №2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

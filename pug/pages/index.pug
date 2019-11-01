@@ -57,31 +57,7 @@ block content
         //- feed
         section.index__feed
             .container
-                form.feed
-                    .row
-                        .feed__col
-                            //- title
-                            .feed__title Не нашли идеальный букет в каталоге?
-                            //- sub
-                            .feed__sub Оставьте заявку, мы перезвоним и придумаем для вас авторский букет!
-                            //- row
-                            .feed__row
-                                .row
-                                    .feed__field
-                                        .feed__label *Как к вам обращаться?
-                                        input(type='text' name='name' placeholder='Например Иван Иванов').feed__input
-                                    .feed__field
-                                        .feed__label *Телефон
-                                        input(type='tel' name='tel' placeholder='+7 ___-___-__-__').feed__input
-                            //- agree
-                            .feed__agree
-                                label.agree
-                                    input(type='checkbox' name='agree' checked=true).agree__input
-                                    span.agree__fake
-                                    span.agree__txt Я даю согласие на обработку персональных данных
-                            //- submit
-                            button(type='submit').agree__submit.btn4
-                                span.btn4__txt оставить заявку
+                +feed('Не нашли идеальный букет в каталоге?','Оставьте заявку, мы перезвоним и придумаем для вас авторский букет!', 'btn4')
         //- wow
         section.index__wow
             .iwow

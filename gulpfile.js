@@ -33,6 +33,7 @@ const vendorJs = [
     'node_modules/selectize/dist/js/standalone/selectize.js',
     'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
     'node_modules/swiper/dist/js/swiper.js',
+    'node_modules/air-datepicker/dist/js/datepicker.js',
 ];
 
 
@@ -44,6 +45,7 @@ const vendorCss = [
     'node_modules/jquery-form-styler/dist/jquery.formstyler.css',
     'node_modules/jquery-form-styler/dist/jquery.formstyler.theme.css',
     'node_modules/swiper/dist/css/swiper.css',
+    'node_modules/air-datepicker/dist/css/datepicker.css',
 ];
 
 

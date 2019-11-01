@@ -1,0 +1,73 @@
+extends ../order
+
+block variables
+    - var activeIndex = 2
+
+block order
+    //- wrap
+    .order__wrap
+        //- top
+        .order__top
+            //- row
+            .row.order__row
+                .order__left
+                    .order__delivery
+                        .odelivery
+                            .order__field.ofield
+                                .ofield__name Ваш адрес:
+                                .ofield__field
+                                    +icon('map', 'ofield__svg ofield__svg_map')
+                                    input(type='text' name='addr' placeholder='Введите адрес').ofield__input
+
+
+                            .odelivery__txt Программа рассчитает стоимость доставки относительно вашего адреса автоматически
+                            .odelivery__price
+                                span.odelivery__price-txt Москва в пределах МКАД&nbsp;
+                                span.odelivery__price-val — 1 000 руб.
+
+                .order__right
+                    +image('images/content/order/map.png','','order__map')
+
+
+        //- bottom
+        .order__bottom
+            a(href='order4.html').btn5.order__next
+                span.btn5__txt на шаг №4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
