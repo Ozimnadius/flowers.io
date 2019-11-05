@@ -11,7 +11,7 @@ function imageResize(src, cls) {
     }
 
 }
-// imageResize('https://loremflickr.com/200/200','.product__img-img');
+// imageResize('https://loremflickr.com/100/56','');
 
 
 function number_format(number, decimals, dec_point, thousands_sep) {
@@ -49,6 +49,8 @@ $('.jsBuy,.jsOne,.jsFavorites,.jsCompare').on('click', function (e) {
 });
 
 $('input[type=tel]').mask('+7 (999) 999-99-99');
+
+
 
 
 

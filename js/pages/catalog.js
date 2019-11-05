@@ -6,14 +6,16 @@ $(function () {
 
     btns.on('click', function (e) {
         let $this = $(this),
+            type = $this.data('type'),
             items = catalog.find('.item');
 
         //ToDo здесь должен быть ajax
-
-        btns.removeClass('active');
-        $this.addClass('active');
-        catalog.toggleClass('list blocks');
-        items.toggleClass('list blocks');
+        if (!catalog.hasClass(type)) {
+            btns.removeClass('active');
+            $this.addClass('active');
+            catalog.toggleClass('list blocks');
+            items.toggleClass('list blocks');
+        }
 
 
     });

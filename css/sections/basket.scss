@@ -95,6 +95,9 @@
     width: 185px;
     height: 120px;
     padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__title {

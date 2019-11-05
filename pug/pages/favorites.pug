@@ -1,0 +1,137 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.catalog.favorites
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Избранное
+
+
+        //- form
+        section.favorites__main
+            .container
+                form.catalog__form.favorites__form
+                    //- top
+                    .catalog__top
+                        //- title
+                        .catalog__title.title Избранное
+
+                        //- controls
+                        .catalog__controls
+                            //- sort
+                            .catalog__sort.csort
+                                .csort__title Сортировать по
+                                .csort__select
+                                    select(name='sort').select
+                                        option Популярности
+                                        option Более дешевые
+                                        option Более дорогие
+                                        option Акции
+
+
+                    //-items
+                    div(class='blocks').favorites__items
+                        .favorites__head
+                            .row
+                                .favorites__col.favorites__col_1
+                                    .favorites__th.favorites__th_left Товар
+                                .favorites__col.favorites__col_2
+                                .favorites__col.favorites__col_3
+                                    .favorites__th Стоимость
+                                .favorites__col.favorites__col_5
+                                .favorites__col.favorites__col_5
+                                    .favorites__th Удалить
+                        .favorites__list
+                            each i in favorites
+                                .favorites__item.fitem
+                                    .row.fitem__row
+                                        .favorites__col.favorites__col_1.fitem__td.fitem__td_left
+                                            //- img
+                                            .fitem__img
+                                                +image(i.src,'','fitem__img-img')
+
+                                            //- block
+                                            .fitem__block
+                                                div(class=i.status.dopClass).fitem__status= i.status.txt
+                                                a(href='product.html').fitem__title Творческий микс
+
+                                        .favorites__col.favorites__col_2.fitem__td
+                                            .fitem__controls
+                                                button(type='button').fitem__control
+                                                    +icon('compare','fitem__control-svg')
+                                                    span.fitem__control-txt В сравнение
+
+                                        .favorites__col.favorites__col_3.fitem__td
+                                            .fitem__prices
+                                                .fitem__price
+                                                    .price
+                                                        span.price__val 2 295&nbsp;
+                                                        span.price__cur руб.
+                                                .fitem__oldprice
+                                                    .price.price_old
+                                                        span.price__val -3 140&nbsp;
+                                                        span.price__cur руб.
+                                        .favorites__col.favorites__col_4.fitem__td
+                                            .fitem__btns
+                                                //- buy
+                                                button(type='button').btn4.btn4_r.fitem__buy.jsBuy
+                                                    span.btn4__txt В корзину
+                                                //- one
+                                                button(type='button').fitem__one.jsOne
+                                                    +icon('arrow','iteml__one-svg')
+                                                    span.iteml__one-txt Купить в 1 клик
+
+                                        .favorites__col.favorites__col_5.fitem__td.fitem__td_right
+                                            button(type='button').fitem__del
+                                                +icon('delete','fitem__del-svg')
+
+
+
+
+                    //- more
+                    button(type='button').favorites__more.btn3
+                        +icon('load', 'btn3__img')
+                        span.btn3__txt Загрузить еще (15)
+        //- gifts
+        section.favorites__gifts
+            +slider('добавьте незабываемый подарок','slider_2')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
