@@ -1,4 +1,4 @@
-//index.js
+//catalog.js
 $(function () {
 
     let catalog = $('.catalog__items'),

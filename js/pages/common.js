@@ -4,13 +4,14 @@ function getNumber(str) {
 }
 
 function imageResize(src, cls) {
-    if (cls){
+    if (cls) {
         $(cls).not('.logo__img').attr('src', src);
     } else {
         $('img').not('.logo__img').attr('src', src);
     }
 
 }
+
 // imageResize('https://loremflickr.com/100/56','');
 
 

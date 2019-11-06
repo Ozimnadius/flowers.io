@@ -1,0 +1,153 @@
+extends ../main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.compare
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Сравнение
+
+
+        //- form
+        section.compare__main
+            form.compare__form
+                .container
+                    //- title
+                    .compare__title.title Сравнение
+                    //- controls
+                    .compare__controls
+                        //- clear
+                        button(type='submit' formaction='#').compare__clear
+                            +icon('del', 'compare__clear-svg')
+                            span.compare__clear-txt Очистить весь список
+                        //- btns
+                        .compare__btns
+                            button(type='button').compare__btn.active Все характеристики
+                            button(type='button').compare__btn.compare__btn_hide Различия
+
+                        //- nav
+                        .compare__nav
+                            .compare__nav-wrap
+                                button(type='button').compare__arr.compare__prev
+                                    +icon('prev','compare__arr-svg')
+                                .compare__pag
+                                button(type='button').compare__arr.compare__next
+                                    +icon('next','compare__arr-svg')
+                    //- content
+                    .compare__content
+                        //- slider
+                        .compare__slider
+                            .swiper-container.compare__container
+                                .swiper-wrapper
+                                    each i in compareItems
+                                        div(data-id=i.id).swiper-slide.cslide
+                                            a(href='product.html').cslide__top
+                                                span.cslide__top-wrap
+                                                    //- status
+                                                    span(class=i.status.dopClass).cslide__status= i.status.txt
+                                                    //- block
+                                                    span.cslide__block
+                                                        span.cslide__img
+                                                            +image(i.src,'','cslide__img-img')
+                                                        span.cslide__title Творческий микс
+
+                                                    //- favorites
+                                                    span.cslide__fav
+                                                        +icon('heart','cslide__fav-svg')
+                                            .cslide__bottom
+                                                span.cslide__del
+                                                    +icon('delete','cslide__del-svg')
+                                                    span.cslide__del-txt Удалить
+
+                        //- chars
+                        .compare__chars
+
+        //- templates
+        // chars
+        template#tmplChars
+            .chars
+                //- list
+                .chars__list.tmpList
+
+                //- price
+                .chars__item
+                    .chars__item-title Цена
+                    .row.tmpPrice
+                //- btns
+                .chars__item
+                    .row.tmpBtns
+
+
+        // item
+        template#tmplCharsItem
+            .chars__item
+                .chars__item-title
+                .row.tmpChars
+
+        // char
+        template#tmplCharsChar
+            .char
+
+        // price
+        template#tmplCharsPrice
+            .char.char_price
+
+        // btns
+        template#tmplCharsBtns
+            .char.char_btns
+                button(type='button').char__buy.btn4.btn4_r
+                    .btn4__txt в корзину
+                button(type='button').btn6.char__one
+                    +icon('arrow','btn6__svg')
+                    span.btn6__txt Купить в 1 клик
+
+        //Todo здесь должен быть тег scrypt (для рендера характеристик) со свойствами для характеристик, свойства хранятся в объекте, или можно переделать на JSON, как удобнее будет
+        script(src='js/pages/chars.js')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

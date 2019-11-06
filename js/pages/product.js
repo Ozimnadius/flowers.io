@@ -1,4 +1,4 @@
-//index.js
+//product.js
 $(function () {
 
     const imgs = $('.product__image'),

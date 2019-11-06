@@ -4,3 +4,4 @@
 //@prepros-append pages/sliders.js
 //@prepros-append pages/catalog.js
 //@prepros-append pages/product.js
+//@prepros-append pages/compare.js
