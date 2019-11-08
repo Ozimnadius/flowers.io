@@ -1,0 +1,90 @@
+extends ../main
+
+block variables
+    - var title = 'Статьи'
+
+block content
+    main.arts
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Статьи
+
+
+        //- form
+        section.arts__main
+            .container
+                form.catalog__form.arts__form
+                    //- top
+                    .catalog__top.arts__top
+                        //- title
+                        .catalog__title.title Статьи
+
+                        //- controls
+                        .catalog__controls
+                            //- sort
+                            .catalog__sort.csort.arts__sort
+                                .csort__title Показать за
+                                .csort__select
+                                    select(name='sort').select
+                                        option 2019 год
+                                        option 2018 год
+                                        option 2017 год
+                                        option 2016 год
+
+
+                    //-items
+                    .arts__list
+                        .row.arts__list-row
+                            each i,x in artsList
+                                .arts__item.aitem
+                                    .aitem__img
+                                        +image('images/content/articles/'+(x+1)+'.jpg', '', 'aitem__img-img')
+                                        .aitem__date 2 июня 2019
+                                    .aitem__title= i.title
+                                    .aitem__txt= i.txt
+                                    a(href='article.html').aitem__link Читать статью
+
+
+
+
+                    //- pag
+                    .arts__pag
+                        +pag('articles.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

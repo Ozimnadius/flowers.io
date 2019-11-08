@@ -214,3 +214,21 @@ mixin feed(title, subtitle, btn)
                 //- submit
                 button(type='submit' class=btn).feed__submit
                     span(class=btn+'__txt') оставить заявку
+
+mixin pag(href)
+    .pag
+        a(href=href).pag__arr
+            +icon('angle-l','pag__svg')
+        .pag__items
+            a(href=href).pag__item
+                .pag__item-val 1
+            a(href=href).pag__item
+                .pag__item-val 2
+            a(href=href).pag__item.active
+                .pag__item-val 3
+            a(href=href).pag__item
+                .pag__item-val ...
+            a(href=href).pag__item
+                .pag__item-val 23
+        a(href=href).pag__arr
+            +icon('angle-r','pag__svg')

@@ -1,0 +1,98 @@
+extends ../main
+
+block variables
+    - var title = 'Букет из 101 розы'
+
+block content
+    main.art.new
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Букет из 101 розы
+
+
+        //- main
+        section.art__main
+            //- title
+            .new__title.art__title.title Букет из 101 розы
+
+            //- top
+            .new__top.art__top
+                .container
+                    .row
+                        .new__banner
+                            .new__banner-wrap
+                                +image('images/content/article/img.jpg', '','new__banner-img')
+
+
+            //- bottom
+            .art__bottom
+                .container
+                    .row
+                        .new__col.new__col_18
+                            .art__block
+                                .art__img
+                                    +image('images/content/article/img2.jpg','','art__img-img')
+                                span.new__text.art__text Роза во все времена считалась самым лучшим, красивым, прекрасно пахнущим цветком. Ее дарили царицам, богиням и вручали как намек на влюбленность молодого человека. В флористике наибольшее количество цветочных композиций создано именно с роз. Часто дарят букеты из 1, 3, 5, 7, 15 цветков. Но цветочная композиция из 101 розы считается самой необычной. Так что же символизирует подобный букет?
+                        .new__col.new__col_10.new__col_pr30
+                            .content
+                                h4 Что символизирует букет из 101 розы?
+                                ul
+                                    li Удачный брак. Говорят, если парень дарит девушке в канун свадьбы букет из такого количества цветов – это приведет к хорошему, долговечному и мирному браку.
+                                    li Гармонию отношений. В паре, где мужчина радует женщину таким презентом, однозначно есть место для любви, гармонии и взаимопониманию.
+                                    li Начало хороших отношений. На любого человека подобное дарение произведет впечатление. Особенно если цветки оформлены в красивое флористическое произведение искусства.
+                                    li Желание всегда быть вместе. Иногда даря такой букет, мужчины подразумевают, что это некий знак верности. Им они хотят выразиться, что хотят быть с девушкой всегда и больше никто им не нужен.
+                        .new__col.new__col_14
+                            .art__image
+                                +image('images/content/article/img3.jpg','','art__image-img')
+                        .new__nav.art__nav
+                            a(href='new.html').new__link
+                                +icon('prev','new__link-svg')
+                                span.new__link-txt Предыдущая новость
+                            a(href='news.html').btn3.new__all
+                                .btn3__txt Все новости
+                            a(href='new.html').new__link
+                                span.new__link-txt.new__link-txt_next Предыдущая новость
+                                +icon('next','new__link-svg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

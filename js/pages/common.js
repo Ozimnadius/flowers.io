@@ -43,6 +43,24 @@ function prettify(num) {
     return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
 }
 
+function Cut(selector,size) {
+    this.items = $(selector);
+    this.size = size;
+    let that = this;
+
+    this.init = function () {
+        that.items.each(function (indx,elem) {
+            let item = $(elem),
+                text = item.text();
+
+            if(text.length > that.size){
+                item.text(text.slice(0, that.size) + ' ...');
+            }
+        });
+    };
+
+}
+
 const wWidth = $(window).width();
 
 $('.jsBuy,.jsOne,.jsFavorites,.jsCompare').on('click', function (e) {
@@ -50,7 +68,6 @@ $('.jsBuy,.jsOne,.jsFavorites,.jsCompare').on('click', function (e) {
 });
 
 $('input[type=tel]').mask('+7 (999) 999-99-99');
-
 
 
 

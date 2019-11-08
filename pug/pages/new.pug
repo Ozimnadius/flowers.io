@@ -1,0 +1,101 @@
+extends ../main
+
+block variables
+    - var title = 'Новость'
+
+block content
+    main.new
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Новость
+
+
+        //- main
+        section.new__main
+            //- title
+            .new__title.title
+                |День влюбленных,
+                br
+                |подарки любимым
+
+            //- top
+            .new__top
+                .container
+                    .row
+                        .new__banner
+                            .new__banner-wrap
+                                +image('images/content/new/img.jpg', '','new__banner-img')
+
+
+            //- bottom
+            .container
+                .row
+                    .new__wrap
+                        .row
+                            .new__col
+                                .new__text Не верьте, если вам скажут, что любовь – чувство прошлого века! Не думайте, что мир вокруг жесток, а люди – злы и черствы. Это не так! Любовь – это основа жизни, ее начало и ядро. В каждом сердце есть любовь и доброта, каждый из нас способен на героические поступки ради любви, и абсолютно все в мире ждут в гости ее величество Любовь. Ведь без нее грустно и пусто в доме, и никакие богатства не могут осчастливить самого одинокого человека.
+
+                            .new__col
+                                .new__img
+                                    +image('images/content/new/img2.jpg','','new__img-img')
+                            .new__col
+                                .new__content.content
+                                    p Пусть в вашем доме выберет себе самое уютное место и поселится навсегда эта очаровательная дама по имени Любовь. Пусть она сопутствует вам во всех делах и начинаниях, пусть без ее одобрения не совершится ни один ваш поступок.
+                            .new__col
+                                .new__content.content
+                                    p Желаю вам, чтобы ваши искренние чувства всегда были взаимны, а слезы на глазах появлялись только от безграничной радости и счастья.
+                            .new__col.new__col_2
+                                .new__image
+                                    +image('images/content/new/img3.jpg', '', 'new__image-img')
+                        .new__nav
+                            a(href='new.html').new__link
+                                +icon('prev','new__link-svg')
+                                span.new__link-txt Предыдущая новость
+                            a(href='news.html').btn3.new__all
+                                .btn3__txt Все новости
+                            a(href='new.html').new__link
+                                span.new__link-txt.new__link-txt_next Предыдущая новость
+                                +icon('next','new__link-svg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

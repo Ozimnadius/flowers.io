@@ -55,7 +55,6 @@ $(function () {
             click: function (e) {
                 this.removeSlide(this.clickedIndex);
                 this.update();
-
             }
         }
 

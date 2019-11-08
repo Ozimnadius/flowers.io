@@ -1,0 +1,78 @@
+extends ../main
+
+block variables
+    - var title = 'Новости'
+
+block content
+    main.news
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная   /&nbsp;&nbsp;&nbsp;
+                span.bread__item.active Новости
+
+
+        //- main
+        section.news__main
+            .container
+                //- title
+                .news__title.title Новости магазина
+
+                //- list
+                .news__list
+                    .row
+                        each i,x in newsList
+                            div(class=i.dopClass).news__item
+                                .nitem
+                                    .nitem__img
+                                        +image('images/content/news/' + (x + 1) + '.jpg','','nitem__img-img')
+                                    .nitem__wrap
+                                        .nitem__title= i.title
+                                        .nitem__date= i.date
+                                    a(href='new.html').nitem__popup
+                                        span.nitem__txt Только взгляните на этого ярко-желтого пушистого цыплёнка, способного поднять настроение кому угодно!
+                                        span.nitem__link
+                                            span.nitem__link-txt Читать новость
+                                            +icon('eye','nitem__link-svg')
+                //- pag
+                .news__pag
+                    +pag('new.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

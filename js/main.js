@@ -5,3 +5,4 @@
 //@prepros-append pages/catalog.js
 //@prepros-append pages/product.js
 //@prepros-append pages/compare.js
+//@prepros-append pages/news.js

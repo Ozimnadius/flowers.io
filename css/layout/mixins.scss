@@ -24,9 +24,25 @@ $vh: 1080;
   $mb: 17px;
   ul {
     margin-bottom: $mb;
-    padding-left: 40px;
+
     li {
-      list-style: disc;
+      padding-left: 17px;
+      position: relative;
+      margin-bottom: $mb;
+      line-height: lh(16,20.8);
+
+
+      &:before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: $red;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 0;
+      }
     }
   }
 
@@ -41,6 +57,10 @@ $vh: 1080;
   }
   h4 {
     margin-bottom: 15px;
+    color: $text2;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: lh(36,46.8);
   }
   h5 {
     margin-bottom: $mb;
