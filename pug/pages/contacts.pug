@@ -9,7 +9,7 @@ block content
         .bread
             .container
                 a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
-                span.bread__item.active КОнтакты
+                span.bread__item.active Контакты
 
 
         //- main
@@ -19,7 +19,7 @@ block content
                 .title.contacts__title Контакты
 
                 //- row
-                .row
+                .row.contacts__row
                     //- left
                     .contacts__left
                         .contacts__map.map
@@ -27,21 +27,57 @@ block content
 
                     //- right
                     .contacts__right
-                        .contacts__txt
+                        .contacts__txt Мы находимся около станции метро Проспект Мира
                         .contacts__list
                             each i in contactsList
                                 a(href=i.href class=i.dopClass).contacts__item
                                     +icon(i.icon,'contacts__item-svg')
-                                    span.contacts__item-txt= i.txt
-
-
+                                    span.contacts__item-txt= i.val
 
 
         //- feed
         section.contacts__feed
+            .cfeed
+                //- bg
+                .cfeed__bg
+                    .container
+                        .row
+                            .cfeed__bg-left
+                                .cfeed__img
+                                    +image('images/content/contacts/bg.png','','cfeed__img-img')
+                //- form
+                .container
+                    .row
+                        form.cfeed__form
+                            .cfeed__wrap
+                                .cfeed__title написать нам
+
+                                .cfeed__fields
+                                    .row
+                                        .cfeed__field
+                                            .cfeed__field-title *Как к вам обращаться?
+                                            input(type='text' name='name' placeholder='Например Иван Иванов').cfeed__input
+                                        .cfeed__field
+                                            .cfeed__field-title Электронная почта
+                                            input(type='email' name='email' placeholder='ivanov@mail.ru').cfeed__input
+                                        .cfeed__field.cfeed__field_2
+                                            .cfeed__field-title Комментарий
+                                            textarea(name='area' placeholder='Ваше сообщение').cfeed__input.cfeed__input_area
+                                button(type='submit').btn5.cfeed__submit
+                                    span.btn5__txt отправить
+
 
         //- list
         section.contacts__advs
+            .container
+                .cadvs__list
+                    each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка','Индивидуальный <br> подход']
+                        .cadvs__item
+                            .cadvs__item-block
+                                .cadvs__item-wrap
+                                    .cadvs__item-img
+                                        +image('images/content/order/' + (x + 1) + '.svg','','cadvs__item-pic')
+                            .cadvs__item-title!=i
 
 
 
