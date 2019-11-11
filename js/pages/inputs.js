@@ -4,8 +4,8 @@
 const rangeFrom = $('.range__input_from'),
     rangeTo = $('.range__input_to'),
     range = $('.range__slider'),
-    rangeMin = range.data('min');
-rangeMax = range.data('max');
+    rangeMin = range.data('min'),
+    rangeMax = range.data('max');
 
 $(".range__slider").ionRangeSlider({
     prettify_enabled: true,
@@ -63,7 +63,7 @@ $('.range__input').on('input', function (e) {
 // select
 $('.select').styler();
 
-$('.filter__select').on('change',function (e) {
+$('.filter__select').on('change', function (e) {
     //ToDo Здесь должень быть ajax на получение товаров
 });
 

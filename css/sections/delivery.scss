@@ -1,0 +1,244 @@
+.delivery {
+  background: url("/images/content/delivery/bg.jpg") right 0 no-repeat;
+  position: relative;
+
+  &__main {
+    margin-bottom: 110px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__top {
+    background: url("/images/content/delivery/img.png") 0 0 no-repeat;
+    background-size: 33.59375%;
+    margin-bottom: 80px;
+
+    &-col {
+      @include col;
+      @include size(14);
+      @include shift-left(10);
+      @include shift-right(3);
+    }
+  }
+
+  &__row {
+    margin-bottom: 130px;
+  }
+
+  &__txt {
+    color: $red;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: lh(30, 39);
+    margin-bottom: 50px;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-img {
+      margin-right: 50px;
+      min-width: 145px;
+    }
+
+    &-txt {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: lh(20, 27);
+
+      i {
+        color: $red;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__bottom {
+    .row {
+      align-items: center;
+    }
+  }
+
+  &__sub {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: lh(36, 46.8);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__left,&__right {
+    @include col;
+    @include size(12);
+  }
+
+  &__left {
+    padding-right: 45px;
+  }
+
+  &__map {
+    height: 299px;
+  }
+
+  &__desc {
+    display: flex;
+    align-items: center;
+
+    &-svg {
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
+      fill: url(#gradient1);
+      margin-right: 20px;
+    }
+
+    &-txt {
+      font-size: 20px;
+      line-height: lh(20,27);
+    }
+  }
+
+}
+
+.dtable {
+
+  &__col {
+    @include col;
+
+    &_1 {
+      @include size(10);
+    }
+
+    &_2 {
+      @include size(8);
+    }
+
+    &_3 {
+      @include size(6);
+    }
+
+  }
+
+  &__head {
+    padding: 14px 60px;
+    border-radius: 102px;
+    border: 1px solid $grey1;
+  }
+
+  &__th {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: lh(18,25.2);
+  }
+
+  &__item {
+    padding: 26px 60px;
+    border-bottom: 1px solid $grey1;
+
+    .row {
+      align-items: center;
+    }
+  }
+
+  &__td {
+    i{
+      color: $red;
+      font-weight: 700;
+      font-style: normal;
+    }
+  }
+
+
+
+}
+
+.dbanner {
+  background: $beige url("/images/bg/pattern-item.png") 0 0;
+
+  &__left {
+    @include col;
+    @include size(12);
+    padding: 115px 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  &__item{
+    height: 102px;
+    border-radius: 6px;
+    border: 1px solid rgba(171, 159, 185, 0.5);
+    background-color: $bg;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background-color: $red;
+    }
+
+    &-img {
+      margin-right: 40px;
+      min-width: 75px;
+    }
+
+    &-txt{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: lh(20,29);
+    }
+  }
+
+  &__right {
+    @include col;
+    @include size(12);
+    position: relative;
+  }
+
+  &__img {
+    margin-right: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &-img {
+      display: block;
+      max-width: initial;
+    }
+  }
+
+}
+
+

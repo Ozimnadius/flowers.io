@@ -6,3 +6,4 @@
 //@prepros-append pages/product.js
 //@prepros-append pages/compare.js
 //@prepros-append pages/news.js
+//@prepros-append pages/contacts.js

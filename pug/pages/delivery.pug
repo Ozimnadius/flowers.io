@@ -1,0 +1,140 @@
+extends ../main
+
+block variables
+    - var title = 'Доставка и оплата'
+
+block content
+    main.delivery
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                span.bread__item.active Доставка и оплата
+
+        //- main
+        section.delivery__main
+            .container
+                //- title
+                .delivery__title.title Доставка и оплата
+
+            //- top
+            .delivery__top
+                .container
+                    //- row
+                    .row.delivery__row
+                        //- right
+                        .delivery__top-col
+                            //- txt
+                            .delivery__txt «wOwByket» предлагает лучшие условия доставки цветов и букетов по Москве и Московской области.
+
+                            //- list
+                            .delivery__list
+                                each i,x in deliveryList
+                                    .delivery__item
+                                        .delivery__item-img
+                                            +image(i.src,'','delivery__item-pic')
+                                        .delivery__item-txt!=i.title
+
+
+
+                    //- table
+                    .delivery__table
+                        .dtable
+                            .dtable__title.delivery__sub Курьерская доставка
+                            .dtable__head
+                                .row
+                                    each i,x in dtable.head
+                                        div(class='dtable__col_' + (x + 1)).dtable__col
+                                            .dtable__th= i
+                            .dtable__body
+                                each i in dtable.body
+                                    .dtable__item
+                                        .row
+                                            each j,x in i
+                                                div(class='dtable__col_' + (x + 1)).dtable__col
+                                                    .dtable__td!=j
+
+
+            //- bottom
+            .delivery__bottom
+                .container
+                    .row
+                        //- left
+                        .delivery__left
+                            .delivery__map.map
+                                iframe(src="https://snazzymaps.com/embed/198694")
+
+                        //- right
+                        .delivery__right
+                            .delivery__sub Самовывоз из магазина
+                            .delivery__desc
+                                +icon('map','delivery__desc-svg')
+                                .delivery__desc-txt Заказанный букет вы можете забрать у нас в магазине по адресу: г. Москва, ул.2-ая Прядильная, д.1
+
+
+        //- banner
+        section.delivery__banner
+            .dbanner
+                .container
+                    .row
+                        //- list
+                        .dbanner__left
+                            //- title
+                            .dbanner__title способы оплаты
+                            .dbanner__list
+                                each i,x in dbannerList
+                                    .dbanner__item
+                                        .dbanner__item-img
+                                            +image('images/content/delivery/banner/'+(x+1)+'.png','','dbanner__item-pic')
+                                        .dbanner__item-txt= i
+                        //- img
+                        .dbanner__right
+                            .dbanner__img
+                                +image('images/content/delivery/banner/img.png','','dbanner__img-img')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

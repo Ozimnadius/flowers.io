@@ -1,0 +1,82 @@
+extends ../main
+
+block variables
+    - var title = 'Контакты'
+
+block content
+    main.contacts
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                span.bread__item.active КОнтакты
+
+
+        //- main
+        section.contacts__main
+            .container
+                //- title
+                .title.contacts__title Контакты
+
+                //- row
+                .row
+                    //- left
+                    .contacts__left
+                        .contacts__map.map
+                            iframe(src="https://snazzymaps.com/embed/198694")
+
+                    //- right
+                    .contacts__right
+                        .contacts__txt
+                        .contacts__list
+                            each i in contactsList
+                                a(href=i.href class=i.dopClass).contacts__item
+                                    +icon(i.icon,'contacts__item-svg')
+                                    span.contacts__item-txt= i.txt
+
+
+
+
+        //- feed
+        section.contacts__feed
+
+        //- list
+        section.contacts__advs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
