@@ -1,0 +1,106 @@
+extends ../main
+
+block variables
+    - var title = 'О магазине'
+
+block content
+    main.about
+        //- bread
+        .bread
+            .container
+                a(href='/').bread__item Главная&nbsp;&nbsp;/&nbsp;&nbsp;
+                span.bread__item.active О магазине
+
+
+        //- main
+        section.about__main
+            .container
+                //- title
+                .title.about__title О магазине
+
+            //- banner
+            .about__banner
+                +banner('images/content/about/img.jpg')
+
+
+            //- content
+            .about__content
+                .container
+                    .about__wrap
+                        .row
+                            //- left
+                            .about__left
+                                .about__sub Интернет-магазин цветов и подарков
+                                .about__img2
+                                    +image('images/content/about/1.png', '','about__img2-img')
+
+                            //- right
+                            .about__right
+                                .content
+                                    p Компания «wowbyket» основана в 2009 году, и на данный момент является сервисом по доставке цветов №1 по данным Яндекса*. В нашем цветочном онлайн магазине представлен широкий выбор авторских букетов, композиций из цветов и подарков высокого качества, которые можно заказать круглосуточно с доставкой в Москве.
+                                    p Все букеты созданы нашими профессиональными флористами в соответствии с актуальными трендами флористики. На сайте представлены композиции из различных видов растений. Мы производим закупки напрямую у поставщиков Голландии, Эквадора и России, поэтому у нас низкие цены и свежие цветы.
+
+                            //- image
+                            .about__img3
+                                +image('images/content/about/2.jpg', '','about__img3-img')
+
+                            //- bottom
+                            .about__bottom
+                                .aadvs
+                                    .aadvs__list
+                                        each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка','Индивидуальный <br> подход']
+                                            .aadvs__item
+                                                .aadvs__item-block
+                                                    .aadvs__item-wrap
+                                                        .aadvs__item-img
+                                                            +image('images/content/order/' + (x + 1) + '.svg','','aadvs__item-pic')
+                                                .aadvs__item-title!=i
+
+
+        //- wow
+        section.about__wow
+            .container
+                +wow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

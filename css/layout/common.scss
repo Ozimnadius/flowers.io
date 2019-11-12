@@ -822,3 +822,101 @@
   z-index: -1;
   opacity: 0;
 }
+
+.banner{
+  background: url("/images/content/index/banner/bg.png") center 0 no-repeat;
+
+  &__col{
+    @include col;
+    @include size(20);
+    @include shift(2);
+  }
+
+  &__img{
+    border-top-left-radius: 50% 25px;
+    border-top-right-radius: 50% 25px;
+    border-bottom-left-radius: 50% 25px;
+    border-bottom-right-radius: 50% 25px;
+    border: 10px solid $bg;
+    overflow: hidden;
+    background: $bg;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+
+    &-img{
+      border-top-left-radius: 50% 23px;
+      border-top-right-radius: 50% 23px;
+      border-bottom-left-radius: 50% 23px;
+      border-bottom-right-radius: 50% 23px;
+    }
+  }
+
+}
+
+.wow{
+  &__list {
+    margin-right: -20px;
+    margin-left: -20px;
+    //background: url("/images/content/index/wow/bg.png") center center no-repeat;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &:nth-child(2) {
+      .wow__item {
+        &:nth-child(1) {
+          padding-left: 55px;
+        }
+
+        &:nth-child(2) {
+          align-self: stretch;
+          padding-top: 30px;
+          padding-bottom: 45px;
+          display: flex;
+          align-items: flex-end;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+      }
+    }
+  }
+
+  &__item {
+
+    &-img {
+      position: relative;
+    }
+
+    &-title {
+      width: 700px;
+      font-size: 46px;
+      line-height: lh(46, 60.41);
+      font-weight: 700;
+      text-transform: uppercase;
+      background: linear-gradient(to right, rgba(254, 91, 58, 1) 0%, rgba(143, 67, 254, 1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      border-width: 4px;
+      border-style: solid;
+      border-image: linear-gradient(to right, #fe5b3a 0%, #8f43fe 100%) 100% 1;
+      position: relative;
+      left: -10px;
+      padding: 16px 0;
+    }
+
+  }
+
+  &__link {
+    width: 214px;
+    height: 54px;
+
+    position: absolute;
+    bottom: 64px;
+    left: 50%;
+    margin-left: -107px;
+  }
+}

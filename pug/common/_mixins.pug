@@ -232,3 +232,41 @@ mixin pag(href)
                 .pag__item-val 23
         a(href=href).pag__arr
             +icon('angle-r','pag__svg')
+
+mixin banner(src)
+    .banner
+        .container
+            .row
+                .banner__col
+                    .banner__img
+                        +image(src, '','banner__img-img')
+
+mixin wow
+    .wow
+        .wow__list
+            .wow__row
+                .wow__item
+                    .wow__item-img
+                        +image('images/content/index/wow/1.png','','wow__item-pic')
+                        a(href='product.html').wow__link.btn4
+                            span.btn4__txt хочу такой букет
+                .wow__item
+                    .wow__item-img
+                        +image('images/content/index/wow/2.png','','wow__item-pic')
+                        a(href='product.html').wow__link.btn4
+                            span.btn4__txt хочу такой букет
+
+            .wow__row
+                .wow__item
+                    .wow__item-img
+                        +image('images/content/index/wow/3.png','','wow__item-pic')
+                        a(href='product.html').wow__link.btn4
+                            span.btn4__txt хочу такой букет
+                .wow__item
+                    .wow__item-title
+                        | Доставленные букеты
+                        | для наших счастливчиков
+                    .wow__item-img
+                        +image('images/content/index/wow/4.png','','wow__item-pic')
+                        a(href='product.html').wow__link.btn4
+                            span.btn4__txt хочу такой букет
