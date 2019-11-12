@@ -44,7 +44,7 @@ html(lang="ru")
                                 .socials
                                     each i in socials
                                         a(href=i.href).social
-                                            +image('images/icons/'+i.icon+'.svg','','social__svg')
+                                            +image('images/icons/' + i.icon + '.svg','','social__svg')
 
 
                 //- middle
@@ -68,7 +68,7 @@ html(lang="ru")
                                     //- tel
                                     a(href='tel:8(800)984-12-12').header__tel.tel 8 (800) 984-12-12
                                     //- callback
-                                    a(href='#').btn
+                                    a(href='#').btn.jsCallorder
                                         span.btn__img
                                             +image('images/icons/tel.png', '', '')
                                         span.btn__txt Обратный звонок
@@ -189,7 +189,7 @@ html(lang="ru")
                                                 +image('images/icons/' + i.icon + '.svg','','social__svg')
 
 
-                                a(href='#').footer__btn.btn3
+                                a(href='#').footer__btn.btn3.jsCallorder
                                     span.btn3__txt заказазать звонок
                 //- bottom
                 .footer__bottom
@@ -200,6 +200,142 @@ html(lang="ru")
                                 .footer__dev-title Разработано
                                 +image('images/icons/dev.png','','footer__dev-img')
 
+
+
+        //- popup
+        .popup
+            .popup__content
+
+        //- templates
+        .templates
+            form(data-id='callorder').form
+                //- close
+                button(type='button').form__close
+                    +icon('close', 'form__close-svg')
+                //- content
+                .form__content
+                    //- title
+                    .form__title Заказать звонок
+                    //- sub
+                    .form__sub Мы свяжемся с Вами в течение нескольких минут.
+
+                    //- fields
+                    .form__fields
+                        .fields
+                            .field.field_24
+                                .field__label *Имя:
+                                input(type='text' name='callName' placeholder='Александр').input
+                            .field.field_24
+                                .field__label *Телефон:
+                                input(type='tel' name='callTel' placeholder='+7 (916) 566-54-67').input
+
+                    //- fz
+                    .form__fz
+                        label.fz
+                            input(type='checkbox' name='callFz' checked=true data-btn='form__submit').fz__input
+                            span.fz__wrap
+                                span.fz__fake
+                                    +icon('check', 'fz__fake-svg')
+                                span.fz__txt Я даю согласие на обработку персональных данных
+
+                    //- submit
+                    button(type='submit').btn4.form__submit
+                        span.btn4__txt Заказать звонок
+
+                    //- hidden
+                    input(type='hidden' name='action' value='callorderSubmit')
+
+            form(data-id='fastbuy').form2
+                //- close
+                button(type='button').form2__close
+                    span.form2__close-wrap
+                        +icon('close', 'form2__close-svg')
+                //- content
+                .form2__content
+                    //- title
+                    .form2__title Быстрая покупка
+                    //- sub
+                    .form2__sub Заполните свои контактные данные и мы свяжемся с Вами для подтверждения заказа
+
+                    //- fields
+                    .form2__fields
+                        .fields
+                            .field.field_15
+                                .field__label *Имя:
+                                input(type='text' name='fastName' placeholder='Александр').input
+                            .field.field_9
+                                .field__label *Телефон:
+                                input(type='tel' name='fastTel' placeholder='+7 (916) 566-54-67').input
+                            .field.field_24
+                                .field__label *Адрес доставки:
+                                input(type='text' name='fastAddr' placeholder='Введите адрес').input
+                            .field.field_24
+                                .field__label *Способ оплаты:
+                                select(name='fastPaytype').form__select
+                                    option(value='Оплата картой') Оплата картой
+                                    option(value='Наличные при получении') Наличные при получении
+                                    option(value='Картой на сайте') Картой на сайте
+                                    option(value='Счет в банк') Счет в банк
+
+                    //- fz
+                    .form2__fz
+                        label.fz.fz_r
+                            input(type='checkbox' name='fastFz' checked=true data-btn='form2__submit').fz__input
+                            span.fz__wrap
+                                span.fz__fake
+                                    +icon('check', 'fz__fake-svg')
+                                span.fz__txt Я даю согласие на обработку персональных данных
+
+                    //- submit
+                    button(type='submit').btn4.btn4_r.form2__submit
+                        span.btn4__txt Оформить заказ
+
+                    //- btn
+                    button(type='button').form2__btn.jsLazyman Не хочу ничего заполнять, перезвоните мне
+
+                    //- hidden
+                    input(type='hidden' name='action' value='fastbuySubmit')
+                    input(type='hidden' name='id' value='').form2__id
+
+            form(data-id='lazyman').form
+                //- close
+                button(type='button').form__close
+                    +icon('close', 'form__close-svg')
+                //- content
+                .form__content
+                    //- title
+                    .form__title мы сделаем всё за вас&nbsp;
+                        .form__title_b в течении
+                            mark 4 минут
+                    //- sub
+                    .form__sub Не тратьте время на заполнение форм, мы позвоним и сами все уточним!
+
+                    //- fields
+                    .form__fields
+                        .fields
+                            .field.field_24
+                                .field__label *Имя:
+                                input(type='text' name='lazyName' placeholder='Александр').input
+                            .field.field_24
+                                .field__label *Телефон:
+                                input(type='tel' name='lazyTel' placeholder='+7 (916) 566-54-67').input
+
+                    //- fz
+                    .form__fz
+                        label.fz
+                            input(type='checkbox' name='lazyFz' checked=true data-btn='form__submit').fz__input
+                            span.fz__wrap
+                                span.fz__fake
+                                    +icon('check', 'fz__fake-svg')
+                                span.fz__txt Я даю согласие на обработку персональных данных
+
+                    //- submit
+                    button(type='submit').btn4.form__submit
+                        span.btn4__txt Оформить заказ
+
+                    //- hidden
+                    input(type='hidden' name='action' value='lazymanSubmit')
+                    input(type='hidden' name='id' value='').form__id
 
         .debug
             div
@@ -229,4 +365,6 @@ html(lang="ru")
 
         script(src='js/vendor.min.js')
         script(src='js/main.min.js')
+
+
 

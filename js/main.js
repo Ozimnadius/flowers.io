@@ -7,3 +7,7 @@
 //@prepros-append pages/compare.js
 //@prepros-append pages/news.js
 //@prepros-append pages/contacts.js
+//@prepros-append pages/popup.js
+
+
+

@@ -1,0 +1,417 @@
+.popup {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba($bg, .9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  @include tr;
+
+  &.active{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.form {
+  width: 1420px;
+  height: 825px;
+  background: url("/images/forms/bg.png") 0 0 no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 215px 260px 165px 590px;
+  color: $bg;
+
+  &__content {
+    height: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 150px;
+    right: 110px;
+    width: 63px;
+    height: 63px;
+    border: 3px solid $bg;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tr;
+
+    &:hover{
+      border-color: $y4;
+
+      .form__close-svg{
+        fill: $y4;
+      }
+    }
+
+    &-svg{
+      width: 25px;
+      height: 25px;
+      fill: $bg;
+      @include tr;
+    }
+  }
+
+  &__title{
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &_b{
+      font-size: 45px;
+    }
+
+    mark{
+      background-color: transparent;
+      color: $y4;
+    }
+  }
+
+  &__sub{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: lh(24,33.6);
+    margin-bottom: 15px;
+  }
+
+  &__fields{
+    margin-bottom: 25px;
+  }
+
+  &__fz{
+    margin-bottom: 40px;
+  }
+
+  &__submit {
+    width: 280px;
+    height: 60px;
+    border-radius: 40px;
+
+    &.disabled{
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    &:hover{
+      box-shadow: 0 3px 0 $purple2, 0px 20px 9px -10px rgba($black, 0.6);
+      background: $purple1;
+    }
+
+
+  }
+
+  &__success{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+.fields{
+  @include row-flex;
+}
+
+.field{
+  @include col;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 30;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  @for $i from 1 through 24 {
+    &_#{$i} {
+      @include size($i);
+    }
+  }
+
+
+
+  &__label{
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .jq-selectbox{
+    width: 100%;
+    &.opened{
+
+      .jq-selectbox__select{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .jq-selectbox__trigger-arrow{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .jq-selectbox__select{
+    border-radius: 6px;
+    border: 1px solid $grey1;
+    background: $bg;
+    text-shadow: none;
+    box-shadow: none;
+    height: auto;
+    color: $black2;
+    font-size: 16px;
+    font-weight: 400;
+    font: 16px/16px "Proxima Nova",sans-serif;
+    padding: 21px 44px 21px 22px;
+  }
+
+  .jq-selectbox__trigger{
+    width: 34px;
+    border: none;
+  }
+
+  .jq-selectbox__trigger-arrow{
+    border-top: 11px solid $black3;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    top: 50%;
+    margin-top: -5.5px;
+  }
+
+  .jq-selectbox__dropdown{
+    margin: 0;
+    margin-top: -1px;
+    border: 1px solid $grey1;
+    border-radius: 0 0 6px 6px;
+    background-color: $bg;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 400;
+    font: 16px/16px "Proxima Nova",sans-serif;
+  }
+
+  .jq-selectbox li{
+    padding: 20px 22px;
+  }
+
+  .jq-selectbox li.selected,.jq-selectbox li:hover{
+    background: rgba($purple5,.1);
+    color: $black2;
+  }
+}
+
+.input{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid $grey1;
+  background-color: $bg;
+  color: $black2;
+  padding: 20px 22px;
+
+  &.error{
+    border: 1px solid #EB3A5F;
+    color: #EB3A5F;
+
+    &::placeholder{
+      color: #EB3A5F;
+    }
+  }
+}
+
+.fz{
+
+  &_r{
+    .fz{
+
+      &__input{
+        display: none;
+
+        &:checked + .fz__wrap{
+          .fz__fake{
+            background: $red;
+
+          }
+        }
+      }
+
+      &__fake{
+        border: 1px solid $red;
+        &-svg{
+          fill: $bg;
+        }
+      }
+
+    }
+  }
+
+  &__wrap{
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__input{
+    display: none;
+
+    &:checked + .fz__wrap{
+      .fz__fake{
+        background: $y4;
+
+        &-svg{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__fake{
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: 1px solid $y4;
+    background-color: $bg;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include tr;
+
+
+    &-svg{
+      width: 15px;
+      height: 12px;
+      fill: $black2;
+      opacity: 0;
+      @include tr;
+    }
+  }
+}
+
+.form2{
+  width: 1416px;
+  height: 832px;
+  background: url("/images/forms/bg2.png") 0 0 no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 115px 110px 140px 790px;
+  color: $text2;
+
+  &__content {
+    height: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 85px;
+    width: 63px;
+    height: 63px;
+    padding: 3px;
+    border-radius: 50%;
+    display: block;
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 50%;
+      background-image: linear-gradient(180deg, #fe5b3a 0%, #8f43fe 100%);
+    }
+
+    @include tr;
+
+    &-wrap{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 20;
+      background: $y4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-svg{
+      width: 25px;
+      height: 25px;
+      fill: url(#gradient1);
+      @include tr;
+    }
+  }
+
+  &__title{
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__sub{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: lh(24,33.6);
+    margin-bottom: 25px;
+  }
+
+  &__fields{
+    margin-bottom: 25px;
+  }
+
+  &__fz{
+    margin-bottom: 30px;
+  }
+
+  &__submit{
+    width: 280px;
+    height: 60px;
+    border-radius: 40px;
+
+    &.disabled{
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    &:hover{
+      box-shadow: 0 3px 0 $purple2, 0px 20px 9px -10px rgba($black, 0.6);
+      background: $purple1;
+
+      .btn4__txt{
+        color: $bg;
+      }
+    }
+  }
+
+  &__btn{
+    color: $bg;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 3px dotted $bg;
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+    @include tr;
+
+    &:hover{
+      color: $y4;
+      border-color: $y4;
+    }
+  }
+}
+

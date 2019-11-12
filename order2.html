@@ -42,7 +42,7 @@
             <div class="header__middle-row">
               <div class="header__middle-left"><a class="header__logo" href="/"><img class="header__logo-img" src="images/icons/logo.svg" alt=""/><span class="header__logo-title">Интернет-магазин<br>цветов и подарков</span></a></div>
               <div class="header__middle-right">
-                <div class="header__contacts"><a class="header__tel tel" href="tel:8(800)984-12-12">8 (800) 984-12-12</a><a class="btn" href="#"><span class="btn__img"><img src="images/icons/tel.png" alt=""/></span><span class="btn__txt">Обратный звонок</span></a></div>
+                <div class="header__contacts"><a class="header__tel tel" href="tel:8(800)984-12-12">8 (800) 984-12-12</a><a class="btn jsCallorder" href="#"><span class="btn__img"><img src="images/icons/tel.png" alt=""/></span><span class="btn__txt">Обратный звонок</span></a></div>
               </div>
             </div>
           </div>
@@ -313,7 +313,7 @@
                 <div class="footer__socials">
                   <div class="socials"><a class="social" href="https://wa.me/79259841212"><img class="social__svg" src="images/icons/whatsapp.svg" alt=""/></a><a class="social" href="tg://resolve?domain=username"><img class="social__svg" src="images/icons/telegram.svg" alt=""/></a><a class="social" href="https://www.instagram.com/"><img class="social__svg" src="images/icons/insta.svg" alt=""/></a>
                   </div>
-                </div><a class="footer__btn btn3" href="#"><span class="btn3__txt">заказазать звонок</span></a>
+                </div><a class="footer__btn btn3 jsCallorder" href="#"><span class="btn3__txt">заказазать звонок</span></a>
               </div>
             </div>
           </div>
@@ -329,6 +329,129 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="popup">
+      <div class="popup__content"></div>
+    </div>
+    <div class="templates">
+      <form class="form" data-id="callorder">
+        <button class="form__close" type="button">
+          <svg class="form__close-svg">
+            <use xlink:href="/images/icons/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="form__content">
+          <div class="form__title">Заказать звонок</div>
+          <div class="form__sub">Мы свяжемся с Вами в течение нескольких минут.</div>
+          <div class="form__fields">
+            <div class="fields">
+              <div class="field field_24">
+                <div class="field__label">*Имя:</div>
+                <input class="input" type="text" name="callName" placeholder="Александр">
+              </div>
+              <div class="field field_24">
+                <div class="field__label">*Телефон:</div>
+                <input class="input" type="tel" name="callTel" placeholder="+7 (916) 566-54-67">
+              </div>
+            </div>
+          </div>
+          <div class="form__fz">
+            <label class="fz">
+              <input class="fz__input" type="checkbox" name="callFz" checked data-btn="form__submit"><span class="fz__wrap"><span class="fz__fake">
+                  <svg class="fz__fake-svg">
+                    <use xlink:href="/images/icons/sprite.svg#check"></use>
+                  </svg></span><span class="fz__txt">Я даю согласие на обработку персональных данных</span></span>
+            </label>
+          </div>
+          <button class="btn4 form__submit" type="submit"><span class="btn4__txt">Заказать звонок</span></button>
+          <input type="hidden" name="action" value="callorderSubmit">
+        </div>
+      </form>
+      <form class="form2" data-id="fastbuy">
+        <button class="form2__close" type="button"><span class="form2__close-wrap">
+            <svg class="form2__close-svg">
+              <use xlink:href="/images/icons/sprite.svg#close"></use>
+            </svg></span></button>
+        <div class="form2__content">
+          <div class="form2__title">Быстрая покупка</div>
+          <div class="form2__sub">Заполните свои контактные данные и мы свяжемся с Вами для подтверждения заказа</div>
+          <div class="form2__fields">
+            <div class="fields">
+              <div class="field field_15">
+                <div class="field__label">*Имя:</div>
+                <input class="input" type="text" name="fastName" placeholder="Александр">
+              </div>
+              <div class="field field_9">
+                <div class="field__label">*Телефон:</div>
+                <input class="input" type="tel" name="fastTel" placeholder="+7 (916) 566-54-67">
+              </div>
+              <div class="field field_24">
+                <div class="field__label">*Адрес доставки:</div>
+                <input class="input" type="text" name="fastAddr" placeholder="Введите адрес">
+              </div>
+              <div class="field field_24">
+                <div class="field__label">*Способ оплаты:</div>
+                <select class="form__select" name="fastPaytype">
+                  <option value="Оплата картой">Оплата картой</option>
+                  <option value="Наличные при получении">Наличные при получении</option>
+                  <option value="Картой на сайте">Картой на сайте</option>
+                  <option value="Счет в банк">Счет в банк</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form2__fz">
+            <label class="fz fz_r">
+              <input class="fz__input" type="checkbox" name="fastFz" checked data-btn="form2__submit"><span class="fz__wrap"><span class="fz__fake">
+                  <svg class="fz__fake-svg">
+                    <use xlink:href="/images/icons/sprite.svg#check"></use>
+                  </svg></span><span class="fz__txt">Я даю согласие на обработку персональных данных</span></span>
+            </label>
+          </div>
+          <button class="btn4 btn4_r form2__submit" type="submit"><span class="btn4__txt">Оформить заказ</span></button>
+          <button class="form2__btn jsLazyman" type="button">Не хочу ничего заполнять, перезвоните мне</button>
+          <input type="hidden" name="action" value="fastbuySubmit">
+          <input class="form2__id" type="hidden" name="id" value="">
+        </div>
+      </form>
+      <form class="form" data-id="lazyman">
+        <button class="form__close" type="button">
+          <svg class="form__close-svg">
+            <use xlink:href="/images/icons/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="form__content">
+          <div class="form__title">мы сделаем всё за вас&nbsp;
+            <div class="form__title_b">в течении
+              <mark>4 минут</mark>
+            </div>
+          </div>
+          <div class="form__sub">Не тратьте время на заполнение форм, мы позвоним и сами все уточним!</div>
+          <div class="form__fields">
+            <div class="fields">
+              <div class="field field_24">
+                <div class="field__label">*Имя:</div>
+                <input class="input" type="text" name="lazyName" placeholder="Александр">
+              </div>
+              <div class="field field_24">
+                <div class="field__label">*Телефон:</div>
+                <input class="input" type="tel" name="lazyTel" placeholder="+7 (916) 566-54-67">
+              </div>
+            </div>
+          </div>
+          <div class="form__fz">
+            <label class="fz">
+              <input class="fz__input" type="checkbox" name="lazyFz" checked data-btn="form__submit"><span class="fz__wrap"><span class="fz__fake">
+                  <svg class="fz__fake-svg">
+                    <use xlink:href="/images/icons/sprite.svg#check"></use>
+                  </svg></span><span class="fz__txt">Я даю согласие на обработку персональных данных</span></span>
+            </label>
+          </div>
+          <button class="btn4 form__submit" type="submit"><span class="btn4__txt">Оформить заказ</span></button>
+          <input type="hidden" name="action" value="lazymanSubmit">
+          <input class="form__id" type="hidden" name="id" value="">
+        </div>
+      </form>
     </div>
     <div class="debug">
       <div>

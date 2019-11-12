@@ -48,7 +48,7 @@ mixin item(icon,src,title,dopClass)
                         span.btn4.btn4_r.iteml__buy.jsBuy
                             span.btn4__txt В корзину
                         //- one
-                        span.iteml__one.jsOne
+                        span(data-id='24').iteml__one.jsOne
                             +icon('arrow','iteml__one-svg')
                             span.iteml__one-txt Купить в 1 клик
 
@@ -93,7 +93,7 @@ mixin item(icon,src,title,dopClass)
                 span.btn4__txt В корзину
 
             //- one
-            span.item__one.jsOne
+            span(data-id='24').item__one.jsOne
                 +icon('arrow','item__one-svg')
                 span.item__one-txt Купить в 1 клик
 
@@ -121,7 +121,7 @@ mixin filters
             //- name
             .filter
                 select(data-placeholder='Цветы' name='flowers').select.filter__select
-                    option(value='')
+                    option(value='' label='Цветы')
                     option(value='Все') Все
                     option(value='Lorem1') Lorem1
                     option(value='Lorem2') Lorem2
@@ -130,7 +130,7 @@ mixin filters
             //- sex
             .filter
                 select(data-placeholder='Кому' name='sex').select.filter__select
-                    option(value='')
+                    option(value='' label='Кому')
                     option(value='Все') Все
                     option(value='Мужчина') Мужчина
                     option(value='Женщина') Женщина
@@ -138,7 +138,7 @@ mixin filters
             //- event
             .filter
                 select(data-placeholder='Событие' name='event').select.filter__select
-                    option(value='')
+                    option(value='' label='Событие')
                     option(value='Все') Все
                     option(value='Lorem1') Lorem1
                     option(value='Lorem2') Lorem2
@@ -146,7 +146,7 @@ mixin filters
             //- style
             .filter
                 select(data-placeholder='Стиль' name='style').select.filter__select
-                    option(value='')
+                    option(value='' label='Стиль')
                     option(value='Все') Все
                     option(value='Lorem1') Lorem1
                     option(value='Lorem2') Lorem2
