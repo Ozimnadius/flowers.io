@@ -1,0 +1,68 @@
+extends ../main
+
+block variables
+    - var title = '404'
+
+block content
+    main.notfound
+
+        //- main
+        section.notfound__main
+            .container
+                .notfound__title
+                    mark УПС!&nbsp;
+                    | ОШИБКА 404
+                .notfound__img
+                    +image('images/content/404.png','','notfound__img-img')
+
+                .notfound__txt
+                    | К сожалению такой страницы не существует, но вы можете вернуться &nbsp;
+                    a(href='/') назад
+                    | &nbsp;или&nbsp;
+                    a(href='/') на главную
+                a(href='/').btn4.btn4_r.notfound__btn
+                    span.btn4__txt Вернуться на главную
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

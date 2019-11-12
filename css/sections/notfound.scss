@@ -1,0 +1,48 @@
+.notfound{
+  background: url("/images/bg/404.jpg") 0 0 no-repeat;
+  padding: 110px 0;
+  text-align: center;
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+    mark {
+      color: $red;
+      background-color: transparent;
+    }
+
+  }
+
+  &__img{
+    margin-bottom: 30px;
+  }
+
+  &__txt{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: lh(24,26.72);
+    max-width: 784px;
+    margin-bottom: 40px;
+
+    a{
+      color: $red;
+      font-weight: 600;
+    }
+  }
+
+  &__btn{
+    width: 315px;
+    height: 54px;
+    border-radius: 40px;
+  }
+
+}
+

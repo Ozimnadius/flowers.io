@@ -6951,6 +6951,59 @@ input, textarea {
   text-align: center;
 }
 
+.notfound {
+  background: url("/images/bg/404.jpg") 0 0 no-repeat;
+  padding: 110px 0;
+  text-align: center;
+}
+
+.notfound .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.notfound__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.notfound__title mark {
+  color: #eb3a5f;
+  background-color: transparent;
+}
+
+.notfound__img {
+  margin-bottom: 30px;
+}
+
+.notfound__txt {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.11333;
+  max-width: 784px;
+  margin-bottom: 40px;
+}
+
+.notfound__txt a {
+  color: #eb3a5f;
+  font-weight: 600;
+}
+
+.notfound__btn {
+  width: 315px;
+  height: 54px;
+  border-radius: 40px;
+}
+
 .footer__top {
   padding-top: 75px;
   padding-bottom: 55px;
