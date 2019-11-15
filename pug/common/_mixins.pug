@@ -99,58 +99,65 @@ mixin item(icon,src,title,dopClass)
 
 mixin filters
     .filters
-        .row
-            //- price
-            .filter
-                .fprice
-                    //- top
-                    .fprice__top
-                        .fprice__title Цена
-                        +icon('angle','fprice__angle')
-                    //- bottom
-                    .fprice__bottom
-                        .range
-                            //- fields
-                            .range__fields
-                                label.range__label От
-                                    input(type='text' name='from' value='390').range__input.range__input_from
-                                label.range__label До
-                                    input(type='text' name='to' value='237 990').range__input.range__input_to
-                            //- slider
-                            input(type='text' name='range' value='' data-type='double' data-min='390' data-max='300000' data-from='390' data-to='237990').range__slider
-            //- name
-            .filter
-                select(data-placeholder='Цветы' name='flowers').select.filter__select
-                    option(value='' label='Цветы')
-                    option(value='Все') Все
-                    option(value='Lorem1') Lorem1
-                    option(value='Lorem2') Lorem2
-                    option(value='Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf') Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
-                    option(value='Lorem4') Lorem4
-            //- sex
-            .filter
-                select(data-placeholder='Кому' name='sex').select.filter__select
-                    option(value='' label='Кому')
-                    option(value='Все') Все
-                    option(value='Мужчина') Мужчина
-                    option(value='Женщина') Женщина
-                    option(value='Другое') Другое
-            //- event
-            .filter
-                select(data-placeholder='Событие' name='event').select.filter__select
-                    option(value='' label='Событие')
-                    option(value='Все') Все
-                    option(value='Lorem1') Lorem1
-                    option(value='Lorem2') Lorem2
-                    option(value='Lorem3') Lorem3
-            //- style
-            .filter
-                select(data-placeholder='Стиль' name='style').select.filter__select
-                    option(value='' label='Стиль')
-                    option(value='Все') Все
-                    option(value='Lorem1') Lorem1
-                    option(value='Lorem2') Lorem2
-                    option(value='Lorem3') Lorem3
+        //- top
+        .filters__top
+            //- btn
+            button(type='button').filters__btn
+                +icon('filter','filters__btn-svg')
+                span.filters__btn-txt Фильтр по параметрам
+            //- close
+            .filters__close
+                +icon('close', 'filters__close-svg')
+        //- wrap
+        .filters__wrap
+            .row
+                //- price
+                .filter
+                    .fprice
+                        //- top
+                        .fprice__top
+                            .fprice__title Цена
+                            +icon('angle','fprice__angle')
+                        //- bottom
+                        .fprice__bottom
+                            .range
+                                //- fields
+                                .range__fields
+                                    label.range__label От
+                                        input(type='text' name='from' value='390').range__input.range__input_from
+                                    label.range__label До
+                                        input(type='text' name='to' value='237 990').range__input.range__input_to
+                                //- slider
+                                input(type='text' name='range' value='' data-type='double' data-min='390' data-max='300000' data-from='390' data-to='237990').range__slider
+                //- name
+                .filter
+                    select(name='flowers').select.filter__select
+                        option(value='Цветы') Цветы
+                        option(value='Lorem1') Lorem1
+                        option(value='Lorem2') Lorem2
+                        option(value='Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf') Loremlksdfgjl kjdfl jdslf gkjssdjkhdkjfghdskfgjhfks sdkj ghsdfkg jhsdkf
+                        option(value='Lorem4') Lorem4
+                //- sex
+                .filter
+                    select(name='sex').select.filter__select
+                        option(value='Кому') Кому
+                        option(value='Мужчина') Мужчина
+                        option(value='Женщина') Женщина
+                        option(value='Другое') Другое
+                //- event
+                .filter
+                    select(name='event').select.filter__select
+                        option(value='Событие') Событие
+                        option(value='Lorem1') Lorem1
+                        option(value='Lorem2') Lorem2
+                        option(value='Lorem3') Lorem3
+                //- style
+                .filter
+                    select(name='style').select.filter__select
+                        option(value='Стиль') Стиль
+                        option(value='Lorem1') Lorem1
+                        option(value='Lorem2') Lorem2
+                        option(value='Lorem3') Lorem3
 
 mixin slider(title,dopClass)
     div(class=dopClass).slider

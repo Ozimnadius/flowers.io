@@ -1,5 +1,11 @@
 .header {
 
+  &__desctop {
+    @include lg-block {
+      display: none;
+    }
+  }
+
   &__top {
     border-bottom: 1px solid $grey1;
 
@@ -28,6 +34,13 @@
 
     &-img {
       margin-right: 30px;
+      @include lg-block {
+        margin-right: 0;
+        width: 133px;
+      }
+      @include sm-block{
+        width: 86px;
+      }
     }
 
     &-title {
@@ -51,6 +64,9 @@
 
   &__bottom {
     background-image: linear-gradient(90deg, #fe5b3a 0%, #8f43fe 100%);
+    @include lg-block {
+      display: none;
+    }
 
     &-row {
       display: flex;
@@ -108,10 +124,17 @@
       @include tr;
     }
 
-    &:hover{
-      .header__link-title{
+    &:hover {
+      .header__link-title {
         color: $y1;
       }
+    }
+  }
+
+  &__tablet {
+    display: none;
+    @include lg-block {
+      display: block;
     }
   }
 
@@ -145,7 +168,7 @@
   &__item {
     position: relative;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -268,14 +291,15 @@
     &:hover {
       background-color: $red;
       color: $bg;
-      &:after{
+
+      &:after {
         opacity: .25;
       }
 
-      .submenu{
-        &__item{
+      .submenu {
+        &__item {
 
-          &-title{
+          &-title {
             color: $bg;
           }
 
@@ -325,10 +349,10 @@
   width: 33px;
   height: 33px;
 
-  &:hover{
-    .hcontrol{
-      &__svg{
-        fill:$y3;
+  &:hover {
+    .hcontrol {
+      &__svg {
+        fill: $y3;
       }
     }
   }
@@ -361,4 +385,473 @@
     right: -4px;
   }
 
+}
+
+.theader {
+
+  &__top {
+    border-bottom: 1px solid $grey1;
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-right{
+      @include sm-block{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__wapp {
+    display: none;
+    @include sm-block{
+      display: block;
+      margin-right: 25px;
+    }
+  }
+
+  &__bottom {
+    border-bottom: 1px solid $grey1;
+    padding: 20px 0;
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include sm-block{
+          justify-content: center;
+      }
+    }
+
+    &-left,&-center{
+      @include sm-block{
+        display: none;
+      }
+    }
+
+    &-right{
+      width: 100%;
+    }
+  }
+
+  &__callorder{
+    width: 100%;
+  }
+
+}
+
+.thcontrols {
+  display: flex;
+  margin-right: -20px;
+  @include sm-block{
+    margin-right: -10px;
+  }
+}
+
+.thcontrol {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid $grey1;
+  position: relative;
+  @include sm-block{
+    width: 60px;
+    height: 60px;
+  }
+
+  &:nth-child(1){
+    @include sm-block{
+      display: none;
+    }
+  }
+
+  &:last-child {
+    border-right: 1px solid $grey1;
+  }
+
+  &__svg {
+    fill: url(#gradient1);
+
+    &_basket {
+      width: 36px;
+      height: 36px;
+    }
+
+    &_menu {
+      width: 40px;
+      height: 27px;
+      @include sm-block{
+        width: 34px;
+        height: 23px;
+      }
+    }
+  }
+
+  &__count {
+    width: 24px;
+    height: 24px;
+    border: 1px solid $bg;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, $y1 0%, $y2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $text2;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+.mmenu {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: -1000px;
+  width: 688px;
+  background: $red2 url("/images/bg/pattern-light.png") 0 0;
+  @include tr;
+  @include sm-block{
+    width: 310px;
+  }
+
+  &.active {
+    @include tr;
+    left: 0;
+  }
+
+  &__close {
+    width: 79px;
+    height: 80px;
+    background-color: $red2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(100% + 1px);
+    @include sm-block{
+      position: static;
+      background: none;
+      margin-left: auto;
+      width: 60px;
+      height: 60px;
+      border-left: 1px solid $bg;
+    }
+
+    &-svg {
+      width: 33px;
+      height: 33px;
+      fill: $bg;
+      @include sm-block{
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__wrap {
+    padding: 30px;
+    max-height: 100vh;
+    overflow-y: auto;
+    @include sm-block{
+      border-top: 1px solid $bg;
+      max-height: calc(100vh - 60px);
+      padding: 20px 10px 80px 10px;
+    }
+  }
+
+  &__block {
+    border-bottom: 1px solid $bg;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__search {
+    padding-bottom: 30px;
+    @include sm-block{
+      padding-bottom: 20px;
+    }
+  }
+
+  &__controls {
+    padding: 25px 0;
+    @include sm-block{
+      padding: 16px 0;
+    }
+  }
+
+  &__list {
+    padding: 15px 0;
+  }
+
+  &__item {
+    display: block;
+    color: $bg;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: lh(16px, 22.5px);
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+    @include sm-block{
+      padding-top: 20px;
+      flex-direction: column;
+    }
+
+    &-left{
+      @include sm-block{
+        margin-bottom: 10px;
+      }
+    }
+
+    &-right{
+      @include sm-block{
+        margin-bottom: 20px;
+      }
+    }
+
+    &-center{
+      @include sm-block{
+        order: 1;
+      }
+    }
+  }
+
+  &__tel {
+    color: $bg;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+}
+
+.msearch {
+  background-color: $beige;
+  position: relative;
+  padding: 3px;
+  @include sm-block{
+    padding: 2px;
+  }
+
+  &__input {
+    border: 1px solid $grey1;
+    width: 100%;
+    padding: 17px 60px 17px 20px;
+    border-radius: 0;
+    @include sm-block{
+      padding: 11px 40px 11px 20px;
+    }
+
+    &::placeholder {
+      color: $text;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    margin-top: -15px;
+    @include sm-block{
+      margin-top: -9px;
+      right: 20px;
+    }
+
+    &-svg {
+      width: 30px;
+      height: 30px;
+      fill: $purple3;
+      @include sm-block{
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+.mcontrols {
+
+}
+
+.mcontrol {
+  position: relative;
+  margin-bottom: 20px;
+  @include sm-block{
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &_m {
+    display: none;
+    @include sm-block{
+      display: flex;
+    }
+  }
+
+  display: flex;
+  align-items: center;
+
+  &__svg {
+    fill: $bg;
+    margin-right: 20px;
+    @include sm-block{
+      margin-right: 12px;
+    }
+
+    &_basket{
+      width: 20px;
+      height: 20px;
+    }
+
+    &_heart {
+      width: 33px;
+      height: 28px;
+      @include sm-block{
+        width: 22px;
+        height: 19px;
+      }
+    }
+
+    &_compare {
+      width: 32px;
+      height: 29px;
+      @include sm-block{
+        width: 22px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__title {
+    color: $bg;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__count {
+    width: 19px;
+    height: 19px;
+    border: 1px solid $purple7;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, $y1 0%, $y2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $text2;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    bottom: -4px;
+    left: 18px;
+
+    @include sm-block{
+      position: static;
+      margin-left: 7px;
+      border: 1px solid $bg;
+    }
+  }
+
+}
+
+.mnav {
+
+  &__item {
+    border-bottom: 1px solid $bg;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-btn {
+      color: $bg;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 21px 0;
+      position: relative;
+      cursor: pointer;
+      @include tr;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 5px 0 5px;
+        border-color: $bg transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        margin-top: -3.5px;
+        right: 0;
+        @include tr;
+      }
+
+      &.active {
+        color: $y2;
+
+        &:after {
+          border-color: $y2 transparent transparent transparent;
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}
+
+.msubnav {
+  display: none;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  @include sm-block{
+    padding-left: 0;
+  }
+
+  &__item {
+    display: block;
+    color: $bg;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: lh(16px, 22.5px);
+    margin-bottom: 10px;
+  }
+}
+
+.msocials {
+  display: flex;
+  align-items: center;
+}
+
+.msocial {
+  margin-right: 23px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

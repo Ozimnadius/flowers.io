@@ -12,7 +12,7 @@
   cursor: pointer;
   @include tr;
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -34,7 +34,7 @@
     margin-top: 3px;
   }
 
-  &__txt{
+  &__txt {
     position: relative;
     z-index: 20;
     color: $text2;
@@ -47,13 +47,24 @@
     background-color: $red;
     box-shadow: 0 3px 0 #af1132, 0px 10px 9px -3px rgba($black, 0.6);
 
-    &:after{
+    @include md-block {
+      box-shadow: 0 1.5px 0 #b99e38, 0px 10px 9px -3px rgba($black, 0.6);
+      background-color: $y2;
+    }
+
+    &:after {
       opacity: 0.25;
+      @include md-block {
+        opacity: .5;
+      }
     }
 
     .btn {
-      &__txt{
+      &__txt {
         color: $bg;
+        @include md-block {
+          color: $text2;
+        }
       }
     }
   }
@@ -71,8 +82,18 @@
   box-shadow: 0 3px 0 #42167e, 0px 20px 9px -10px rgba($black, 0.6);
   cursor: pointer;
   @include tr;
+  @include md-block {
+    width: 288px;
+    height: 64px;
+    border-radius: 36px;
+  }
+  @include sm-block{
+    width: 254px;
+    height: 57px;
+    border-radius: 31px;
+  }
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -92,9 +113,12 @@
     position: absolute;
     left: 22px;
     bottom: 5px;
+    @include md-block {
+      width: 69px;
+    }
   }
 
-  &__txt{
+  &__txt {
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
     color: $bg;
     font-size: 18px;
@@ -103,19 +127,37 @@
     padding-left: 72px;
     margin-top: 3px;
     @include tr;
+    @include md-block {
+      font-size: 16px;
+    }
+    @include sm-block{
+      font-size: 14px;
+      padding-left: 50px;
+    }
   }
 
-  &:hover{
+  &:hover {
     background-color: $y2;
     box-shadow: 0 3px 0 #b99e38, 0px 20px 9px -10px rgba($black, 0.6);
 
-    &:after{
+    @include md-block {
+      background-color: $purple2;
+      box-shadow: 0 3px 0 #42167e, 0px 20px 9px -10px rgba($black, 0.6);
+    }
+
+    &:after {
       opacity: 0.5;
+      @include md-block {
+        opacity: .25;
+      }
     }
 
     .btn2 {
-      &__txt{
+      &__txt {
         color: $text2;
+        @include md-block {
+          color: $bg;
+        }
       }
     }
   }
@@ -132,7 +174,7 @@
   cursor: pointer;
   @include tr;
 
-  &__img{
+  &__img {
     width: 18px;
     height: 18px;
     fill: $purple5;
@@ -140,7 +182,7 @@
     @include tr;
   }
 
-  &__txt{
+  &__txt {
     color: $purple5;
     font-size: 16px;
     font-weight: 600;
@@ -152,14 +194,25 @@
     box-shadow: 0 3px 0 #AF1132;
     background-color: $red;
     border-color: $red;
+    @include md-block {
+      box-shadow: none;
+      background-color: transparent;
+      border: 1px solid $purple5;
+    }
 
-    .btn3{
+    .btn3 {
       &__img {
         fill: $bg;
+        @include md-block {
+          fill: $purple5;
+        }
       }
 
-      &__txt{
+      &__txt {
         color: $bg;
+        @include md-block {
+          color: $purple5;
+        }
       }
     }
   }
@@ -180,33 +233,54 @@
   cursor: pointer;
   @include tr;
 
-  &:hover{
+  &:hover {
     background-color: $red;
     box-shadow: 0 3px 0 #af1132, 0px 20px 9px -10px rgba($black, 0.6);
 
-    &:after{
+    @include md-block {
+      background-color: $y2;
+      box-shadow: 0 3px 0 #b99e38, 0px 20px 9px -10px rgba($black, 0.6);
+    }
+
+    &:after {
       opacity: 0.25;
+      @include md-block {
+        opacity: .5;
+      }
     }
 
     .btn4 {
-      &__txt{
+      &__txt {
         color: $bg;
+        @include md-block {
+          color: $text2;
+        }
       }
 
-      &__pic{
+      &__pic {
         display: none;
-        &_h{
+        @include md-block {
           display: block;
+        }
+
+        &_h {
+          display: block;
+          @include md-block {
+            display: none;
+          }
         }
       }
 
       &__count {
         border: 1px solid $bg;
+        @include md-block {
+          border: 1px solid $y5;
+        }
       }
     }
   }
 
-  &:after{
+  &:after {
     content: '';
     display: block;
     position: absolute;
@@ -222,29 +296,39 @@
     @include tr;
   }
 
-  &_r{
+  &_r {
     background-color: $red;
     box-shadow: 0 3px 0 #af1132, 0px 20px 9px -10px rgba($black, 0.6);
 
-    .btn4__txt{
+    .btn4__txt {
       color: $bg;
     }
 
-    &:after{
+    &:after {
       opacity: 0.25;
     }
 
-    &:hover{
+    &:hover {
       box-shadow: 0 3px 0 #b99e38, 0px 20px 9px -10px rgba($black, 0.6);
       background-color: $y2;
+      @include md-block {
+        background-color: $red;
+        box-shadow: 0 3px 0 #af1132, 0px 20px 9px -10px rgba($black, 0.6);
+      }
 
-      .btn4__txt{
+      .btn4__txt {
         color: $text2;
+        @include md-block {
+          color: $bg;
+        }
 
       }
 
-      &:after{
+      &:after {
         opacity: .5;
+        @include md-block {
+          opacity: 0.25;
+        }
       }
     }
   }
@@ -255,15 +339,15 @@
     z-index: 20;
   }
 
-  &__pic{
+  &__pic {
     display: block;
 
-    &_h{
+    &_h {
       display: none;
     }
   }
 
-  &__count{
+  &__count {
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -284,7 +368,7 @@
     bottom: -3px;
   }
 
-  &__txt{
+  &__txt {
     color: $text2;
     font-size: 16px;
     font-weight: 600;
@@ -306,11 +390,11 @@
   justify-content: center;
   border-radius: 40px;
   background: $red;
-  box-shadow: 0 3px 0 #AF1132, 0px 10px 9px -3px rgba($black, 0.6);;
+  box-shadow: 0 3px 0 #AF1132, 0px 10px 9px -3px rgba($black, 0.6);
   cursor: pointer;
   @include tr;
 
-  &__img{
+  &__img {
     width: 18px;
     height: 18px;
     fill: $bg;
@@ -318,7 +402,7 @@
     @include tr;
   }
 
-  &__txt{
+  &__txt {
     color: $bg;
     font-size: 18px;
     font-weight: 600;
@@ -329,14 +413,24 @@
   &:hover {
     box-shadow: 0 1.5px 0 #b99e38, 0px 10px 9px -3px rgba($black, 0.6);
     background-color: $y2;
+    @include md-block {
+      background: $red;
+      box-shadow: 0 3px 0 #AF1132, 0px 10px 9px -3px rgba($black, 0.6);
+    }
 
-    .btn5{
+    .btn5 {
       &__img {
         fill: $text2;
+        @include md-block {
+          fill: $bg;
+        }
       }
 
-      &__txt{
+      &__txt {
         color: $text2;
+        @include md-block {
+          color: $bg;
+        }
       }
     }
   }
@@ -344,26 +438,37 @@
 
 }
 
-.btn6{
+.btn6 {
   display: flex;
   align-items: center;
   border-bottom: 3px dotted $text2;
   padding-bottom: 3px;
   @include tr;
 
-  &:hover{
-    border-color: $purple3;
-    .btn6{
-      &__svg{
+  &:hover {
+    border-color: $text2;
+    @include md-block {
+      border-color: transparent;
+    }
+
+    .btn6 {
+      &__svg {
         fill: $purple3;
+        @include md-block {
+          fill: $text2;
+        }
       }
-      &__txt{
+
+      &__txt {
         color: $purple3;
+        @include md-block {
+          color: $text2;
+        }
       }
     }
   }
 
-  &__svg{
+  &__svg {
     width: 13px;
     height: 13px;
     fill: $text2;
@@ -371,50 +476,66 @@
     @include tr;
   }
 
-  &__txt{
+  &__txt {
     color: $text2;
     font-weight: 600;
     text-transform: uppercase;
   }
 }
 
-.socials{
+.socials {
   display: flex;
   align-items: center;
 }
 
-.social{
+.social {
   margin-right: 22px;
   @include tr;
-  &:last-child{
+
+  &:last-child {
     margin-right: 0;
   }
 
-  &:hover{
+  &:hover {
     @include op;
+  }
+
+  &__svg {
+    @include lg-block {
+      width: 40px;
+    }
   }
 }
 
-.tel{
+.tel {
   color: $red;
   font-size: 24px;
   font-weight: 700;
-  line-height: lh(24,33.6);
+  line-height: lh(24, 33.6);
   @include tr;
 
-  &:hover{
+  @include lg-block {
+    font-size: 22px;
+  }
+
+  &:hover {
     @include op;
   }
 
   &_g {
-    text-shadow: 0 1px 0 #fff964;
     color: $purple3;
     font-size: 25px;
     font-weight: 700;
+    @include lg-block{
+      font-size: 28px;
+    }
+    @include sm-block{
+      font-size: 25px;
+    }
   }
 }
 
-.link{
+.link {
   color: $purple3;
   font-size: 16px;
   font-weight: 600;
@@ -422,37 +543,39 @@
   padding-bottom: 5px;
   @include tr;
 
-  &:hover{
+  &:hover {
     color: $red;
     border-color: $red;
   }
 
-  &_white{
+  &_white {
     color: $bg;
     border-color: $bg;
 
-    &:hover{
+    &:hover {
       color: $y2;
       border-color: $y2;
     }
   }
 }
 
-.bread{
+.bread {
   padding: 55px 0 20px 0;
-  &__item{
+
+  &__item {
     color: $text;
     font-size: 14px;
-    &.active{
+
+    &.active {
       color: #b19b9b;
     }
   }
 }
 
-.title{
+.title {
   font-size: 46px;
   font-weight: 700;
-  line-height: lh(46,59.8);
+  line-height: lh(46, 59.8);
   text-transform: uppercase;
   background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
   -webkit-background-clip: text;
@@ -467,11 +590,28 @@
   background-image: url("/images/content/slider/bg.jpg");
   background-position: 45% 0;
   background-repeat: no-repeat;
+  @include lg-block {
+    padding-top: 20px;
+    padding-bottom: 70px;
+    margin: 0;
+    background: url(/images/content/slider/bg-t.svg) 0 0 repeat, linear-gradient(102.4deg, #fe5b3a 0%, #8f43fe 100%);
+  }
+  @include sm-block{
+    padding: 40px 0;
+  }
 
-  &_2{
+  .container {
+    padding: 0 50px;
+    @include sm-block{
+      padding: 0 10px;
+    }
+  }
+
+  &_2 {
     background-image: url("/images/content/slider/bg2.png");
     padding-top: 295px;
-    .slider__text{
+
+    .slider__text {
       width: 166px;
       font-size: 24px;
     }
@@ -481,16 +621,36 @@
     display: flex;
     align-items: flex-end;
     margin-bottom: 40px;
+    @include lg-block {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
     display: flex;
     align-items: flex-end;
     margin-right: 50px;
+    @include lg-block {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    @include sm-block{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+    }
 
     &-img {
       position: relative;
       z-index: 2;
+      @include lg-block {
+        width: 93px;
+      }
+      @include sm-block{
+        display: none;
+      }
     }
 
     &-txt {
@@ -512,6 +672,24 @@
       margin-left: -8px;
       margin-bottom: 10px;
 
+      @include lg-block {
+        height: 72px;
+        font-size: 38px;
+        padding-left: 30px;
+        padding-right: 40px;
+      }
+      @include sm-block{
+        border: 1px solid $bg;
+        border-radius: 102px;
+        width: 100%;
+        height: 46px;
+        font-size: 20px;
+        padding: 0 10px;
+        justify-content: center;
+        margin: 0;
+
+      }
+
     }
   }
 
@@ -521,17 +699,33 @@
     font-size: 30px;
     line-height: lh(30, 36);
     margin-bottom: 10px;
+    @include lg-block{
+      width: auto;
+      font-size: 24px;
+    }
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__container {
     padding-bottom: 250px;
     margin-bottom: -215px;
     pointer-events: none;
+    @include lg-block{
+      padding-bottom: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__slide {
     box-sizing: border-box;
     pointer-events: initial;
+    height: auto;
+
+    .item{
+      height: 100%;
+    }
   }
 
   &__nav {
@@ -539,6 +733,12 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 65px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__arr {
@@ -547,6 +747,9 @@
     border-radius: 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     @include tr;
+    @include sm-block{
+      display: none;
+    }
 
     &:hover {
       .slider__arr-svg {
@@ -570,6 +773,9 @@
     background-color: rgba(255, 255, 255, 0.4);
     margin: 0 24px;
     padding: 3px;
+    @include sm-block{
+      margin: 0;
+    }
 
     .swiper-scrollbar {
       background: none;
@@ -600,6 +806,10 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 15px;
+    @include lg-block{
+      padding-right: 0;
+      justify-content: center;
+    }
   }
 
   &__link {
@@ -611,19 +821,31 @@
     &:hover {
       &:after {
         opacity: 0;
+        @include lg-block{
+          opacity: 1;
+        }
       }
 
       &:before {
         opacity: 1;
+        @include lg-block{
+          opacity: 0;
+        }
       }
 
       .slider__link {
         &-title {
           color: $red;
+          @include lg-block{
+            color: $bg;
+          }
         }
 
         &-svg {
           fill: $red;
+          @include lg-block{
+              fill: $bg;
+          }
         }
       }
     }
@@ -639,6 +861,9 @@
       background: url("/images/bg/line-p.png") 0 0;
       opacity: 1;
       @include tr;
+      @include lg-block{
+        background: url("/images/bg/line-w.png") 0 0;
+      }
     }
 
     &:before {
@@ -660,6 +885,10 @@
       line-height: lh(16, 20.8);
       margin-right: 10px;
       @include tr;
+
+      @include lg-block{
+        color: $bg;
+      }
     }
 
     &-svg {
@@ -667,6 +896,9 @@
       height: 13px;
       fill: $purple3;
       @include tr;
+      @include lg-block{
+          fill: $bg;
+      }
     }
   }
 
@@ -681,6 +913,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include size-lg(24);
+    @include shift-lg(0);
   }
 
   &__title {
@@ -692,6 +926,17 @@
     text-transform: uppercase;
     padding: 15px 44px;
     margin-bottom: 25px;
+    @include lg-block{
+      font-size: 38px;
+      text-align: center;
+      padding: 15px 100px;
+      margin-bottom: 20px;
+    }
+    @include sm-block{
+      padding: 17px 15px;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
   }
 
   &__sub {
@@ -701,16 +946,34 @@
     max-width: 825px;
     text-align: center;
     margin-bottom: 40px;
+    @include lg-block{
+      font-size: 26px;
+      margin-bottom: 25px;
+    }
+    @include sm-block{
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
   }
 
   &__row {
     width: 100%;
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__field {
     @include col;
     @include size(12);
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 17px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__label {
@@ -718,6 +981,10 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 13px;
+    @include sm-block{
+      font-size: 16px;
+      margin-bottom: 11px;
+    }
   }
 
   &__input {
@@ -727,16 +994,25 @@
     color: $black2;
     font-size: 18px;
     padding: 22px 25px;
+    @include sm-block{
+      padding: 16px 20px;
+    }
   }
 
   &__agree {
     margin-bottom: 40px;
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
-  &__submit{
+  &__submit {
     width: 343px;
     height: 68px;
     border-radius: 40px;
+    @include sm-block{
+      width: 100%;
+    }
   }
 
 }
@@ -784,7 +1060,7 @@
   &__txt {
     color: $text2;
     font-size: 18px;
-    line-height: lh(18,24.05);
+    line-height: lh(18, 24.05);
   }
 
 }
@@ -793,7 +1069,7 @@
   color: $red;
 }
 
-.map{
+.map {
   height: 300px;
   width: 100%;
   border: 10px solid $bg;
@@ -806,7 +1082,7 @@
 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 
-  iframe{
+  iframe {
     border-top-left-radius: 50% 16px;
     border-top-right-radius: 50% 16px;
     border-bottom-left-radius: 50% 16px;
@@ -817,22 +1093,22 @@
   }
 }
 
-#gardient{
+#gardient {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.banner{
+.banner {
   background: url("/images/content/index/banner/bg.png") center 0 no-repeat;
 
-  &__col{
+  &__col {
     @include col;
     @include size(20);
     @include shift(2);
   }
 
-  &__img{
+  &__img {
     border-top-left-radius: 50% 25px;
     border-top-right-radius: 50% 25px;
     border-bottom-left-radius: 50% 25px;
@@ -842,7 +1118,7 @@
     background: $bg;
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
 
-    &-img{
+    &-img {
       border-top-left-radius: 50% 23px;
       border-top-right-radius: 50% 23px;
       border-bottom-left-radius: 50% 23px;
@@ -852,7 +1128,7 @@
 
 }
 
-.wow{
+.wow {
   &__list {
     margin-right: -20px;
     margin-left: -20px;

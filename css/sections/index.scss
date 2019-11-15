@@ -4,12 +4,22 @@
     margin-bottom: 100px;
     position: relative;
     z-index: 20;
+    @include lg-block {
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 60px;
+    }
+
   }
 
   &__gifts {
     position: relative;
     z-index: 10;
     margin-bottom: 20px;
+    @include lg-block {
+      margin-bottom: 0;
+    }
   }
 
   &__feed {
@@ -17,6 +27,14 @@
     padding-bottom: 150px;
     background: url("/images/bg/bg-feed.jpg") right 0 no-repeat;
     margin-bottom: -50px;
+    @include lg-block {
+      padding: 80px 0;
+      margin-bottom: 0;
+      background: none;
+    }
+    @include sm-block{
+      padding: 60px 0;
+    }
   }
 }
 
@@ -24,6 +42,16 @@
   padding-top: 10px;
   padding-bottom: 110px;
   background-position: center 0;
+  background-repeat: no-repeat;
+  @include lg-block {
+    padding-bottom: 180px;
+    background-size: 100% auto;
+  }
+  @include sm-block {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
 
   &__wrap {
     @include col;
@@ -31,10 +59,19 @@
     padding-top: 35px;
     padding-left: 110px;
     position: relative;
+    @include size-lg(24);
+    @include lg-block {
+      padding-left: 75px;
+    }
+    @include sm-block {
+      padding-left: 0;
+      padding-top: 25px;
+    }
   }
 
   &__pic {
     width: 100%;
+    display: block;
   }
 
   &__content {
@@ -46,6 +83,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include sm-block {
+      position: static;
+      margin-top: -40px;
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -59,6 +101,15 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: $bg;
     margin-bottom: 30px;
+    @include lg-block {
+      font-size: 38px;
+      margin-bottom: 22px;
+    }
+    @include sm-block {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 
   &__sub {
@@ -67,6 +118,19 @@
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 70px;
+    @include lg-block {
+      font-size: 26px;
+      margin-bottom: 45px;
+    }
+    @include sm-block {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
   }
 
   &__list {
@@ -76,6 +140,14 @@
     right: 0;
     display: flex;
     justify-content: center;
+    @include lg-block {
+      left: 10px;
+      top: 100%;
+    }
+    @include sm-block {
+      flex-wrap: wrap;
+      position: static;
+    }
   }
 
   &__item {
@@ -83,6 +155,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include lg-block {
+      width: 200px;
+    }
+    @include sm-block {
+      width: 50%;
+      margin-bottom: 15px;
+    }
 
     &-block {
       width: 106px;
@@ -92,6 +171,20 @@
       background-color: $bg;
       padding: 7px;
       margin-bottom: 19px;
+      @include lg-block {
+        width: 85px;
+        height: 86px;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+        border-radius: 13px;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      @include sm-block{
+        width: 67px;
+        height: 67px;
+        border-radius: 13px;
+        padding: 4px;
+      }
     }
 
     &-wrap {
@@ -101,6 +194,10 @@
       border: 1px solid $grey1;
       background-color: #f0e8cd;
       padding: 3px;
+      @include lg-block {
+        border-radius: 10px;
+        padding: 2px;
+      }
     }
 
     &-img {
@@ -111,6 +208,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include lg-block {
+        border-radius: 10px;
+        padding: 15px 10px;
+      }
+      @include sm-block{
+        padding: 10px;
+      }
+    }
+
+    &-pic {
+      max-height: 100%;
     }
 
     &-title {
@@ -119,9 +227,14 @@
       font-weight: 600;
       line-height: lh(18, 20.04);
       text-align: center;
+      @include lg-block {
+        font-size: 16px;
+      }
+      @include sm-block{
+        font-size: 14px;
+      }
     }
   }
-
 
 }
 
@@ -148,12 +261,39 @@
     -webkit-text-fill-color: transparent;
     position: relative;
 
+    @include lg-block {
+      width: 516px;
+      height: 72px;
+      border-radius: 102px;
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      width: 100%;
+      height: auto;
+      font-size: 22px;
+      padding: 10px 10px;
+      margin-bottom: 20px;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      color: $purple3;
+    }
+
     &:before {
       content: url("/images/content/index/pop/border-left.png");
       display: block;
       position: absolute;
       left: -64px;
       top: -44px;
+      @include lg-block{
+        top: -54px;
+      }
+      @include sm-block{
+        content: url("/images/content/index/pop/border-left-m.png");
+        left: -30px;
+        top: 7px;
+      }
     }
 
     &:after {
@@ -162,18 +302,29 @@
       position: absolute;
       right: -58px;
       top: -36px;
+      @include sm-block{
+        content: url("/images/content/index/pop/border-right-m.png");
+        top: -16px;
+        right: -29px;
+      }
     }
   }
 
   &__filters {
     margin-bottom: 40px;
     padding: 0 115px;
+    @include lg-block {
+      padding: 0 30px;
+      margin-bottom: 10px;
+    }
+    @include sm-block{
+      padding: 0;
+    }
   }
 
   &__items {
     margin-bottom: 20px;
   }
-
 
   &__more {
     margin: 0 auto;
@@ -183,17 +334,88 @@
 
 .iwow {
   padding-bottom: 75px;
+  @include lg-block {
+    padding: 0;
+  }
+  @include sm-block{
+    padding-bottom: 60px;
+  }
+
+  &__desctop {
+    @include lg-block {
+      display: none;
+    }
+  }
+
+  &__tablet {
+    display: none;
+    @include lg-block {
+      display: block;
+    }
+  }
 
   &__img {
     margin-bottom: -100px;
     position: relative;
     z-index: 1;
+    @include lg-block {
+      margin-bottom: 0;
+    }
+    @include sm-block{
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+
+    &-img {
+      @include lg-block {
+        display: none;
+      }
+
+
+      &_t {
+        display: none;
+        @include lg-block {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 38px;
+    line-height: lh(38, 49.4);
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgba(254, 91, 58, 1) 0%, rgba(143, 67, 254, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding: 0 50px;
+    margin-bottom: 25px;
+
+    display: none;
+    @include lg-block {
+      display: block;
+    }
+    @include sm-block{
+      font-size: 22px;
+      padding: 0;
+      margin-bottom: 0;
+    }
   }
 
   &__list {
     margin-right: -20px;
     margin-left: -20px;
     background: url("/images/content/index/wow/bg.png") center center no-repeat;
+    @include lg-block {
+      margin: 0;
+      padding-bottom: 75px;
+      background-position: center 0;
+    }
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__row {
@@ -222,9 +444,32 @@
   }
 
   &__item {
+    @include lg-block {
+      @include col;
+      margin-bottom: 20px;
+    }
+
+    &_24 {
+      @include size-lg(24);
+    }
+
+    &_12 {
+      @include size-lg(12);
+    }
 
     &-img {
       position: relative;
+      @include lg-block {
+        border-radius: 50%/22px;
+        border: 10px solid $bg;
+        box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+    }
+
+    &-pic {
+      display: block;
+      border-radius: 50%/18px;
     }
 
     &-title {
@@ -255,6 +500,105 @@
     bottom: 64px;
     left: 50%;
     margin-left: -107px;
+    @include lg-block {
+      bottom: 30px;
+    }
+  }
+
+  &__container{
+    padding: 20px 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  &__slider{
+    display: none;
+    @include sm-block{
+      display: block;
+    }
+  }
+
+  &__slide{
+    width: 300px;
+    box-sizing: border-box;
+    height: 348px;
+    border-radius: 50%/19px;
+    border: 8px solid $bg;
+    box-shadow: 0 6px 17px rgba(0, 0, 0, 0.2);
+
+    &-img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 50%/19px;
+    }
+  }
+
+  &__nav{
+    padding: 1px;
+    border-radius: 63px;
+    background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+    width: 187px;
+    margin: 0 auto;
+
+    &-wrap{
+      display: flex;
+      align-items: center;
+      padding: 7px;
+      border-radius: 63px;
+      background: $bg;
+    }
+
+  }
+
+  &__pag{
+    width: 96px;
+    text-align: center;
+    color: rgba($black,.3);
+    font-size: 16px;
+    font-weight: 400;
+    vertical-align: top;
+
+
+
+
+    .swiper-pagination-current{
+      color: rgba($black,.6);
+      font-size: 26px;
+      vertical-align: top;
+    }
+
+  }
+
+  &__arr{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(122, 52, 170, 0.5);
+    &:hover{
+      box-shadow: none;
+      .compare__arr-svg{
+        fill: $red;
+      }
+    }
+
+    &-svg{
+      width: 100%;
+      height: 100%;
+
+      fill: url(#gradient1);
+    }
+
+    &.swiper-button-disabled{
+      opacity: .5;
+      &:hover{
+        .compare__arr-svg{
+          fill: $red;
+          fill: url(#gradient1);
+        }
+      }
+    }
   }
 }
 
@@ -262,6 +606,14 @@
   padding-top: 80px;
   padding-bottom: 100px;
   position: relative;
+  @include lg-block {
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
+  @include sm-block{
+    padding-bottom: 0;
+  }
+
 
   &:before, &:after {
     content: '';
@@ -271,6 +623,9 @@
     top: 0;
     bottom: 0;
     z-index: 10;
+    @include sm-block{
+      display: none;
+    }
   }
 
   &:before {
@@ -285,6 +640,20 @@
     background-image: url(/images/bg/pattern-light.png);
   }
 
+  .container{
+    @include sm-block{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__table{
+    @include sm-block{
+      display: none;
+    }
+  }
+
   &__row {
     position: relative;
     z-index: 20;
@@ -292,6 +661,11 @@
     margin-right: -60px;
     display: flex;
     flex-wrap: wrap;
+    @include lg-block {
+      margin-left: -45px;
+      margin-right: -45px;
+      padding: 0 15px;
+    }
   }
 
   &__col {
@@ -300,27 +674,39 @@
     margin-left: 60px;
     display: flex;
     flex-direction: column;
+    @include lg-block {
+      width: calc(50% - 90px);
+      margin-left: 45px;
+      margin-right: 45px;
+
+    }
   }
 
-  &__title{
+  &__title {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 10px;
+    @include lg-block {
+      text-align: center;
+    }
+    @include sm-block{
+      font-size: 20px;
+    }
 
     &_red {
       color: $red;
     }
 
-    &_white{
+    &_white {
       color: $bg;
     }
   }
 
-  &__list{
+  &__list {
     margin-bottom: 20px;
   }
 
-  &__item{
+  &__item {
     @include col;
     @include size(12);
     display: flex;
@@ -328,18 +714,30 @@
     border-bottom-left-radius: 50% 20px;
     border-bottom-right-radius: 50% 20px;
     @include tr;
+    @include size-lg(24);
+    @include lg-block {
+      display: none;
+    }
+    @include size-sm(24);
 
-    &:hover{
+    &:first-child {
+      @include lg-block {
+        display: flex;
+      }
+    }
+
+    &:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 
-    &-top{
+    &-top {
       border: 5px solid $bg;
       border-radius: 6px 6px 0 0;
     }
 
-    &-img{
+    &-img {
       display: block;
+      width: 100%;
     }
 
     &-bottom {
@@ -354,21 +752,21 @@
       flex-direction: column;
     }
 
-    &-title{
+    &-title {
       color: $text2;
       font-size: 20px;
       font-weight: 600;
-      line-height: lh(20,26);
+      line-height: lh(20, 26);
       margin-bottom: 5px;
     }
 
-    &-txt{
+    &-txt {
       color: $grey2;
-      line-height: lh(16,22.4);
+      line-height: lh(16, 22.4);
       margin-bottom: 7px;
     }
 
-    &-date{
+    &-date {
       margin-top: auto;
       color: $purple3;
     }
@@ -376,6 +774,28 @@
 
   &__link {
     align-self: center;
+    @include sm-block{
+      text-align: center;
+    }
+  }
+
+  &__mobile{
+    display: none;
+    @include sm-block{
+      display: block;
+    }
+  }
+
+  &__news{
+    background-color: #f9f3e5;
+    background-image: url(/images/bg/pattern-item.png);
+    padding: 40px 0;
+  }
+
+  &__articles{
+    background-color: $red;
+    background-image: url(/images/bg/pattern-light.png);
+    padding: 40px 0;
   }
 
 }

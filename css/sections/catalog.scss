@@ -51,9 +51,15 @@
 
   &__items {
     margin-bottom: 20px;
+    @include lg-block {
+      padding: 0 30px;
+    }
+    @include sm-block {
+      padding: 0;
+    }
 
-    &.list{
-      .catalog__item{
+    &.list {
+      .catalog__item {
         @include size(24);
         margin-bottom: 0;
       }
@@ -64,6 +70,11 @@
     @include col;
     @include size(6);
     margin-bottom: 20px;
+    @include size-lg(12);
+    @include size-sm(12);
+    @include sm-block{
+      margin-bottom: 10px;
+    }
 
     .item {
       height: 100%;
@@ -82,21 +93,160 @@
     justify-content: center;
   }
 
-  &__gifts{
+  &__gifts {
     margin-bottom: 80px;
   }
 }
 
 .filters {
+  position: relative;
+  z-index: 80;
 
+  &.active {
+    .filters {
+
+      &__top {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &__btn {
+        margin-left: 0;
+        border-bottom: 3px dotted transparent;
+
+        &-svg {
+          fill: $bg
+        }
+
+        &-txt {
+          color: $bg;
+        }
+      }
+
+      &__close {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &__wrap {
+        display: block;
+      }
+    }
+  }
+
+  &__top {
+    display: none;
+    padding: 13px 15px 13px 20px;
+    position: relative;
+    border-bottom: 1px solid $bg;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $red url("/images/bg/pattern-light.png") 0 0;
+      opacity: 0;
+    }
+
+    @include sm-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .row {
+    @include lg-block {
+      justify-content: center;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    border-bottom: 3px dotted $purple3;
+    padding-bottom: 3px;
+    margin-top: 3px;
+    position: relative;
+    z-index: 10;
+    margin-left: 30px;
+
+    &-svg {
+      min-width: 16px;
+      width: 16px;
+      height: 15px;
+      fill: $purple3;
+      margin-right: 10px;
+    }
+
+    &-txt {
+      color: $purple3;
+    }
+  }
+
+  &__close {
+    width: 34px;
+    height: 34px;
+    border: 1px solid $bg;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    @include tr;
+
+    &-svg {
+      width: 12px;
+      height: 13px;
+      fill: $bg;
+      @include tr;
+    }
+  }
+
+  &__wrap {
+    @include sm-block {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
 }
 
 .fprice {
   position: relative;
+  z-index: 20;
+  @include sm-block {
+    border-bottom: 1px solid $bg;
+  }
+
 
   &.opened {
     .fprice__top {
       border-radius: 6px 6px 0 0;
+      @include sm-block {
+        border-radius: 0;
+      }
+    }
+
+    .fprice__title{
+      @include sm-block{
+        color: $y2;
+      }
     }
 
     .fprice__bottom {
@@ -105,28 +255,42 @@
 
     .fprice__angle {
       transform: rotate(-180deg);
+      fill: $y2;
     }
   }
 
   &__top {
     border-radius: 6px;
     border: 1px solid $grey1;
-    padding: 13px 21px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     background: $bg;
+    @include sm-block {
+      border-radius: 0;
+      border: none;
+      background: $red;
+
+    }
   }
 
   &__title {
     color: $black2;
+    @include sm-block {
+      color: $bg;
+      font-weight: 600;
+    }
   }
 
   &__angle {
     width: 13px;
     height: 7px;
     fill: $black2;
+    @include sm-block {
+      fill: $bg;
+    }
   }
 
   &__bottom {
@@ -139,6 +303,14 @@
     border-radius: 0 0 6px 6px;
     padding: 20px;
     display: none;
+
+    @include sm-block {
+      border-radius: 0;
+      border: none;
+      background: $red;
+      position: static;
+      padding-top: 0;
+    }
   }
 }
 
@@ -146,7 +318,8 @@
   @include col;
   @include size(24/5);
   position: relative;
-  z-index: 80;
+  //z-index: 80;
+
 
   &:after {
     content: '';
@@ -158,6 +331,9 @@
     margin-top: -6px;
     left: calc(100% + 9px);
     background: url("/images/icons/seporate.png") 0 0;
+    @include sm-block {
+      display: none;
+    }
   }
 
   &:last-child {
@@ -167,7 +343,22 @@
   }
 
   @include select;
+  @include size-lg(8);
+  @include lg-block {
+    margin-bottom: 20px;
+  }
+  @include size-sm(24);
+  @include sm-block {
+    margin-bottom: 0;
+  }
 
+  &:nth-child(3n) {
+    @include lg-block {
+      &:after {
+        display: none;
+      }
+    }
+  }
 
 }
 
@@ -184,6 +375,11 @@
     margin-left: 15px;
     width: calc(50% - 30px);
     text-align: center;
+
+    @include sm-block {
+      color: $bg;
+      font-weight: 600;
+    }
   }
 
   &__input {
@@ -195,15 +391,27 @@
     text-align: center;
     color: rgba($text, .8);
     font-size: 14px;
+    @include sm-block {
+      font-weight: 400;
+      color: $bg;
+      width: 77px;
+    }
   }
 
   .irs-line {
     border-radius: 15px;
     background-color: #dadada;
+    @include sm-block {
+      background-color: $bg;
+    }
   }
 
   .irs-bar {
     background-image: linear-gradient(90deg, #fe5b3a 0%, #8f43fe 100%);
+    @include sm-block {
+      background: $y3;
+    }
+
   }
 
   .irs-handle {
@@ -212,20 +420,38 @@
     border: 6px solid #f75946;
     outline: 2px solid $bg;
     box-shadow: none;
+    @include sm-block {
+      border: 6px solid $y3;
+      outline: 2px solid $red;
+      background: $red;
+    }
+
+    &.state_hover {
+      @include sm-block {
+        background: $red;
+      }
+    }
 
     &.to {
       border: 6px solid $purple7;
+      @include sm-block {
+        border: 6px solid $y3;
+      }
+
     }
   }
 }
 
-@mixin item-title(){
+@mixin item-title() {
 
   color: $text2;
   font-size: 22px;
   font-weight: 600;
   line-height: lh(22, 30.94);
   text-transform: uppercase;
+  @include sm-block {
+    font-size: 12px;
+  }
 
 }
 
@@ -233,12 +459,12 @@
   position: relative;
   display: block;
 
-  &.list{
-    .item__hidden,.item__visible{
+  &.list {
+    .item__hidden, .item__visible {
       display: none;
     }
 
-    &:hover{
+    &:hover {
 
       &:after {
         opacity: 0;
@@ -278,26 +504,42 @@
 
     &:after {
       opacity: 1;
+      @include lg-block {
+        opacity: 0;
+      }
     }
 
     .item__visible {
       border: 1px solid transparent;
       z-index: 100;
+      @include lg-block {
+        border: 1px solid $white;
+        z-index: 20;
+      }
 
       &:after {
         opacity: 1;
+        @include lg-block {
+          opacity: 0;
+        }
       }
     }
 
     .item__hidden {
       top: calc(100% - 60px);
       z-index: 90;
+      @include lg-block {
+        z-index: 10;
+        top: 2px;
+      }
     }
 
     .item__control {
       border-color: $purple6;
+      @include lg-block {
+        border-color: $white;
+      }
     }
-
 
 
   }
@@ -319,6 +561,10 @@
     background-clip: padding-box;
     overflow: hidden;
     height: 100%;
+    @include sm-block {
+      padding-top: 15px;
+      padding-bottom: 20px;
+    }
 
     &:after {
       content: '';
@@ -340,6 +586,11 @@
     z-index: 10;
     top: 14px;
     left: 10px;
+    @include sm-block {
+      width: 55px;
+      top: 7px;
+      left: 3px;
+    }
   }
 
   &__controls {
@@ -348,6 +599,9 @@
     top: 40px;
     right: 0;
     display: block;
+    @include sm-block {
+      display: none;
+    }
   }
 
   &__control {
@@ -371,9 +625,16 @@
     &:hover {
       background-color: $red;
       border-color: $red !important;
+      @include lg-block {
+        background-color: $bg;
+        border-color: $white !important;
+      }
 
       .item__control-svg {
         fill: $bg;
+        @include lg-block {
+          fill: $grey1;
+        }
       }
     }
 
@@ -395,6 +656,11 @@
     justify-content: center;
     margin-bottom: 25px;
     height: 215px;
+    @include sm-block {
+      padding: 0 30px;
+      height: 70px;
+      margin-bottom: 10px;
+    }
 
     &-img {
       max-height: 100%;
@@ -408,6 +674,7 @@
     text-align: center;
     margin-bottom: 10px;
     @include item-title;
+
   }
 
   &__prices {
@@ -417,10 +684,18 @@
     align-items: flex-end;
     justify-content: center;
     margin-top: auto;
+    @include sm-block {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__price {
     margin-right: 12px;
+    @include sm-block{
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
   }
 
   &__hidden {
@@ -443,6 +718,9 @@
     padding-bottom: 40px;
     box-shadow: 0 3px 0 #7e256b;
     @include tr;
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__buy {
@@ -537,7 +815,7 @@
 
 }
 
-.iteml{
+.iteml {
   display: none;
   padding: 20px 0;
   border-bottom: 1px solid $grey1;
@@ -546,11 +824,11 @@
   z-index: 10;
 
 
-  .row{
+  .row {
     align-items: center;
   }
 
-  &__left{
+  &__left {
     @include col;
     @include size(7);
     padding-left: 30px;
@@ -566,64 +844,65 @@
     align-items: center;
     justify-content: center;
 
-    &-img{
+    &-img {
       max-height: 100%;
     }
   }
 
-  &__title{
+  &__title {
     @include item-title;
     font-size: 16px;
   }
 
-  &__center{
+  &__center {
     @include col;
     @include size(4);
     display: flex;
   }
 
-  &__prices{
+  &__prices {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .price{
+    .price {
       font-size: 20px;
 
-      &_old{
+      &_old {
         font-size: 14px;
       }
     }
 
   }
 
-  &__price{
+  &__price {
     margin-bottom: 5px;
   }
 
-  &__controls{
+  &__controls {
     @include col;
     @include size(7);
     display: flex;
     justify-content: space-between;
   }
 
-  &__control{
+  &__control {
     display: flex;
     align-items: center;
 
-    &:hover{
-      .iteml__control{
-        &-svg{
+    &:hover {
+      .iteml__control {
+        &-svg {
           fill: $red;
         }
-        &-title{
+
+        &-title {
           color: $red;
         }
       }
     }
 
-    &-svg{
+    &-svg {
       width: 18px;
       height: 16px;
       fill: $text;
@@ -638,26 +917,26 @@
     }
   }
 
-  &__right{
+  &__right {
     @include col;
     @include size(6);
     display: flex;
     justify-content: flex-end;
   }
 
-  &__buttons{
+  &__buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__buy{
+  &__buy {
     width: 243px;
     height: 54px;
     margin-bottom: 20px;
   }
 
-  &__one{
+  &__one {
     display: flex;
     align-items: center;
     position: relative;
@@ -733,6 +1012,9 @@
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
+  @include sm-block{
+    font-size: 14px;
+  }
 
   &_old {
     opacity: 0.6;
@@ -742,6 +1024,9 @@
     line-height: 1;
     text-decoration: line-through;
     margin-bottom: 2px;
+    @include sm-block{
+      font-size: 12px;
+    }
   }
 
 }
@@ -830,16 +1115,16 @@
       padding: 3px;
       font-weight: 700;
 
-      &:hover{
+      &:hover {
         border: none;
       }
 
-      .pag__item-val{
+      .pag__item-val {
         border-color: transparent;
       }
     }
 
-    &:hover{
+    &:hover {
       border: 3px solid $grey1;
     }
 

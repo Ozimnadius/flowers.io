@@ -8,6 +8,7 @@
 //@prepros-append pages/news.js
 //@prepros-append pages/contacts.js
 //@prepros-append pages/popup.js
+//@prepros-append pages/mmenu.js
 
 
 

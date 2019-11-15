@@ -12,6 +12,17 @@ $(function () {
             nextEl: '.slider__next',
             prevEl: '.slider__prev',
         },
+        breakpoints: {
+            // when window width is >= 769.99px
+            769.99: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            },
+            // when window width is >= 1379.99px
+            1379.99: {
+                slidesPerView: 2,
+            }
+        }
     });
 
     let swiperPop = new Swiper('.pop__container', {
@@ -28,7 +39,18 @@ $(function () {
         },
     });
 
-
+    let swiperWow = new Swiper('.iwow__container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.iwow__pag',
+            type: 'fraction',
+        },
+        navigation: {
+            nextEl: '.iwow__next',
+            prevEl: '.iwow__prev',
+        }
+    });
 
 
 });

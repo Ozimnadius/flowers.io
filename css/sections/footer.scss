@@ -4,27 +4,53 @@
     padding-top: 75px;
     padding-bottom: 55px;
     border-bottom: 1px solid $grey1;
+    @include lg-block {
+      padding-top: 35px;
+      padding-bottom: 0px;
+    }
+    @include sm-block{
+      padding-bottom: 30px;
+    }
+
+    .container {
+      position: relative;
+    }
   }
 
-  &__left{
+  &__left {
     @include col;
     @include size(6.75);
+    @include size-lg(12);
+    @include size-sm(20);
+    @include shift-sm(2);
+    @include sm-block{
+      margin-bottom: 15px;
+    }
   }
 
   &__logo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
+    @include sm-block{
+      align-items: center;
+    }
 
     &-img {
       margin-bottom: 23px;
       width: 292px;
+      @include sm-block{
+        width: 212px;
+        margin-bottom: 13px;
+      }
     }
 
     &-title {
       color: $red;
       font-weight: 600;
+      @include sm-block{
+        text-align: center;
+      }
     }
   }
 
@@ -33,12 +59,30 @@
     @include size(6.5);
     @include shift-right(1.2);
     padding-top: 10px;
+    @include lg-block {
+      display: none;
+    }
   }
 
   &__contacts {
     @include col;
     @include size(5.25);
     padding-top: 5px;
+    @include size-lg(12);
+    @include lg-block {
+      display: flex;
+    }
+    @include size-sm(20);
+    @include shift-sm(2);
+    @include sm-block{
+      margin-bottom: 30px;
+    }
+
+    .footer__socials{
+      @include sm-block{
+        display: none;
+      }
+    }
   }
 
   &__right {
@@ -48,15 +92,62 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include lg-block {
+      display: none;
+    }
+    @include size-sm(20);
+    @include shift-sm(2);
+    @include sm-block{
+      display: flex;
+    }
   }
 
   &__tel {
     margin-bottom: 18px;
+    @include lg-block {
+      margin-bottom: 0;
+    }
+    @include sm-block{
+      margin-bottom: 15px;
+    }
   }
 
-  &__socials{
+  &__socials {
     margin-bottom: 20px;
-    .social{
+    @include lg-block {
+      margin-bottom: 0;
+      margin-left: 45px;
+      margin-right: 30px;
+      min-width: 36px;
+    }
+    @include sm-block{
+      order: 1;
+      margin: 0;
+    }
+
+    .socials {
+      @include lg-block {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @include sm-block{
+          flex-direction: row;
+      }
+    }
+
+    .social {
+      @include lg-block {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+      @include sm-block{
+        margin-bottom: 0;
+        margin-right: 25px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+
       &__svg {
         width: 35px;
       }
@@ -65,19 +156,40 @@
 
   &__btn {
     width: 100%;
+    @include lg-block {
+      width: 227px;
+      background: $bg;
+    }
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__bottom {
     padding: 30px 0;
+    @include sm-block{
+      padding: 25px 0;
+    }
+
     &-row {
       position: relative;
       display: flex;
       justify-content: center;
+      @include lg-block {
+        justify-content: flex-start;
+      }
+      @include sm-block{
+        flex-wrap: wrap;
+          justify-content: center;
+      }
     }
   }
 
-  &__copy{
+  &__copy {
     color: $grey2;
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__dev {
@@ -87,10 +199,34 @@
     transform: translateY(-50%);
     display: flex;
     align-items: center;
+    @include sm-block{
+      position: static;
+    }
 
     &-title {
       margin-right: 14px;
       color: $grey9;
+    }
+  }
+
+  &__tablet {
+    display: none;
+    padding: 20px 0;
+    border-bottom: 1px solid $grey1;
+    background: url("/images/bg/footer.svg") 0 0;
+
+    @include lg-block {
+      display: block;
+    }
+
+    @include sm-block{
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
@@ -99,19 +235,43 @@
 .fbanner {
   background-image: linear-gradient(180deg, $purple1 0%, $purple2 100%);
   padding: 16px 0;
+  @include lg-block {
+    padding: 35px 0;
+  }
 
   &__row {
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm-block {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   &__title {
     color: $bg;
     font-size: 30px;
     font-weight: 700;
-    line-height: lh(30,39);
+    line-height: lh(30, 39);
     margin-right: 80px;
+    @include lg-block {
+      font-size: 24px;
+      margin-right: 45px;
+    }
+    @include sm-block{
+      margin-right: 0;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+  }
+
+  &__btn {
+    min-width: 341px;
+    @include sm-block{
+      min-width: initial;
+      width: 100%;
+    }
   }
 }
 
@@ -126,22 +286,22 @@
     color: $red;
     font-size: 18px;
     font-weight: 700;
-    line-height: lh(18,25.31);
+    line-height: lh(18, 25.31);
     margin-bottom: 15px;
   }
 
   &__item {
     display: block;
     color: $grey2;
-    line-height: lh(16,22.5);
+    line-height: lh(16, 22.5);
     position: relative;
     margin-bottom: 10px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
-    
-    &:hover{
+
+    &:hover {
       color: $red;
       text-decoration: underline;
       text-decoration-style: dashed;
@@ -150,20 +310,24 @@
   }
 }
 
-.fcontacts{
+.fcontacts {
   display: flex;
   flex-direction: column;
 }
-.fcontact{
+
+.fcontact {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  @include lg-block {
+    margin-bottom: 20px;
+  }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 
-  &__icon{
+  &__icon {
     min-width: 40px;
     width: 40px;
     height: 40px;
@@ -175,7 +339,8 @@
     border-radius: 50%;
     margin-right: 24px;
   }
-  &__svg{
+
+  &__svg {
     width: 22px;
     height: 22px;
     fill: $bg;
@@ -187,7 +352,7 @@
 
     &-title {
       color: $text2;
-      line-height: lh(16,22.4);
+      line-height: lh(16, 22.4);
     }
 
     &-mail {
@@ -195,7 +360,7 @@
       font-size: 18px;
       position: relative;
 
-      &:after{
+      &:after {
         content: '';
         display: block;
         position: absolute;

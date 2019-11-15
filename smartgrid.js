@@ -24,12 +24,14 @@ smartgrid('./css/layout', {
         sm: {
             width: "769.99px",
             fields: "10px",
-            containerWidth: "320px"
+            containerWidth: "320px",
+            offset: '10px'
         },
         xs: {
             width: "575.99px",
             fields: "10px",
-            containerWidth: "100%"
+            containerWidth: "100%",
+            offset: '10px'
         }
     },
 });

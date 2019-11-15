@@ -20,4 +20,13 @@ $(function () {
 
     });
 
+
+    $('.filters__top').on('click', function (e) {
+        let $this = $(this),
+            filters = $this.closest('.filters');
+
+        filters.toggleClass('active');
+
+    });
+
 });

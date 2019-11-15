@@ -27,89 +27,150 @@ html(lang="ru")
         .wrapper
             //- heeader
             header.header
-                //- top
-                .header__top
-                    .container
-                        .header__top-row
-                            //- left
-                            .header__top-left
-                                //- nav
-                                .hnav
-                                    each i in headerNav
-                                        a(href=i.href).hnav__item= i.title
+                //- desctop
+                .header__desctop
+                    //- top
+                    .header__top
+                        .container
+                            .header__top-row
+                                //- left
+                                .header__top-left
+                                    //- nav
+                                    .hnav
+                                        each i in headerNav
+                                            a(href=i.href).hnav__item= i.title
 
-                            //- right
-                            .header__top-right
-                                //- socials
-                                .socials
-                                    each i in socials
-                                        a(href=i.href).social
-                                            +image('images/icons/' + i.icon + '.svg','','social__svg')
-
-
-                //- middle
-                .header__middle
-                    .container
-                        .header__middle-row
-                            //- left
-                            .header__middle-left
-                                //- logo
-                                a(href='/').header__logo
-                                    +image('images/icons/logo.svg','','header__logo-img')
-                                    span.header__logo-title
-                                        | Интернет-магазин
-                                        br
-                                        | цветов и подарков
-
-                            //- right
-                            .header__middle-right
-                                //- contacts
-                                .header__contacts
-                                    //- tel
-                                    a(href='tel:8(800)984-12-12').header__tel.tel 8 (800) 984-12-12
-                                    //- callback
-                                    a(href='#').btn.jsCallorder
-                                        span.btn__img
-                                            +image('images/icons/tel.png', '', '')
-                                        span.btn__txt Обратный звонок
+                                //- right
+                                .header__top-right
+                                    //- socials
+                                    .socials
+                                        each i in socials
+                                            a(href=i.href).social
+                                                +image('images/icons/' + i.icon + '.svg','','social__svg')
 
 
-                //- bottom
-                .header__bottom
-                    .container
-                        .header__bottom-row
-                            //- left
-                            .header__bottom-left
-                                //- menu
-                                .header__menu
-                                    .menu
-                                        each i in menu
-                                            .menu__item
-                                                a(href='catalog.html').menu__link
-                                                    span.menu__link-title= i.title
-                                                    +icon('triangle','menu__link-svg')
-                                                .submenu
-                                                    each j in i.submenu
-                                                        a(href='catalog.html').submenu__item
-                                                            .submenu__item-title= j
+                    //- middle
+                    .header__middle
+                        .container
+                            .header__middle-row
+                                //- left
+                                .header__middle-left
+                                    //- logo
+                                    a(href='/').header__logo
+                                        +image('images/icons/logo.svg','','header__logo-img')
+                                        span.header__logo-title
+                                            | Интернет-магазин
+                                            br
+                                            | цветов и подарков
+
+                                //- right
+                                .header__middle-right
+                                    //- contacts
+                                    .header__contacts
+                                        //- tel
+                                        a(href='tel:8(800)984-12-12').header__tel.tel 8 (800) 984-12-12
+                                        //- callback
+                                        a(href='#').btn.jsCallorder
+                                            span.btn__img
+                                                +image('images/icons/tel.png', '', '')
+                                            span.btn__txt Обратный звонок
 
 
-                                //- link
-                                a(href='/').header__link
-                                    +image('images/icons/teddy.png', '','header__link-img')
-                                    span.header__link-title добавить к букету
+                    //- bottom
+                    .header__bottom
+                        .container
+                            .header__bottom-row
+                                //- left
+                                .header__bottom-left
+                                    //- menu
+                                    .header__menu
+                                        .menu
+                                            each i in menu
+                                                .menu__item
+                                                    a(href='catalog.html').menu__link
+                                                        span.menu__link-title= i.title
+                                                        +icon('triangle','menu__link-svg')
+                                                    .submenu
+                                                        each j in i.submenu
+                                                            a(href='catalog.html').submenu__item
+                                                                .submenu__item-title= j
 
 
-                            //- right
-                            .header__bottom-right
-                                //- controls
-                                .hcontrols
-                                    each i in headerControls
-                                        .hcontrols__item
-                                            a(href=i.href).hcontrol
-                                                +icon(i.icon,'hcontrol__svg')
-                                                if i.count
-                                                    span.hcontrol__count= i.count
+                                    //- link
+                                    a(href='/').header__link
+                                        +image('images/icons/teddy.png', '','header__link-img')
+                                        span.header__link-title добавить к букету
+
+
+                                //- right
+                                .header__bottom-right
+                                    //- controls
+                                    .hcontrols
+                                        each i in headerControls
+                                            .hcontrols__item
+                                                a(href=i.href).hcontrol
+                                                    +icon(i.icon,'hcontrol__svg')
+                                                    if i.count
+                                                        span.hcontrol__count= i.count
+
+
+
+                //- tablet
+                .header__tablet
+                    .theader
+                        //- top
+                        .theader__top
+                            .container
+                                .theader__top-row
+                                    //- left
+                                    .theader__top-left
+                                        //- logo
+                                        a(href='/').header__logo
+                                            +image('images/icons/logo.svg','','header__logo-img')
+
+
+
+                                    //- right
+                                    .theader__top-right
+                                        a(href='https://wa.me/79259841212').theader__wapp
+                                            +image('images/icons/whatsapp.svg','','theader__wapp-img')
+                                        .thcontrols
+                                            a(href='basket.html').thcontrol
+                                                +icon('basket','thcontrol__svg thcontrol__svg_basket')
+                                                span.thcontrol__count 99
+                                            button(type='button').thcontrol.jsMmenuOpen
+                                                +icon('menu','thcontrol__svg thcontrol__svg_menu')
+
+
+                        //- bottom
+                        .theader__bottom
+                            .container
+                                .theader__bottom-row
+                                    //- left
+                                    .theader__bottom-left
+                                        //- tel
+                                        a(href='tel:8(800)984-12-12').header__tel.tel 8 (800) 984-12-12
+
+                                    //- center
+                                    .theader__bottom-center
+                                        //- socials
+                                        .socials
+                                            each i in socials
+                                                a(href=i.href).social
+                                                    +image('images/icons/' + i.icon + '.svg','','social__svg')
+
+
+
+                                    //- right
+                                    .theader__bottom-right
+                                        //- callback
+                                        a(href='#').btn.jsCallorder.theader__callorder
+                                            span.btn__img
+                                                +image('images/icons/tel.png', '', '')
+                                            span.btn__txt Обратный звонок
+
+
+
 
 
             //- pages
@@ -177,6 +238,13 @@ html(lang="ru")
                                             span.fcontact__val-time пн-вс: 9:00 - 18:00
 
 
+                                .footer__socials
+                                    .socials
+                                        each i in socials
+                                            a(href=i.href).social
+                                                +image('images/icons/' + i.icon + '.svg','','social__svg')
+
+
                             //- right
                             .footer__right
                                 //- tel
@@ -191,6 +259,13 @@ html(lang="ru")
 
                                 a(href='#').footer__btn.btn3.jsCallorder
                                     span.btn3__txt заказазать звонок
+                //- tablet
+                .footer__tablet
+                    .container
+                        //- tel
+                        a(href='tel:8(800)984-12-12').footer__tel.tel.tel_g 8 (800) 984-12-12
+                        a(href='#').footer__btn.btn3.jsCallorder
+                            span.btn3__txt заказазать звонок
                 //- bottom
                 .footer__bottom
                     .container
@@ -336,6 +411,78 @@ html(lang="ru")
                     //- hidden
                     input(type='hidden' name='action' value='lazymanSubmit')
                     input(type='hidden' name='id' value='').form__id
+
+        //- mmenu
+        .mmenu
+            //- close
+            button(type='button').mmenu__close.jsMmenuClose
+                +icon('close', 'mmenu__close-svg')
+
+            //- wrap
+            .mmenu__wrap
+                //- search
+                .mmenu__block.mmenu__search
+                    form(action='search.html' method='post').msearch
+                        input(type='search' name='search' placeholder='Поиск по сайту').msearch__input
+                        button(type='submit').msearch__submit
+                            +icon('loop', 'msearch__submit-svg')
+
+                //- controls
+                .mmenu__block.mmenu__controls
+                    .mcontrols
+                        each i in mcontrols
+                            a(href=i.href class=i.cls).mcontrol
+                                +icon(i.icon,'mcontrol__svg mcontrol__svg_'+i.icon)
+                                span.mcontrol__title= i.title
+                                if i.count
+                                    span.mcontrol__count= i.count
+
+                //- nav
+                .mmenu__block.mmenu__nav
+                    .mnav
+                        each i in menu
+                            .mnav__item
+                                .mnav__item-btn= i.title
+                                .msubnav
+                                    each j in i.submenu
+                                        a(href='category.html').msubnav__item= j
+                //- menu
+                .mmenu__block.mmenu__list
+                    each i in mmenuList
+                        a(href=i.href).mmenu__item= i.title
+
+                //- bottom
+                .mmenu__block.mmenu__bottom
+                    //- left
+                    .mmenu__bottom-left
+                        a(href='tel:8(800)984-12-12').mmenu__tel 8 (800) 984-12-12
+
+                    //- center
+                    .mmenu__bottom-center
+                        .msocials
+                            each i in msocials
+                                a(href=i.href).msocial
+                                    +image('images/icons/' + i.icon + '.svg','','msocial__svg')
+
+                    //- right
+                    .mmenu__bottom-right
+                        //- callback
+                        a(href='#').btn.jsCallorder
+                            span.btn__img
+                                +image('images/icons/tel.png', '', '')
+                            span.btn__txt Обратный звонок
+
+
+
+
+
+
+
+
+
+
+
+
 
         .debug
             div
