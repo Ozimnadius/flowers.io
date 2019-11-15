@@ -97,8 +97,9 @@ mixin item(icon,src,title,dopClass)
                 +icon('arrow','item__one-svg')
                 span.item__one-txt Купить в 1 клик
 
-mixin filters
-    .filters
+
+mixin filters(sort)
+    div(class=sort==true?'filters_sort':'').filters
         //- top
         .filters__top
             //- btn
@@ -129,6 +130,15 @@ mixin filters
                                         input(type='text' name='to' value='237 990').range__input.range__input_to
                                 //- slider
                                 input(type='text' name='range' value='' data-type='double' data-min='390' data-max='300000' data-from='390' data-to='237990').range__slider
+                if sort
+                    //- sort
+                    .filter.filter_m
+                        select(data-placeholder='Сортировать по' name='sort').select.filter__select
+                            option(value='' label='Сортировать по')
+                            option(value='Популярности') Популярности
+                            option(value='Более дешевые') Более дешевые
+                            option(value='Более дорогие') Более дорогие
+                            option(value='Акции') Акции
                 //- name
                 .filter
                     select(name='flowers').select.filter__select
@@ -158,6 +168,7 @@ mixin filters
                         option(value='Lorem1') Lorem1
                         option(value='Lorem2') Lorem2
                         option(value='Lorem3') Lorem3
+
 
 mixin slider(title,dopClass)
     div(class=dopClass).slider

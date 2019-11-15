@@ -42,8 +42,7 @@ block content
 
                     //- filters
                     .catalog__filters
-                        +filters
-
+                        +filters(true)
                     //-items
                     div(class='blocks').catalog__items
                         .row
@@ -73,7 +72,7 @@ block content
 
         //- gifts
         section.catalog__gifts
-            +slider
+            +slider('Популярные подарки')
         //- content
         section.catalog__content
             .container

@@ -2,9 +2,19 @@
   padding-bottom: 90px;
   background-position: center 0;
   background-repeat: no-repeat;
+  @include lg-block{
+    padding-bottom: 70px;
+    background-image: none !important;
+  }
+  @include sm-block{
+    padding-bottom: 50px;
+  }
 
   &__main {
     margin-bottom: 80px;
+    @include sm-block{
+      margin-bottom: 60px;
+    }
   }
 
   &__top {
@@ -13,19 +23,34 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 45px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
   }
 
   &__controls {
     display: flex;
     align-items: center;
+    @include lg-block{
+      margin-top: 10px;
+    }
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__sort {
     margin-right: 40px;
+    @include lg-block{
+      margin-right: 0;
+    }
   }
 
   &__types {
     display: flex;
+    @include lg-block{
+      display: none;
+    }
   }
 
   &__type {
@@ -86,6 +111,17 @@
     padding: 30px;
     background: $beige;
     border-radius: 16px;
+    @include lg-block{
+      padding: 20px;
+      padding-bottom: 0;
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 10px;
+    }
   }
 
   &__pag {
@@ -95,12 +131,68 @@
 
   &__gifts {
     margin-bottom: 80px;
+    @include lg-block{
+      margin-bottom: 60px;
+    }
   }
 }
 
 .filters {
   position: relative;
   z-index: 80;
+
+  &_sort{
+    @include sm-block{
+      border-radius: 6px;
+      background-color: $beige;
+      padding: 13px 15px;
+    }
+
+
+    .filters__top{
+      @include sm-block{
+        border-radius: 6px;
+        border: 1px solid $grey1;
+        background-color: $bg;
+        padding: 13px 15px 13px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    }
+
+    .filters__btn{
+      @include sm-block{
+        margin-left: 0;
+        border-bottom: none;
+      }
+
+
+      &-txt{
+        @include sm-block{
+          text-transform: uppercase;
+        }
+
+      }
+    }
+
+
+    &.active{
+      padding: 0;
+
+      .filters__top{
+        padding: 13px 15px 13px 20px;
+        justify-content: space-between;
+      }
+      
+      .filters__btn{
+        &-txt{
+          text-transform: none;
+        }
+      }
+    }
+  }
 
   &.active {
     .filters {
@@ -127,6 +219,7 @@
       &__close {
         visibility: visible;
         opacity: 1;
+        display: flex;
       }
 
       &__wrap {
@@ -195,14 +288,13 @@
     height: 34px;
     border: 1px solid $bg;
     border-radius: 50%;
-    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 10;
     opacity: 0;
     visibility: hidden;
-    @include tr;
+    display: none;
 
     &-svg {
       width: 12px;
@@ -262,7 +354,7 @@
   &__top {
     border-radius: 6px;
     border: 1px solid $grey1;
-    padding: 20px;
+    padding: 13px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -272,6 +364,8 @@
       border-radius: 0;
       border: none;
       background: $red;
+      padding: 20px;
+
 
     }
   }
@@ -318,7 +412,13 @@
   @include col;
   @include size(24/5);
   position: relative;
-  //z-index: 80;
+
+  &_m{
+    display: none;
+    @include sm-block{
+      display: block;
+    }
+  }
 
 
   &:after {
@@ -1096,6 +1196,9 @@
     padding: 0;
     margin-right: 20px;
     font-size: 22px;
+    @include sm-block{
+      margin-right: 10px;
+    }
 
     &-val {
       width: 100%;
@@ -1131,6 +1234,12 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  &__arr{
+    @include sm-block{
+      display: none;
     }
   }
 }

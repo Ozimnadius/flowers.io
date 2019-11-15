@@ -110,6 +110,10 @@ $vh: 1080;
   h4 {
     font-size: 36px;
     font-weight: bold;
+    @include sm-block{
+      font-size: 22px;
+    }
+
   }
   h5 {
     font-size: 24px;
