@@ -30,10 +30,11 @@ block content
                         .contacts__txt Мы находимся около станции метро Проспект Мира
                         .contacts__list
                             each i in contactsList
-                                a(href=i.href class=i.dopClass).contacts__item
-                                    +icon(i.icon,'contacts__item-svg')
-                                    span.contacts__item-txt= i.val
-
+                                div(class='contacts__list-col_' + i.cls).contacts__list-col
+                                    each j in i.list
+                                        a(href=j.href class=j.dopClass).contacts__item
+                                            +icon(j.icon,'contacts__item-svg')
+                                            span.contacts__item-txt= j.val
 
         //- feed
         section.contacts__feed

@@ -501,27 +501,38 @@
 -
     var contactsList = [
         {
-            icon: 'phone',
-            val: '8 (800) 984-12-12',
-            href: 'tel:8(800)984-12-12'
+            cls: 'left',
+            list: [
+                {
+                    icon: 'phone',
+                    val: '8 (800) 984-12-12',
+                    href: 'tel:8(800)984-12-12'
+                },
+                {
+                    icon: 'email',
+                    val: 'flowers@gmail.com',
+                    href: 'mailto:flowers@gmail.com',
+                    dopClass: 'email'
+                }
+            ]
         },
         {
-            icon: 'email',
-            val: 'flowers@gmail.com',
-            href: 'mailto:flowers@gmail.com',
-            dopClass: 'email'
-        },
-        {
-            icon: 'map',
-            val: 'г. Москва, ул.2-ая Прядильная, д.1',
-            dopClass: 'light'
-        },
-        {
-            icon: 'clock',
-            val: 'пн-вс: 9:00-18-00',
-            dopClass: 'light'
+            cls: 'right',
+            list: [
+                {
+                    icon: 'map',
+                    val: 'г. Москва, ул.2-ая Прядильная, д.1',
+                    dopClass: 'light'
+                },
+                {
+                    icon: 'clock',
+                    val: 'пн-вс: 9:00-18-00',
+                    dopClass: 'light'
+                }
+            ]
         }
     ];
+
 -
     var deliveryList = [
         {

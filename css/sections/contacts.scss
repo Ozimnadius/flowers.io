@@ -1,13 +1,35 @@
 .contacts{
   background: url("/images/content/index/banner/bg.png") center 15px no-repeat;
   padding-bottom: 90px;
+  @include lg-block{
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 0;
+  }
+  @include sm-block{
+    background-size: initial;
+    background-position: center -300px;
+  }
 
   &__main {
     margin-bottom: 200px;
+    @include lg-block{
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 60px;
+    }
   }
 
   &__title {
     margin-bottom: 40px;
+    @include lg-block{
+      margin-bottom: 25px;
+    }
+    @include sm-block{
+      margin-bottom: 15px;
+    }
   }
 
   &__row {
@@ -18,15 +40,32 @@
     @include col;
     @include size(16);
     padding-right: 65px;
+    @include size-lg(24);
+    @include lg-block{
+      padding-right: 0;
+      order: 1;
+    }
+    @include size-sm(24);
   }
 
   &__map {
     height: 481px;
+    @include lg-block{
+      height: 415px;
+    }
+    @include sm-block{
+      height: 176px;
+    }
   }
 
   &__right {
     @include col;
     @include size(8);
+    @include size-lg(24);
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__txt {
@@ -35,17 +74,65 @@
     font-weight: 600;
     line-height: lh(40,52);
     margin-bottom: 50px;
+    @include lg-block{
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list{
+    @include lg-block{
+        @include row-flex;
+    }
+
+    &-col {
+      margin-bottom: 25px;
+      @include lg-block{
+          @include col;
+      }
+      @include sm-block{
+        margin-bottom: 14px;
+      }
+
+      &_left{
+        @include size-lg(10);
+        @include size-sm(24);
+      }
+
+      &_right{
+        @include size-lg(14);
+        @include size-sm(24);
+      }
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
+    @include sm-block{
+      margin-bottom: 14px;
+    }
 
     &.email {
       .contacts__item {
         &-txt {
           color: $red;
+        }
+
+        &-svg{
+          @include sm-block{
+            width: 18px;
+            height: 15px;
+          }
         }
       }
     }
@@ -68,17 +155,43 @@
       height: 29px;
       fill: url(#gradient1);
       margin-right: 25px;
+      @include sm-block{
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+      }
     }
 
     &-txt{
       color: $text2;
       font-size: 24px;
       font-weight: 600;
+      @include lg-block{
+        font-size: 22px;
+      }
+      @include sm-block{
+        font-size: 16px;
+      }
     }
   }
 
   &__feed {
     margin-bottom: 100px;
+    @include lg-block{
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 65px;
+    }
+  }
+
+  &__advs{
+    @include lg-block{
+      margin-bottom: 70px;
+    }
+    @include sm-block{
+      margin-bottom: 40px;
+    }
   }
 
 }
@@ -94,9 +207,16 @@
     height: 466px;
     margin-top: -233px;
     background-color: $red;
+    @include sm-block{
+      height: 374px;
+      margin-top: -187px;
+    }
 
     .container{
       height: 100%;
+      @include lg-block{
+        display: none;
+      }
       .row{
         height: 100%;
       }
@@ -130,12 +250,28 @@
     position: relative;
     z-index: 20;
     padding: 10px;
+    @include size-lg(21);
+    @include shift-lg(1.5);
+    @include size-sm(24);
+    @include shift-sm(0);
+    @include sm-block{
+      border-radius: 12px;
+      padding: 3px;
+    }
   }
 
   &__wrap {
     border-radius: 33px;
     border: 1px solid $grey1;
     padding: 60px 50px 70px 50px;
+    @include lg-block{
+      padding: 30px 40px 40px 40px;
+      border-radius: 27px;
+    }
+    @include sm-block{
+      padding: 35px 20px;
+      border-radius: 12px;
+    }
   }
 
   &__title{
@@ -143,9 +279,16 @@
     text-align: center;
     font-size: 40px;
     font-weight: 700;
-    line-height: 52px;
     text-transform: uppercase;
     margin-bottom: 40px;
+    @include lg-block{
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    @include sm-block{
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
   }
 
   &__fields{
@@ -156,6 +299,10 @@
     @include col;
     @include size(12);
     margin-bottom: 25px;
+    @include size-lg(24);
+    @include lg-block{
+      margin-bottom: 20px;
+    }
 
     &_2{
       @include size(24);
@@ -166,6 +313,12 @@
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 10px;
+      @include lg-block{
+        font-size: 16px;
+      }
+      @include sm-block{
+        font-size: 14px;
+      }
     }
   }
 
@@ -176,9 +329,19 @@
     border-radius: 6px;
     border: 1px solid $grey1;
     width: 100%;
+    @include lg-block{
+      padding: 16px 20px;
+      font-size: 16px;
+    }
 
     &_area{
       height: 138px;
+      @include lg-block{
+        height: 111px;
+      }
+      @include sm-block{
+        height: 52px;
+      }
     }
   }
 
@@ -187,6 +350,14 @@
     height: 60px;
     border-radius: 40px;
     margin: 0 auto;
+    @include lg-block{
+      width: 278px;
+      height: 51px;
+      border-radius: 32px;
+    }
+    @include sm-block{
+      width: 100%;
+    }
   }
 }
 
@@ -194,6 +365,13 @@
   &__list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    @include lg-block{
+      padding: 0 55px;
+    }
+    @include sm-block{
+      padding: 0;
+    }
   }
 
   &__item {
@@ -201,6 +379,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block{
+      width: 50%;
+      margin-bottom: 15px;
+    }
 
     &-block {
       width: 151px;
@@ -210,6 +392,19 @@
       background-color: $bg;
       padding: 11px;
       margin-bottom: 25px;
+      @include lg-block{
+        width: 85px;
+        height: 86px;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+        border-radius: 13px;
+        padding: 6px;
+        margin-bottom: 15px;
+      }
+      @include sm-block{
+        width: 67px;
+        height: 67px;
+        padding: 4px;
+      }
     }
 
     &-wrap {
@@ -219,6 +414,13 @@
       border: 1px solid $grey1;
       background-color: #f0e8cd;
       padding: 4px;
+      @include lg-block{
+        border-radius: 10px;
+        padding: 2px;
+      }
+      @include sm-block{
+
+      }
     }
 
     &-img {
@@ -229,6 +431,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include lg-block{
+        border-radius: 10px;
+        padding: 15px 10px;
+      }
+      @include sm-block{
+        padding: 10px 6px;
+      }
+    }
+
+    &-pic{
+      max-height: 100%;
     }
 
     &-title {
@@ -237,6 +450,12 @@
       font-weight: 600;
       line-height: lh(18, 20.04);
       text-align: center;
+      @include lg-block{
+        font-size: 16px;
+      }
+      @include sm-block{
+        font-size: 14px;
+      }
     }
   }
 }
