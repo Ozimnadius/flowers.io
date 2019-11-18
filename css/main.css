@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Proxima Nova';
   src: local("Proxima Nova Black"), local("ProximaNova-Black"), url("../fonts/ProximaNova-Black.woff2") format("woff2"), url("../fonts/ProximaNova-Black.woff") format("woff");
@@ -1856,6 +1857,16 @@ input, textarea {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 1379.99px) {
+  .map {
+    border: 6px solid #ffffff;
+    border-top-left-radius: 50% 14px;
+    border-top-right-radius: 50% 14px;
+    border-bottom-left-radius: 50% 14px;
+    border-bottom-right-radius: 50% 14px;
+  }
+}
+
 @media screen and (max-width: 769.99px) {
   .map {
     border: 5px solid #ffffff;
@@ -1874,6 +1885,15 @@ input, textarea {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .map iframe {
+    border-top-left-radius: 50% 12px;
+    border-top-right-radius: 50% 12px;
+    border-bottom-left-radius: 50% 12px;
+    border-bottom-right-radius: 50% 12px;
+  }
 }
 
 @media screen and (max-width: 769.99px) {
@@ -11071,18 +11091,62 @@ input, textarea {
   position: relative;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery {
+    background: none;
+  }
+}
+
 .delivery__main {
   margin-bottom: 110px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__main {
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__main {
+    margin-bottom: 60px;
+  }
 }
 
 .delivery__title {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__title {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__title {
+    margin-bottom: 13px;
+  }
+}
+
 .delivery__top {
   background: url("/images/content/delivery/img.png") 0 0 no-repeat;
   background-size: 33.59375%;
   margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__top {
+    background-size: 29.5%;
+    margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__top {
+    background: none;
+    margin-bottom: 50px;
+  }
 }
 
 .delivery__top-col {
@@ -11110,8 +11174,50 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__top-col {
+    width: calc(66.66667% - 20px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__top-col {
+    margin-left: calc(33.33333% + 10px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__top-col {
+    margin-right: calc(0% + 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__top-col {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__top-col {
+    margin-left: calc(0% + 5px);
+  }
+}
+
 .delivery__row {
   margin-bottom: 130px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__row {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__row {
+    margin-bottom: 50px;
+  }
 }
 
 .delivery__txt {
@@ -11120,6 +11226,20 @@ input, textarea {
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__txt {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__txt {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 
 .delivery__item {
@@ -11132,6 +11252,21 @@ input, textarea {
   align-items: center;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__item {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__item {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+}
+
 .delivery__item:last-child {
   margin-bottom: 0;
 }
@@ -11141,10 +11276,32 @@ input, textarea {
   min-width: 145px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__item-img {
+    min-width: 82px;
+    width: 82px;
+    margin-right: 45px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__item-img {
+    min-width: 55px;
+    width: 55px;
+    margin-right: 25px;
+  }
+}
+
 .delivery__item-txt {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.35;
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__item-txt {
+    font-size: 16px;
+  }
 }
 
 .delivery__item-txt i {
@@ -11165,6 +11322,20 @@ input, textarea {
   line-height: 1.3;
   text-transform: uppercase;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__sub {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__sub {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
 }
 
 .delivery__left, .delivery__right {
@@ -11190,12 +11361,46 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__left, .delivery__right {
+    width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__left, .delivery__right {
+    width: calc(100% - 10px);
+  }
+}
+
 .delivery__left {
   padding-right: 45px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .delivery__left {
+    padding-right: 0;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-top: 40px;
+  }
+}
+
 .delivery__map {
   height: 299px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .delivery__map {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__map {
+    height: 145px;
+  }
 }
 
 .delivery__desc {
@@ -11205,6 +11410,15 @@ input, textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__desc {
+    margin-top: 25px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
 }
 
 .delivery__desc-svg {
@@ -11218,6 +11432,12 @@ input, textarea {
 .delivery__desc-txt {
   font-size: 20px;
   line-height: 1.35;
+}
+
+@media screen and (max-width: 769.99px) {
+  .delivery__desc-txt {
+    font-size: 16px;
+  }
 }
 
 .dtable__col {
@@ -11242,16 +11462,86 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 769.99px) {
+  .dtable__col {
+    margin-bottom: 25px;
+  }
+  .dtable__col:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.dtable__col:before {
+  content: '';
+  display: block;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
 .dtable__col_1 {
   width: calc(41.66667% - 20px);
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dtable__col_1 {
+    width: calc(33.33333% - 20px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_1 {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_1:before {
+    content: 'Сумма заказа:';
+  }
 }
 
 .dtable__col_2 {
   width: calc(33.33333% - 20px);
 }
 
+@media screen and (max-width: 1379.99px) {
+  .dtable__col_2 {
+    width: calc(33.33333% - 20px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_2 {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_2:before {
+    content: 'Доставка внутри МКАДа:';
+  }
+}
+
 .dtable__col_3 {
   width: calc(25% - 20px);
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dtable__col_3 {
+    width: calc(33.33333% - 20px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_3 {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__col_3:before {
+    content: 'Доставка за МКАД:';
+  }
 }
 
 .dtable__head {
@@ -11260,10 +11550,29 @@ input, textarea {
   border: 1px solid #ab9fb9;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .dtable__head {
+    padding: 14px 0;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__head {
+    display: none;
+  }
+}
+
 .dtable__th {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dtable__th {
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 .dtable__item {
@@ -11271,10 +11580,34 @@ input, textarea {
   border-bottom: 1px solid #ab9fb9;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .dtable__item {
+    padding: 24px 0;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__item {
+    padding: 30px 0;
+  }
+}
+
 .dtable__item .row {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dtable__td {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dtable__td {
+    text-align: left;
+  }
 }
 
 .dtable__td i {
@@ -11311,11 +11644,48 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 1379.99px) {
+  .dbanner__left {
+    width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dbanner__left {
+    padding: 75px 0;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__left {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__left {
+    padding: 35px 0;
+  }
+}
+
 .dbanner__title {
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 35px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dbanner__title {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
 }
 
 .dbanner__item {
@@ -11333,6 +11703,14 @@ input, textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__item {
+    min-height: 75px;
+    height: auto;
+    padding: 15px 20px;
+  }
 }
 
 .dbanner__item:last-child {
@@ -11353,12 +11731,27 @@ input, textarea {
 .dbanner__item-img {
   margin-right: 40px;
   min-width: 75px;
+  width: 75px;
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__item-img {
+    min-width: 53px;
+    width: 53px;
+    margin-right: 15px;
+  }
 }
 
 .dbanner__item-txt {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.45;
+}
+
+@media screen and (max-width: 769.99px) {
+  .dbanner__item-txt {
+    font-size: 16px;
+  }
 }
 
 .dbanner__right {
@@ -11382,6 +11775,12 @@ input, textarea {
   .dbanner__right {
     margin-left: 5px;
     margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .dbanner__right {
+    display: none;
   }
 }
 
