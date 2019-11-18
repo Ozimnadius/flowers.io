@@ -9691,6 +9691,18 @@ input, textarea {
   padding-bottom: 100px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .news {
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .news {
+    padding-bottom: 60px;
+  }
+}
+
 .news__title {
   text-align: center;
   margin-bottom: 27px;
@@ -9699,6 +9711,12 @@ input, textarea {
 
 .news__list {
   margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .news__list {
+    margin-bottom: 10px;
+  }
 }
 
 .news__item {
@@ -9726,9 +9744,40 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 1379.99px) {
+  .news__item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .news__item {
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .news__item {
+    width: calc(100% - 10px);
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .news__item {
+    margin-bottom: 20px;
+  }
+}
+
 .news__item.top {
   position: relative;
   top: 80px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .news__item.top {
+    position: static;
+  }
 }
 
 .news__pag {
@@ -9751,6 +9800,18 @@ input, textarea {
   overflow: hidden;
   height: 560px;
   position: relative;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .nitem {
+    height: 464px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .nitem {
+    height: 391px;
+  }
 }
 
 .nitem:hover .nitem__popup {
@@ -9799,6 +9860,13 @@ input, textarea {
   text-align: center;
 }
 
+@media screen and (max-width: 769.99px) {
+  .nitem__wrap {
+    padding: 0 20px;
+    bottom: 10px;
+  }
+}
+
 .nitem__title {
   color: #eb3a5f;
   font-size: 20px;
@@ -9807,8 +9875,20 @@ input, textarea {
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .nitem__title {
+    font-size: 16px;
+  }
+}
+
 .nitem__date {
   font-weight: 600;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .nitem__date {
+    font-size: 14px;
+  }
 }
 
 .nitem__popup {
