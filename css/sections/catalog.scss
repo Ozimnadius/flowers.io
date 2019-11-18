@@ -678,6 +678,9 @@
       background: url("/images/bg/pattern-item.png") center 0;
       opacity: 0;
       @include tr;
+      @include lg-block{
+        display: none;
+      }
     }
   }
 

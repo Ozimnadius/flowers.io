@@ -1,12 +1,27 @@
-.product{
+.product {
 
   &__main {
     background: url("/images/content/product/bg.png") center 0 no-repeat;
     margin-bottom: 200px;
+    @include lg-block {
+      background: url("/images/content/product/bg-t.png") center 0 no-repeat;
+      margin-bottom: 70px;
+    }
+    @include sm-block {
+      background: url("/images/content/product/bg-m.png") center 0 no-repeat;
+      margin-bottom: 60px;
+    }
   }
 
-  &__container{
+  &__container {
     margin-top: -40px;
+    @include lg-block {
+      margin-top: 18px;
+      position: relative;
+    }
+    @include sm-block {
+      margin-top: 7px;
+    }
   }
 
   &__title {
@@ -24,6 +39,14 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
+      @include lg-block {
+        font-size: 18px;
+        margin-bottom: 17px;
+      }
+      @include sm-block {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
     }
 
     &-bottom {
@@ -32,18 +55,36 @@
       -webkit-text-fill-color: transparent;
       font-size: 50px;
       text-transform: uppercase;
+      @include lg-block {
+        font-size: 36px;
+        font-weight: 400;
+      }
+      @include sm-block {
+        font-size: 24px;
+      }
     }
   }
 
   /* left */
-  &__left{
+  &__left {
     @include col;
     @include size(8);
     padding-right: 70px;
     padding-top: 30px;
+    @include lg-block {
+      order: 2;
+      padding: 0;
+      padding-top: 70px;
+      padding-left: 45px;
+    }
+    @include size-lg(12);
+    @include size-sm(24);
+    @include sm-block{
+      padding: 0;
+    }
   }
 
-  &__status{
+  &__status {
     color: $green;
     font-weight: 600;
     margin-bottom: 17px;
@@ -53,74 +94,133 @@
     }
   }
 
-  &__chars{
+  &__chars {
     margin-bottom: 20px;
+    @include lg-block {
+      margin-bottom: 25px;
+    }
   }
 
-  &__char{
+  &__char {
     margin-bottom: 20px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
 
-    &-name{
+    &-name {
       color: $text2;
       font-weight: 700;
       margin-bottom: 10px;
+      @include lg-block {
+        margin-bottom: 13px;
+      }
     }
 
   }
 
-  &__postcard{
+  &__postcard {
     position: relative;
     margin-bottom: 70px;
+    @include lg-block {
+      margin-bottom: 0;
+    }
+    @include sm-block{
+      margin-bottom: 15px;
+    }
 
-    &-img{
+    &-img {
       position: relative;
       left: -6px;
     }
 
-    &-txt{
+    &-txt {
       position: absolute;
       top: 40px;
       left: 97px;
       font-weight: 700;
-      line-height: lh(16,20.8);
+      line-height: lh(16, 20.8);
+
+      background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
   &__list {
     display: flex;
     justify-content: space-between;
+    @include lg-block {
+      display: none;
+    }
+    @include sm-block{
+      display: flex;
+      @include row-flex;
+    }
+
+    &_t {
+      display: none;
+      @include lg-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 40px);
+        transform: translateY(-50%);
+      }
+      @include sm-block{
+        display: none;
+      }
+    }
   }
 
-  &__item{
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include lg-block {
+      width: 125px;
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    @include sm-block{
+        @include col;
+      margin-bottom: 0;
+    }
+    @include size-sm(12);
 
-    &-img{
+    &-img {
       width: 46px;
       height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
+      @include lg-block {
+        margin-bottom: 13px;
+      }
     }
 
-    &-pic{
+    &-pic {
       max-height: 100%;
     }
 
-    &-txt{
+    &-txt {
       color: $red;
       font-size: 18px;
       font-weight: 600;
-      line-height: lh(16,20.04);
+      line-height: lh(16, 20.04);
       text-align: center;
+      @include lg-block {
+        font-size: 16px;
+      }
     }
   }
+
   /* END left */
 
 
@@ -129,13 +229,24 @@
     @include col;
     @include size(8);
     position: relative;
+    @include size-lg(12);
+    @include shift-lg(6);
+    @include lg-block {
+      margin-bottom: 35px;
+    }
+    @include size-sm(24);
+    @include shift-sm(0);
+    @include sm-block {
+      padding: 0 15px;
+      margin-bottom: 100px;
+    }
   }
 
-  &__img{
+  &__img {
     position: relative;
 
 
-    &-wrap{
+    &-wrap {
       height: 565px;
       border: 1px solid transparent;
       border-top-left-radius: 50% 20px;
@@ -143,6 +254,14 @@
       border-bottom-left-radius: 50% 20px;
       border-bottom-right-radius: 50% 20px;
       overflow: hidden;
+
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+      @include lg-block {
+        height: 430px;
+      }
+      @include sm-block {
+        height: 343px;
+      }
 
       &:after {
         content: '';
@@ -171,20 +290,31 @@
       display: block;
     }
 
-    &-stick{
+    &-stick {
       position: absolute;
       z-index: 20;
       top: -7px;
       left: -40px;
+      @include lg-block {
+        width: 100px;
+      }
+      @include sm-block {
+        width: 80px;
+        top: 10px;
+        left: 10px;
+      }
     }
 
   }
 
-  &__controls{
+  &__controls {
     position: absolute;
     right: 0;
     bottom: 50px;
     z-index: 20;
+    @include sm-block {
+      bottom: 45px;
+    }
   }
 
   &__control {
@@ -199,18 +329,21 @@
     border-bottom-left-radius: 21px;
     margin-bottom: 10px;
     @include tr;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
 
-    &:hover{
+    &:hover {
       background-color: $red;
       border-color: $red;
-      .product__control{
-        &-svg{
+
+      .product__control {
+        &-svg {
           fill: $bg;
         }
-        &-txt{
+
+        &-txt {
           color: $bg;
         }
       }
@@ -222,15 +355,20 @@
       fill: $grey1;
       margin-right: 7px;
       @include tr;
+      @include sm-block {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+      }
     }
 
-    &-txt{
+    &-txt {
       font-size: 14px;
       @include tr;
     }
   }
 
-  &__images{
+  &__images {
     position: absolute;
     top: 50%;
     right: calc(100% + 30px);
@@ -238,20 +376,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block {
+      top: calc(100% + 20px);
+      left: 0;
+      right: 0;
+      z-index: 1;
+      transform: translateY(0);
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 
-  &__image{
+  &__image {
     border-radius: 50%;
     margin-bottom: 24px;
     opacity: .5;
     cursor: pointer;
     position: relative;
-
-    &:last-child{
+    @include sm-block {
       margin-bottom: 0;
+      margin-right: 30px;
     }
 
-    &:after{
+    &:last-child {
+      margin-bottom: 0;
+      @include sm-block {
+        margin-right: 0;
+      }
+    }
+
+    &:after {
       content: '';
       position: absolute;
       left: 100%;
@@ -261,6 +415,14 @@
       height: 1px;
       background-color: #fb5a3c;
       display: none;
+      @include sm-block {
+        left: 50%;
+        margin-left: -.5px;
+        height: 31px;
+        width: 1px;
+        top: initial;
+        bottom: 100%;
+      }
     }
 
     &-wrap {
@@ -269,25 +431,40 @@
       border-radius: 50%;
       border: 4px solid transparent;
       overflow: hidden;
+      @include lg-block {
+        width: 52px;
+        height: 52px;
+      }
     }
 
-    &.active{
+    &.active {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       opacity: 1;
 
-      .product__image-wrap{
+      .product__image-wrap {
         width: 53px;
         height: 53px;
         border-color: #fb5a3c;
+        @include lg-block {
+          width: 62px;
+          height: 62px;
+        }
       }
 
-      &:after{
+      &:after {
         display: block;
       }
 
     }
 
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
   }
+
   /* END center */
 
 
@@ -297,62 +474,104 @@
     @include size(8);
     padding-left: 40px;
     padding-top: 20px;
+    @include lg-block {
+      order: 1;
+      padding: 0;
+    }
+    @include size-lg(12);
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
-  &__prices{
+  &__prices {
     display: flex;
     align-items: flex-end;
     margin-bottom: 5px;
+    @include lg-block {
+      margin-bottom: 10px;
+    }
+    @include sm-block {
+      justify-content: center;
+      margin-bottom: 15px;
+
+    }
+
+    .price__cur {
+      text-transform: none;
+
+    }
   }
 
-  &__price{
+  &__price {
     margin-right: 10px;
-    .price{
+
+    .price {
       font-size: 28px;
+      @include sm-block {
+        font-size: 24px;
+        font-weight: 700;
+      }
     }
   }
 
-  &__oldprice{
-    .price{
+  &__oldprice {
+    .price {
       font-size: 18px;
+      @include sm-block {
+        font-size: 14px;
+      }
     }
   }
 
-  &__notice{
+  &__notice {
     opacity: 0.5;
     color: $black;
     font-size: 14px;
     margin-bottom: 25px;
+    @include sm-block {
+      text-align: center;
+    }
   }
 
-  &__vars{
+  &__vars {
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 0;
+    }
   }
 
-  &__var{
+  &__var {
     cursor: pointer;
     margin-bottom: 10px;
     display: block;
-    &:last-child{
+    @include sm-block{
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
       margin-bottom: 0;
     }
 
     &-input {
       display: none;
 
-      &:checked+.product__var-wrap{
+      &:checked + .product__var-wrap {
         border: 1px solid $purple8;
         background-color: $bg;
-        .product__var{
 
-          &-fake{
-            border-color:$purple8;
-            &:after{
+        .product__var {
+
+          &-fake {
+            border-color: $purple8;
+
+            &:after {
               opacity: 1;
             }
           }
 
-          &-title{
+          &-title {
             color: $purple8;
             font-weight: 600;
           }
@@ -360,7 +579,7 @@
       }
     }
 
-    &-wrap{
+    &-wrap {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       border-radius: 6px;
       border: 1px solid $grey1;
@@ -369,14 +588,17 @@
       justify-content: space-between;
       padding: 17px 20px;
       @include tr;
+      @include sm-block{
+        padding: 13px 15px;
+      }
     }
 
-    &-left{
+    &-left {
       display: flex;
       align-items: center;
     }
 
-    &-fake{
+    &-fake {
       min-width: 21px;
       width: 21px;
       height: 21px;
@@ -386,7 +608,7 @@
       margin-right: 10px;
       position: relative;
 
-      &:after{
+      &:after {
         content: '';
         display: block;
         width: 26px;
@@ -400,7 +622,7 @@
       }
     }
 
-    &-title{
+    &-title {
       margin-right: 5px;
       line-height: 1;
       @include tr;
@@ -412,18 +634,35 @@
       align-self: flex-end;
       line-height: 1;
       margin-bottom: 3px;
+      @include sm-block{
+        font-size: 10px;
+      }
     }
 
-    &-price{
+    &-price {
       color: $text2;
       font-weight: 600;
+      @include sm-block{
+        font-size: 14px;
+      }
     }
   }
 
-  &__btns{
+  &__btns {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block{
+      display: none;
+    }
+
+    &_m{
+      display: none;
+      @include sm-block{
+        display: flex;
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &__buy {
@@ -431,9 +670,12 @@
     height: 60px;
     border-radius: 40px;
     margin-bottom: 25px;
+    @include sm-block{
+      width: 100%;
+    }
   }
 
-  &__one{
+  &__one {
     display: flex;
     align-items: center;
     position: relative;
@@ -499,19 +741,32 @@
       @include tr;
     }
   }
+
   /* END right */
 
-  &__gifts{
+  &__gifts {
     margin-bottom: 60px;
+    @include lg-block {
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 65px;
+    }
   }
 
-  &__pop{
+  &__pop {
     margin-bottom: 105px;
+    @include lg-block {
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 60px;
+    }
   }
 
 }
 
-.pop{
+.pop {
 
   &__title {
     width: 656px;
@@ -534,12 +789,33 @@
     -webkit-text-fill-color: transparent;
     position: relative;
 
+    @include lg-block {
+      width: 516px;
+      height: 72px;
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+    @include sm-block{
+      font-size: 22px;
+      width: 100%;
+      height: 46px;
+      margin-bottom: 20px;
+    }
+
     &:before {
       content: url("/images/content/index/pop/border-left.png");
       display: block;
       position: absolute;
       left: -64px;
       top: -44px;
+      @include lg-block {
+        top: -57px;
+      }
+      @include sm-block{
+        content: url("/images/content/index/pop/border-left-m.png");
+        left: -30px;
+        top: 7px;
+      }
     }
 
     &:after {
@@ -548,6 +824,18 @@
       position: absolute;
       right: -58px;
       top: -36px;
+      @include sm-block{
+        content: url("/images/content/index/pop/border-right-m.png");
+        top: -16px;
+        right: -29px;
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 0 30px;
+    @include sm-block{
+      padding: 0;
     }
   }
 
@@ -556,11 +844,20 @@
     margin-bottom: -225px;
     pointer-events: none;
     z-index: 20;
+    @include sm-block{
+      padding-bottom: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__slide {
     box-sizing: border-box;
     pointer-events: initial;
+    height: auto;
+
+    .item {
+      height: 100%;
+    }
   }
 
   &__nav {
@@ -577,6 +874,9 @@
     height: 46px;
     border-radius: 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    @include sm-block{
+      display: none;
+    }
 
     &:hover {
 
@@ -603,8 +903,12 @@
     overflow: hidden;
     position: relative;
     background: $bg;
+    @include sm-block{
+      width: 100%;
+      margin: 0;
+    }
 
-    &:after{
+    &:after {
       content: '';
       display: block;
       position: absolute;
@@ -617,7 +921,7 @@
       border-radius: 54px;
     }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;

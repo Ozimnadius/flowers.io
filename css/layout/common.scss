@@ -87,7 +87,7 @@
     height: 64px;
     border-radius: 36px;
   }
-  @include sm-block{
+  @include sm-block {
     width: 254px;
     height: 57px;
     border-radius: 31px;
@@ -130,7 +130,7 @@
     @include md-block {
       font-size: 16px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 14px;
       padding-left: 50px;
     }
@@ -526,10 +526,10 @@
     color: $purple3;
     font-size: 25px;
     font-weight: 700;
-    @include lg-block{
+    @include lg-block {
       font-size: 28px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 25px;
     }
   }
@@ -561,10 +561,10 @@
 
 .bread {
   padding: 55px 0 20px 0;
-  @include lg-block{
+  @include lg-block {
     padding: 33px 0 20px 0;
   }
-  @include sm-block{
+  @include sm-block {
     padding: 23px 0;
   }
 
@@ -587,10 +587,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  @include lg-block{
+  @include lg-block {
     font-size: 38px;
   }
-  @include sm-block{
+  @include sm-block {
     font-size: 22px;
   }
 }
@@ -607,14 +607,15 @@
     padding-bottom: 70px;
     margin: 0;
     background: url(/images/content/slider/bg-t.svg) 0 0 repeat, linear-gradient(102.4deg, #fe5b3a 0%, #8f43fe 100%);
+    box-shadow: 0 4px 0 #7e256b;
   }
-  @include sm-block{
+  @include sm-block {
     padding: 40px 0;
   }
 
   .container {
     padding: 0 50px;
-    @include sm-block{
+    @include sm-block {
       padding: 0 10px;
     }
   }
@@ -622,10 +623,45 @@
   &_2 {
     background-image: url("/images/content/slider/bg2.png");
     padding-top: 295px;
+    @include lg-block {
+      padding-top: 20px;
+      padding-bottom: 70px;
+      margin: 0;
+      background: url(/images/content/slider/bg-t.svg) 0 0 repeat, linear-gradient(102.4deg, #fe5b3a 0%, #8f43fe 100%);
+    }
+    @include sm-block {
+      padding: 40px 0;
+    }
 
     .slider__text {
       width: 166px;
       font-size: 24px;
+      @include lg-block {
+        width: auto;
+        font-size: 24px;
+      }
+      @include sm-block {
+        display: none;
+      }
+    }
+
+    .slider__title {
+      @include lg-block{
+        width: 100%;
+
+      }
+
+      &-txt {
+        @include lg-block {
+          flex-grow: 1;
+          padding-left: 15px;
+          padding-right: 15px;
+          font-size: 28px;
+        }
+        @include sm-block{
+          font-size: 18px;
+        }
+      }
     }
   }
 
@@ -648,7 +684,7 @@
       margin-right: 0;
       margin-bottom: 10px;
     }
-    @include sm-block{
+    @include sm-block {
       width: 100%;
       text-align: center;
       margin-bottom: 0;
@@ -660,7 +696,7 @@
       @include lg-block {
         width: 93px;
       }
-      @include sm-block{
+      @include sm-block {
         display: none;
       }
     }
@@ -690,7 +726,7 @@
         padding-left: 30px;
         padding-right: 40px;
       }
-      @include sm-block{
+      @include sm-block {
         border: 1px solid $bg;
         border-radius: 102px;
         width: 100%;
@@ -711,11 +747,11 @@
     font-size: 30px;
     line-height: lh(30, 36);
     margin-bottom: 10px;
-    @include lg-block{
+    @include lg-block {
       width: auto;
       font-size: 24px;
     }
-    @include sm-block{
+    @include sm-block {
       display: none;
     }
   }
@@ -724,7 +760,7 @@
     padding-bottom: 250px;
     margin-bottom: -215px;
     pointer-events: none;
-    @include lg-block{
+    @include lg-block {
       padding-bottom: 0;
       margin-bottom: 20px;
     }
@@ -735,7 +771,7 @@
     pointer-events: initial;
     height: auto;
 
-    .item{
+    .item {
       height: 100%;
     }
   }
@@ -745,10 +781,10 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 65px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 30px;
     }
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 25px;
     }
   }
@@ -759,7 +795,7 @@
     border-radius: 50%;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     @include tr;
-    @include sm-block{
+    @include sm-block {
       display: none;
     }
 
@@ -785,7 +821,7 @@
     background-color: rgba(255, 255, 255, 0.4);
     margin: 0 24px;
     padding: 3px;
-    @include sm-block{
+    @include sm-block {
       margin: 0;
     }
 
@@ -818,7 +854,7 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 15px;
-    @include lg-block{
+    @include lg-block {
       padding-right: 0;
       justify-content: center;
     }
@@ -833,14 +869,14 @@
     &:hover {
       &:after {
         opacity: 0;
-        @include lg-block{
+        @include lg-block {
           opacity: 1;
         }
       }
 
       &:before {
         opacity: 1;
-        @include lg-block{
+        @include lg-block {
           opacity: 0;
         }
       }
@@ -848,15 +884,15 @@
       .slider__link {
         &-title {
           color: $red;
-          @include lg-block{
+          @include lg-block {
             color: $bg;
           }
         }
 
         &-svg {
           fill: $red;
-          @include lg-block{
-              fill: $bg;
+          @include lg-block {
+            fill: $bg;
           }
         }
       }
@@ -873,7 +909,7 @@
       background: url("/images/bg/line-p.png") 0 0;
       opacity: 1;
       @include tr;
-      @include lg-block{
+      @include lg-block {
         background: url("/images/bg/line-w.png") 0 0;
       }
     }
@@ -898,7 +934,7 @@
       margin-right: 10px;
       @include tr;
 
-      @include lg-block{
+      @include lg-block {
         color: $bg;
       }
     }
@@ -908,8 +944,8 @@
       height: 13px;
       fill: $purple3;
       @include tr;
-      @include lg-block{
-          fill: $bg;
+      @include lg-block {
+        fill: $bg;
       }
     }
   }
@@ -938,13 +974,13 @@
     text-transform: uppercase;
     padding: 15px 44px;
     margin-bottom: 25px;
-    @include lg-block{
+    @include lg-block {
       font-size: 38px;
       text-align: center;
       padding: 15px 100px;
       margin-bottom: 20px;
     }
-    @include sm-block{
+    @include sm-block {
       padding: 17px 15px;
       font-size: 20px;
       margin-bottom: 15px;
@@ -958,11 +994,11 @@
     max-width: 825px;
     text-align: center;
     margin-bottom: 40px;
-    @include lg-block{
+    @include lg-block {
       font-size: 26px;
       margin-bottom: 25px;
     }
-    @include sm-block{
+    @include sm-block {
       font-size: 18px;
       margin-bottom: 15px;
     }
@@ -971,7 +1007,7 @@
   &__row {
     width: 100%;
     margin-bottom: 30px;
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 20px;
     }
   }
@@ -980,9 +1016,9 @@
     @include col;
     @include size(12);
     @include size-sm(24);
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 17px;
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
     }
@@ -993,7 +1029,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 13px;
-    @include sm-block{
+    @include sm-block {
       font-size: 16px;
       margin-bottom: 11px;
     }
@@ -1006,14 +1042,14 @@
     color: $black2;
     font-size: 18px;
     padding: 22px 25px;
-    @include sm-block{
+    @include sm-block {
       padding: 16px 20px;
     }
   }
 
   &__agree {
     margin-bottom: 40px;
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 25px;
     }
   }
@@ -1022,7 +1058,7 @@
     width: 343px;
     height: 68px;
     border-radius: 40px;
-    @include sm-block{
+    @include sm-block {
       width: 100%;
     }
   }

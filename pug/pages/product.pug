@@ -40,24 +40,31 @@ block content
                                 .product__char-val
                                     | Благородный букет из бронзовых
                                     br
-                                    |орхидей, пионовидных роз, каркадэ
+                                    | орхидей, пионовидных роз, каркадэ
 
 
 
+                        //- btns
+                        .product__btns.product__btns_m
+                            button(type='button').product__buy.btn4.btn4_r.jsBuy
+                                span.btn4__txt Заказать букет
+                            button(type='button' data-id='24').product__one.jsOne
+                                +icon('arrow','product__one-svg')
+                                span.product__one-txt Купить в 1 клик
                         //- postcard
                         .product__postcard
                             +image('images/content/product/postcard.png','','product__postcard-img')
                             .product__postcard-txt
-                                |Авторская открытка
+                                | Авторская открытка
                                 br
-                                |в подарок!
+                                | в подарок!
 
                         //- list
                         .product__list
                             each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка']
                                 .product__item
                                     .product__item-img
-                                        +image('images/content/product/'+(x+1)+'.svg','','product__item-pic')
+                                        +image('images/content/product/' + (x + 1) + '.svg','','product__item-pic')
                                     .product__item-txt!=i
 
                     //- center
@@ -76,9 +83,17 @@ block content
 
                         .product__images
                             each i in [1,2,3]
-                                div(data-src='images/content/product/image.jpg' class=i==2?'active':'').product__image
+                                div(data-src='images/content/product/image.jpg' class=i == 2 ? 'active' : '').product__image
                                     .product__image-wrap
-                                        +image('images/content/product/'+i+'.jpg','','product__image-img')
+                                        +image('images/content/product/' + i + '.jpg','','product__image-img')
+                        //- list
+                        .product__list.product__list_t
+                            each i,x in ['Прямая поставка <br> из теплиц','Быстрая доставка']
+                                .product__item
+                                    .product__item-img
+                                        +image('images/content/product/' + (x + 1) + '.svg','','product__item-pic')
+                                    .product__item-txt!=i
+
                     //- right
                     .product__right
                         //- prices
@@ -96,7 +111,7 @@ block content
                         //- vars
                         .product__vars
                             each i,x in productPrices
-                                label(data-id=x+1).product__var
+                                label(data-id=x + 1).product__var
                                     input(type='radio' name='price' checked=i.active).product__var-input
                                     span.product__var-wrap
                                         span.product__var-left
