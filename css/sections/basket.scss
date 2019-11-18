@@ -2,34 +2,65 @@
 
   &__main{
     margin-bottom: 220px;
+    @include lg-block{
+      margin-bottom: 80px;
+    }
   }
 
   &__title {
     margin-bottom: 35px;
+    @include lg-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__left {
     @include col;
     @include size(18);
+    @include size-lg(24);
+    @include lg-block{
+      margin-bottom: 30px;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 0;
+    }
   }
 
   &__right {
     @include col;
     @include size(6);
+    @include size-lg(24);
+    @include size-sm(24);
   }
 
   &__gifts{
     margin-bottom: 120px;
+    @include lg-block{
+      margin-bottom: 4px;
+    }
   }
 }
 
 .btable {
   $w: 1017;
+  @include lg-block{
+      $w: 727;
+  }
+  @include sm-block{
+    $w: 300;
+  }
 
   &__head {
     border-radius: 102px;
     border: 1px solid $grey1;
     padding: 16px 0;
+    @include lg-block{
+      padding: 10px 0;
+    }
+    @include sm-block{
+      display: none;
+    }
   }
 
   &__col {
@@ -37,18 +68,51 @@
 
     &_1 {
       @include size(370/$w*24);
+      @include lg-block{
+          @include size(311/$w*24);
+      }
+      @include size-sm(24);
+      @include sm-block{
+        margin-bottom: 8px;
+      }
     }
 
     &_2 {
       @include size(185/$w*24);
+      @include lg-block{
+        @include size(131/$w*24);
+      }
+      @include size-sm(24);
+      @include sm-block{
+        order: 2;
+      }
     }
 
     &_3 {
       @include size(308/$w*24);
+      @include lg-block{
+        @include size(169/$w*24);
+      }
+      @include size-sm(24);
+      @include sm-block{
+        order: 1;
+        margin-bottom: 25px;
+      }
     }
 
     &_4 {
       @include size(152/$w*24);
+      @include lg-block{
+        @include size(116/$w*24);
+      }
+      @include sm-block{
+        margin: 0;
+        padding: 0;
+        width: auto;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
     }
   }
 
@@ -56,20 +120,39 @@
     text-align: center;
     font-size: 18px;
     font-weight: 600;
+    @include lg-block{
+      font-size: 16px;
+    }
 
     &_left {
       text-align: left;
       padding-left: 75px;
+      @include lg-block{
+        padding-left: 40px;
+      }
     }
 
     &_right {
       padding-right: 56px;
+      @include lg-block{
+        padding: 0;
+      }
     }
   }
 
   &__item {
     padding: 20px 0;
     border-bottom: 1px solid $grey1;
+    @include lg-block{
+      padding: 15px 0;
+    }
+    @include sm-block{
+      border-radius: 12px;
+      border: 1px solid $grey1;
+      margin-bottom: 20px;
+      position: relative;
+      padding: 30px;
+    }
 
     &-row{
       align-items: center;
@@ -80,6 +163,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm-block{
+        flex-direction: column;
+    }
 
     &_left {
       justify-content: flex-start;
@@ -88,6 +174,13 @@
 
     &_right {
       padding-right: 56px;
+      @include lg-block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 0;
+      }
     }
   }
 
@@ -98,6 +191,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include lg-block{
+      width: 133px;
+      height: 87px;
+      padding: 0 20px;
+    }
+    @include sm-block{
+      width: 123px;
+      height: 117px;
+      padding: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
@@ -105,12 +209,18 @@
     font-weight: 600;
     line-height: lh(16, 22.5);
     text-transform: uppercase;
+    @include sm-block{
+      text-align: center;
+    }
   }
 
   &__prices{
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block{
+        flex-direction: row;
+    }
 
   }
 
@@ -119,12 +229,20 @@
 
     .price {
       font-size: 20px;
+      text-transform: none;
+      @include lg-block{
+        font-size: 16px;
+      }
+      @include sm-block{
+        margin-right: 10px;
+      }
     }
   }
 
   &__oldprice{
     .price{
       font-size: 14px;
+      text-transform: none;
     }
   }
 
@@ -133,6 +251,15 @@
       width: 38px;
       height: 38px;
       fill: $grey1;
+
+      @include lg-block{
+        width: 28px;
+        height: 28px;
+      }
+      @include sm-block{
+        width: 33px;
+        height: 32px;
+      }
     }
   }
 
@@ -143,6 +270,9 @@
   border-radius: 52px;
   padding: 1px;
   overflow: hidden;
+  @include sm-block{
+    width: 112px;
+  }
 
   &:after{
     content: '';
@@ -186,6 +316,12 @@
     align-items: center;
     justify-content: center;
 
+    @include lg-block{
+      min-width: 27px;
+      width: 27px;
+      height: 27px;
+    }
+
     &:hover{
       background: $red;
       box-shadow: none;
@@ -195,6 +331,10 @@
       width: 21px;
       height: 21px;
       fill: $bg;
+      @include lg-block{
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }
@@ -204,13 +344,38 @@
   border: 1px solid #ddd9e3;
   background-color: $bg;
 
+  @include lg-block{
+    display: flex;
+    overflow: hidden;
+  }
+  @include sm-block{
+    display: block;
+  }
+
   &__top {
     padding: 25px 22px 35px 22px;
     border-bottom: 1px solid #ddd9e3;
     background-image: url("/images/bg/pattern-item.png");
+    @include lg-block{
+      width: 50%;
+      border: none;
+      border-right: 1px solid #ddd9e3;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+    }
+    @include sm-block{
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #ddd9e3;
+      padding: 25px 15px;
+    }
   }
 
   &__promo{
+    @include lg-block{
+      width: 100%;
+    }
 
     &-title{
       text-align: center;
@@ -240,6 +405,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include lg-block{
+      width: 50%;
+      border: none;
+      padding: 30px 43px;
+    }
+    @include sm-block{
+      width: 100%;
+      padding: 30px 15px;
+    }
+
+    &-top{
+      @include lg-block{
+        margin-bottom: 15px;
+      }
+    }
   }
 
   &__title {
@@ -248,12 +428,16 @@
     text-transform: uppercase;
     margin-bottom: 5px;
     text-align: center;
+    @include lg-block{
+      display: inline-flex;
+      margin-bottom: 0;
+    }
   }
 
   &__price{
     font-size: 30px;
     font-weight: 700;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     color: $black;
     text-align: center;
     margin-bottom: 25px;
@@ -261,6 +445,11 @@
     background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @include lg-block{
+      font-size: 24px;
+      display: inline-flex;
+      margin-bottom: 0;
+    }
   }
 
   &__buy {
