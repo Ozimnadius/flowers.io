@@ -16,9 +16,11 @@ $(function () {
     // });
 
 
-    $('.arts__list-row').masonry({
-        itemSelector: '.arts__item',
-    });
+    if (wWidth >=1380) {
+        $('.arts__list-row').masonry({
+            itemSelector: '.arts__item',
+        });
+    }
 
     // let aitemsCut = new Cut('.aitem__txt','155').init();
 
