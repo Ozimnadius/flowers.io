@@ -44,12 +44,6 @@
 
 .btable {
   $w: 1017;
-  @include lg-block{
-      $w: 727;
-  }
-  @include sm-block{
-    $w: 300;
-  }
 
   &__head {
     border-radius: 102px;
@@ -69,7 +63,7 @@
     &_1 {
       @include size(370/$w*24);
       @include lg-block{
-          @include size(311/$w*24);
+          @include size(311/727*24);
       }
       @include size-sm(24);
       @include sm-block{
@@ -80,7 +74,7 @@
     &_2 {
       @include size(185/$w*24);
       @include lg-block{
-        @include size(131/$w*24);
+        @include size(131/727*24);
       }
       @include size-sm(24);
       @include sm-block{
@@ -91,7 +85,7 @@
     &_3 {
       @include size(308/$w*24);
       @include lg-block{
-        @include size(169/$w*24);
+        @include size(169/727*24);
       }
       @include size-sm(24);
       @include sm-block{
@@ -103,7 +97,7 @@
     &_4 {
       @include size(152/$w*24);
       @include lg-block{
-        @include size(116/$w*24);
+        @include size(116/727*24);
       }
       @include sm-block{
         margin: 0;

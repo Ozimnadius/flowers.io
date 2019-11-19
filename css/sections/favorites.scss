@@ -1,53 +1,239 @@
-$w: 1360;
-
 .favorites {
+  @include lg-block {
+    padding-bottom: 80px;
+  }
+  @include sm-block{
+    padding-bottom: 60px;
+  }
 
-  &__main{
+  &__main {
     margin-bottom: 200px;
+    @include lg-block {
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 60px;
+    }
   }
 
-  &__items{
+  &__title {
+    @include sm-block {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__controls {
+    @include sm-block {
+      display: flex;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  &__sort {
+    @include sm-block {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+
+    &-title {
+      @include lg-block {
+        margin-right: 15px;
+      }
+      @include sm-block {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__select {
+    @include lg-block {
+      width: 227px;
+    }
+    @include sm-block {
+      width: 100%;
+    }
+
+    .jq-selectbox {
+
+      &.opened {
+        .jq-selectbox__select {
+          @include sm-block {
+            color: $black3;
+          }
+        }
+      }
+
+      &.focused {
+        .jq-selectbox__select {
+          @include sm-block {
+            border-color: $grey1;
+          }
+        }
+      }
+    }
+
+    .jq-selectbox__select {
+      @include sm-block {
+        border: 1px solid $grey1;
+        color: $black3;
+        padding: 10px 30px 10px 20px;
+        background: transparent;
+        height: auto;
+        font-weight: 400;
+      }
+    }
+
+    .jq-selectbox__trigger {
+      @include sm-block {
+        width: 28px;
+      }
+    }
+
+    .jq-selectbox__trigger-arrow {
+      border-top: 8px solid #242629;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      @include sm-block {
+
+      }
+    }
+
+    .jq-selectbox__dropdown {
+      @include sm-block {
+        position: absolute;
+        border: 1px solid #ab9fb9;
+        background-color: #ffffff;
+        box-shadow: none;
+      }
+    }
+
+    .jq-selectbox li {
+      @include sm-block {
+        padding: 5px 10px 6px;
+        color: #231f20;
+      }
+
+      &.selected {
+        @include sm-block {
+          background-color: rgba(107, 42, 196, 0.1);
+          color: #444041;
+        }
+      }
+    }
+  }
+
+  &__top {
+    @include lg-block {
+      margin-bottom: 20px;
+    }
+    @include sm-block {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__items {
     margin-bottom: 40px;
+    @include lg-block {
+      margin-bottom: 30px;
+    }
   }
 
-  &__col{
+  &__col {
     @include col;
+    $w: 1360;
 
-    &_1{
+    &_1 {
       @include size(397/$w*24);
+      @include lg-block {
+        @include size(235/728*24);
+      }
+      @include size-sm(24);
+
     }
-    &_2{
+
+    &_2 {
       @include size(160/$w*24);
+      @include lg-block {
+        display: none;
+      }
+
+      &.fitem__td {
+        @include lg-block {
+          display: none;
+        }
+      }
+
     }
-    &_3{
+
+    &_3 {
       @include size(295/$w*24);
+      @include lg-block {
+        @include size(189/728*24);
+      }
+      @include size-sm(24);
     }
-    &_4{
+
+    &_4 {
       @include size(310/$w*24);
+      @include lg-block {
+        @include size(200/728*24);
+      }
+      @include size-sm(24);
     }
-    &_5{
+
+    &_5 {
       @include size(198/$w*24);
+      @include lg-block {
+        @include size-lg(104/728*24);
+      }
+      @include sm-block {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .favorites__th {
+        @include lg-block {
+          text-align: left;
+        }
+      }
     }
   }
 
-  &__head{
+  &__head {
     border-radius: 102px;
     border: 1px solid $grey1;
     padding: 16px 0;
+    @include sm-block {
+      display: none;
+    }
   }
 
-  &__th{
+  &__th {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
+    @include lg-block {
+      font-size: 16px;
+    }
 
     &_left {
       text-align: left;
       padding-left: 75px;
+      @include lg-block {
+        padding-left: 30px;
+      }
     }
   }
 
-  &__more{
+  &__more {
     margin: 0 auto;
   }
 }
@@ -55,11 +241,22 @@ $w: 1360;
 .fitem {
   border-bottom: 1px solid $grey1;
   padding: 20px 0;
+  @include sm-block {
+    border-radius: 12px;
+    border: 1px solid $grey1;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px 40px 30px 40px;
+  }
 
-  &__td{
+  &__td {
     display: flex;
     align-items: center;
     justify-content: center;
+    @include sm-block {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &_left {
       justify-content: flex-start;
@@ -73,77 +270,179 @@ $w: 1360;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include lg-block {
+      width: 90px;
+      height: 86px;
+      padding: 0;
+      margin-right: 10px;
+    }
+    @include sm-block {
+      width: 128px;
+      height: 122px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
-  &__status{
+  &__status {
     color: $green;
     margin-bottom: 10px;
-    &.disabled{
+
+    @include sm-block {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      margin: 0;
+      height: 42px;
+      border: 1px solid $grey1;
+      background-color: $bg;
+      border-top-right-radius: 21px;
+      border-bottom-right-radius: 21px;
+      border-left: none;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    &_m {
+      display: none;
+      @include sm-block {
+        display: flex;
+      }
+    }
+
+    &.disabled {
       color: $red;
     }
   }
 
-  &__title{
+  &__title {
     display: block;
     color: $text2;
     font-weight: 600;
-    line-height: lh(16,22.5);
+    line-height: lh(16, 22.5);
     text-transform: uppercase;
+    @include sm-block {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__controls {
+    &_t {
+      display: none;
+      @include lg-block {
+        display: block;
+        margin-top: 10px;
+      }
+      @include sm-block {
+        margin-top: 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+      }
+    }
   }
 
   &__control {
     display: flex;
     align-items: center;
 
-    &:hover{
-      .fitem__control{
-        &-svg{
+    @include sm-block {
+      height: 42px;
+      border: 1px solid $grey1;
+      background-color: $bg;
+      border-top-right-radius: 21px;
+      border-bottom-right-radius: 21px;
+      border-left: none;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 20px;
+    }
+
+    &:hover {
+      .fitem__control {
+        &-svg {
           fill: $red;
         }
-        &-txt{
+
+        &-txt {
           color: $red;
         }
       }
     }
 
-    &-svg{
+    &-svg {
       width: 18px;
       height: 16px;
       fill: $text;
       margin-right: 10px;
       @include tr;
+      @include sm-block {
+        width: 21px;
+        height: 18px;
+        margin-right: 0;
+      }
     }
 
     &-txt {
       font-size: 16px;
       font-weight: 600;
       @include tr;
+      @include sm-block {
+        display: none;
+      }
     }
   }
 
-  &__prices{
+  &__prices {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block {
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 17px;
+    }
   }
 
-  &__price{
+  &__price {
     margin-bottom: 5px;
+    @include sm-block {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+
+    .price {
+      @include lg-block {
+        font-size: 16px;
+      }
+    }
   }
 
-  &__btns{
+  &__btns {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block{
+      width: 100%;
+    }
   }
 
-  &__buy{
+  &__buy {
     width: 243px;
     height: 54px;
     margin-bottom: 20px;
+    @include lg-block {
+      width: 183px;
+      height: 41px;
+      border-radius: 30px;
+    }
+    @include sm-block{
+      width: 100%;
+    }
   }
 
-  &__one{
+  &__one {
     display: flex;
     align-items: center;
     position: relative;
@@ -211,12 +510,20 @@ $w: 1360;
 
   }
 
-  &__del{
+  &__del {
 
     &-svg {
       width: 38px;
       height: 38px;
       fill: $grey1;
+      @include lg-block {
+        width: 28px;
+        height: 28px;
+      }
+      @include sm-block {
+        width: 33px;
+        height: 32px;
+      }
     }
   }
 

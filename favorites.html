@@ -169,12 +169,12 @@
           <section class="favorites__main">
             <div class="container">
               <form class="catalog__form favorites__form">
-                <div class="catalog__top">
-                  <div class="catalog__title title">Избранное</div>
-                  <div class="catalog__controls">
-                    <div class="catalog__sort csort">
-                      <div class="csort__title">Сортировать по</div>
-                      <div class="csort__select">
+                <div class="catalog__top favorites__top">
+                  <div class="catalog__title title favorites__title">Избранное</div>
+                  <div class="catalog__controls favorites__controls">
+                    <div class="catalog__sort csort favorites__sort">
+                      <div class="csort__title favorites__sort-title">Сортировать по</div>
+                      <div class="csort__select favorites__select">
                         <select class="select" name="sort">
                           <option>Популярности</option>
                           <option>Более дешевые</option>
@@ -195,7 +195,7 @@
                       <div class="favorites__col favorites__col_3">
                         <div class="favorites__th">Стоимость</div>
                       </div>
-                      <div class="favorites__col favorites__col_5"></div>
+                      <div class="favorites__col favorites__col_4"></div>
                       <div class="favorites__col favorites__col_5">
                         <div class="favorites__th">Удалить</div>
                       </div>
@@ -208,7 +208,8 @@
                           <div class="fitem__img"><img class="fitem__img-img" src="images/content/catalog/4.png" alt=""/>
                           </div>
                           <div class="fitem__block">
-                            <div class="fitem__status">Есть в наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
+                            <div class="fitem__status">Есть в наличии</div>
+                            <div class="fitem__status fitem__status_m">В наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
                           </div>
                         </div>
                         <div class="favorites__col favorites__col_2 fitem__td">
@@ -227,6 +228,13 @@
                             </div>
                             <div class="fitem__oldprice">
                               <div class="price price_old"><span class="price__val">-3 140&nbsp;</span><span class="price__cur">руб.</span></div>
+                            </div>
+                            <div class="fitem__controls fitem__controls_t">
+                              <button class="fitem__control" type="button">
+                                <svg class="fitem__control-svg">
+                                  <use xlink:href="/images/icons/sprite.svg#compare"></use>
+                                </svg><span class="fitem__control-txt">В сравнение</span>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -255,7 +263,8 @@
                           <div class="fitem__img"><img class="fitem__img-img" src="images/content/catalog/3.png" alt=""/>
                           </div>
                           <div class="fitem__block">
-                            <div class="disabled fitem__status">Нет в наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
+                            <div class="disabled fitem__status">Нет в наличии</div>
+                            <div class="disabled fitem__status fitem__status_m">Нет</div><a class="fitem__title" href="product.html">Творческий микс</a>
                           </div>
                         </div>
                         <div class="favorites__col favorites__col_2 fitem__td">
@@ -274,6 +283,13 @@
                             </div>
                             <div class="fitem__oldprice">
                               <div class="price price_old"><span class="price__val">-3 140&nbsp;</span><span class="price__cur">руб.</span></div>
+                            </div>
+                            <div class="fitem__controls fitem__controls_t">
+                              <button class="fitem__control" type="button">
+                                <svg class="fitem__control-svg">
+                                  <use xlink:href="/images/icons/sprite.svg#compare"></use>
+                                </svg><span class="fitem__control-txt">В сравнение</span>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -302,7 +318,8 @@
                           <div class="fitem__img"><img class="fitem__img-img" src="images/content/catalog/2.png" alt=""/>
                           </div>
                           <div class="fitem__block">
-                            <div class="fitem__status">Есть в наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
+                            <div class="fitem__status">Есть в наличии</div>
+                            <div class="fitem__status fitem__status_m">В наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
                           </div>
                         </div>
                         <div class="favorites__col favorites__col_2 fitem__td">
@@ -321,6 +338,13 @@
                             </div>
                             <div class="fitem__oldprice">
                               <div class="price price_old"><span class="price__val">-3 140&nbsp;</span><span class="price__cur">руб.</span></div>
+                            </div>
+                            <div class="fitem__controls fitem__controls_t">
+                              <button class="fitem__control" type="button">
+                                <svg class="fitem__control-svg">
+                                  <use xlink:href="/images/icons/sprite.svg#compare"></use>
+                                </svg><span class="fitem__control-txt">В сравнение</span>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -349,7 +373,8 @@
                           <div class="fitem__img"><img class="fitem__img-img" src="images/content/catalog/1.png" alt=""/>
                           </div>
                           <div class="fitem__block">
-                            <div class="fitem__status">Есть в наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
+                            <div class="fitem__status">Есть в наличии</div>
+                            <div class="fitem__status fitem__status_m">В наличии</div><a class="fitem__title" href="product.html">Творческий микс</a>
                           </div>
                         </div>
                         <div class="favorites__col favorites__col_2 fitem__td">
@@ -368,6 +393,13 @@
                             </div>
                             <div class="fitem__oldprice">
                               <div class="price price_old"><span class="price__val">-3 140&nbsp;</span><span class="price__cur">руб.</span></div>
+                            </div>
+                            <div class="fitem__controls fitem__controls_t">
+                              <button class="fitem__control" type="button">
+                                <svg class="fitem__control-svg">
+                                  <use xlink:href="/images/icons/sprite.svg#compare"></use>
+                                </svg><span class="fitem__control-txt">В сравнение</span>
+                              </button>
                             </div>
                           </div>
                         </div>

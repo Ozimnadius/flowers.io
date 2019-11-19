@@ -17,16 +17,16 @@ block content
             .container
                 form.catalog__form.favorites__form
                     //- top
-                    .catalog__top
+                    .catalog__top.favorites__top
                         //- title
-                        .catalog__title.title Избранное
+                        .catalog__title.title.favorites__title Избранное
 
                         //- controls
-                        .catalog__controls
+                        .catalog__controls.favorites__controls
                             //- sort
-                            .catalog__sort.csort
-                                .csort__title Сортировать по
-                                .csort__select
+                            .catalog__sort.csort.favorites__sort
+                                .csort__title.favorites__sort-title Сортировать по
+                                .csort__select.favorites__select
                                     select(name='sort').select
                                         option Популярности
                                         option Более дешевые
@@ -43,7 +43,7 @@ block content
                                 .favorites__col.favorites__col_2
                                 .favorites__col.favorites__col_3
                                     .favorites__th Стоимость
-                                .favorites__col.favorites__col_5
+                                .favorites__col.favorites__col_4
                                 .favorites__col.favorites__col_5
                                     .favorites__th Удалить
                         .favorites__list
@@ -58,6 +58,7 @@ block content
                                             //- block
                                             .fitem__block
                                                 div(class=i.status.dopClass).fitem__status= i.status.txt
+                                                div(class=i.status.dopClass).fitem__status.fitem__status_m= i.status.txt2
                                                 a(href='product.html').fitem__title Творческий микс
 
                                         .favorites__col.favorites__col_2.fitem__td
@@ -76,6 +77,10 @@ block content
                                                     .price.price_old
                                                         span.price__val -3 140&nbsp;
                                                         span.price__cur руб.
+                                                .fitem__controls.fitem__controls_t
+                                                    button(type='button').fitem__control
+                                                        +icon('compare','fitem__control-svg')
+                                                        span.fitem__control-txt В сравнение
                                         .favorites__col.favorites__col_4.fitem__td
                                             .fitem__btns
                                                 //- buy
