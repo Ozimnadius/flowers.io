@@ -315,14 +315,17 @@
 
     &_18 {
       @include size(18);
+      @include size-lg(24);
     }
 
     &_10 {
       @include size(10);
+      @include size-lg(24);
     }
 
     &_14 {
       @include size(14);
+      @include size-lg(24);
     }
 
     &_pr30 {
@@ -330,6 +333,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @include lg-block{
+        padding-right: 0;
+      }
     }
   }
 

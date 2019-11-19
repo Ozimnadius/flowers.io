@@ -236,6 +236,12 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .content h4 {
+    font-size: 30px;
+  }
+}
+
 @media screen and (max-width: 769.99px) {
   .content h4 {
     font-size: 22px;
@@ -10234,12 +10240,30 @@ input, textarea {
   width: calc(75% - 20px);
 }
 
+@media screen and (max-width: 1379.99px) {
+  .new__col_18 {
+    width: calc(100% - 20px);
+  }
+}
+
 .new__col_10 {
   width: calc(41.66667% - 20px);
 }
 
+@media screen and (max-width: 1379.99px) {
+  .new__col_10 {
+    width: calc(100% - 20px);
+  }
+}
+
 .new__col_14 {
   width: calc(58.33333% - 20px);
+}
+
+@media screen and (max-width: 1379.99px) {
+  .new__col_14 {
+    width: calc(100% - 20px);
+  }
 }
 
 .new__col_pr30 {
@@ -10254,6 +10278,12 @@ input, textarea {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .new__col_pr30 {
+    padding-right: 0;
+  }
 }
 
 .new__text {
@@ -10724,6 +10754,18 @@ input, textarea {
   padding-bottom: 60px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .art {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .art {
+    padding-bottom: 20px;
+  }
+}
+
 .art__top {
   margin-bottom: 0px;
   position: relative;
@@ -10735,8 +10777,43 @@ input, textarea {
   padding-bottom: 40px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .art__bottom {
+    background-size: contain;
+    background-position: center bottom 70px;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__bottom {
+    background-position: center bottom 100px;
+  }
+}
+
 .art__block {
   padding-top: 50px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__block {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .art__block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 20px;
+  }
 }
 
 .art__img {
@@ -10746,8 +10823,83 @@ input, textarea {
   margin-top: -30px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .art__img {
+    width: 191px;
+    padding-left: 0;
+    margin-right: 40px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__img {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-right: 0;
+  }
+}
+
+.art__txt {
+  display: none;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__txt {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .art__txt {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__or-1 {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__or-2 {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__or-3 {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+}
+
 .art__image {
   height: 475px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__image {
+    height: 326px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .art__image {
+    height: 134px;
+  }
 }
 
 .art__image-img {
@@ -10780,6 +10932,36 @@ input, textarea {
   .art__nav {
     margin-left: 5px;
     margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__nav {
+    width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__nav {
+    margin-left: calc(0% + 10px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__nav {
+    margin-right: calc(0% + 10px);
+  }
+}
+
+@media screen and (max-width: 1379.99px) {
+  .art__nav {
+    margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 769.99px) {
+  .art__nav {
+    margin-top: 120px;
   }
 }
 
