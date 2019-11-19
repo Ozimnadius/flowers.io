@@ -1,9 +1,9 @@
 .news {
   padding-bottom: 100px;
-  @include lg-block{
+  @include lg-block {
     padding-bottom: 80px;
   }
-  @include sm-block{
+  @include sm-block {
     padding-bottom: 60px;
   }
 
@@ -13,9 +13,9 @@
     display: block;
   }
 
-  &__list{
+  &__list {
     margin-bottom: 40px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 10px;
     }
   }
@@ -26,24 +26,24 @@
     padding: 0 35px;
     margin-bottom: 80px;
     @include size-lg(12);
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 30px;
       padding: 0 20px;
     }
     @include size-sm(24);
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 20px;
     }
 
-    &.top{
+    &.top {
       position: relative;
       top: 80px;
-      @include lg-block{
+      @include lg-block {
         position: static;
       }
     }
 
-    &.bottom{
+    &.bottom {
 
     }
   }
@@ -65,15 +65,15 @@
   overflow: hidden;
   height: 560px;
   position: relative;
-  @include lg-block{
+  @include lg-block {
     height: 464px;
   }
-  @include sm-block{
+  @include sm-block {
     height: 391px;
   }
 
-  &:hover{
-    .nitem__popup{
+  &:hover {
+    .nitem__popup {
       visibility: visible;
       opacity: 1;
     }
@@ -88,7 +88,7 @@
     overflow: hidden;
     position: relative;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -115,31 +115,31 @@
     right: 0;
     padding: 0 50px;
     text-align: center;
-    @include sm-block{
+    @include sm-block {
       padding: 0 20px;
       bottom: 10px;
     }
   }
 
-  &__title{
+  &__title {
     color: $red;
     font-size: 20px;
     font-weight: 600;
-    line-height: lh(20,26);
+    line-height: lh(20, 26);
     margin-bottom: 10px;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
     }
   }
 
-  &__date{
+  &__date {
     font-weight: 600;
-    @include lg-block{
+    @include lg-block {
       font-size: 14px;
     }
   }
 
-  &__popup{
+  &__popup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -162,7 +162,7 @@
     @include tr;
 
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -175,9 +175,9 @@
     }
   }
 
-  &__txt{
+  &__txt {
     color: $purple3;
-    line-height: lh(16,20.8);
+    line-height: lh(16, 20.8);
     margin-bottom: 15px;
   }
 
@@ -187,13 +187,13 @@
     border-bottom: 3px dotted $purple3;
     padding-bottom: 5px;
 
-    &-txt{
+    &-txt {
       margin-right: 10px;
       font-weight: 600;
       color: $purple3;
     }
 
-    &-svg{
+    &-svg {
       width: 17px;
       height: 12px;
       fill: $purple3;
@@ -202,24 +202,50 @@
 
 }
 
-.new{
+.new {
   padding-bottom: 100px;
+  @include lg-block {
+    padding-bottom: 80px;
+  }
+  @include sm-block{
+    padding-bottom: 60px;
+  }
 
-  &__title{
+  &__title {
     display: block;
     text-align: center;
     margin-bottom: 55px;
+    @include lg-block {
+      margin-bottom: 30px;
+    }
+    @include sm-block {
+      margin-bottom: 20px;
+    }
   }
 
   &__top {
     margin-bottom: 50px;
-    background: url("/images/content/new/bg.png") 0 55px no-repeat, url("/images/content/new/bg.png") right -230px  top 55px no-repeat;
+    background: url("/images/content/new/bg.png") 0 55px no-repeat,
+    url("/images/content/new/bg.png") right -230px top 55px no-repeat;
+    @include lg-block {
+      background: url("/images/content/new/bg.png") -180px 30px no-repeat,
+      url("/images/content/new/bg.png") right -240px top 30px no-repeat;
+      background-size: 50%;
+      margin-bottom: 30px;
+    }
+    @include sm-block {
+      margin-bottom: 20px;
+      background: none;
+    }
+
   }
 
-  &__wrap{
+  &__wrap {
     @include col;
     @include size(20);
     @include shift(2);
+    @include size-lg(24);
+    @include shift-lg(0);
   }
 
   &__banner {
@@ -235,16 +261,35 @@
     overflow: hidden;
     background: $bg;
 
-    &-wrap{
+    @include size-lg(21);
+    @include shift-lg(1.5);
+    @include lg-block {
+      border: 6px solid $bg;
+    }
+    @include size-sm(24);
+    @include shift-sm(0);
+    @include sm-block {
+      border: 4px solid $bg;
+      border-radius: 50%/12px;
+    }
+
+    &-wrap {
       border-top-left-radius: 50% 20px;
       border-top-right-radius: 50% 20px;
       border-bottom-left-radius: 50% 20px;
       border-bottom-right-radius: 50% 20px;
       overflow: hidden;
       height: 564px;
+      @include lg-block {
+        height: 310px;
+      }
+      @include sm-block {
+        height: 145px;
+        border-radius: 50%/10px;
+      }
     }
 
-    &-img{
+    &-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -255,9 +300,17 @@
     @include col;
     @include size(12);
     margin-bottom: 40px;
+    @include lg-block {
+      margin-bottom: 25px;
+    }
+    @include size-sm(24);
+    @include sm-block {
+      margin-bottom: 15px;
+    }
 
-    &_2{
+    &_2 {
       @include size(24);
+      @include size-sm(24);
     }
 
     &_18 {
@@ -268,11 +321,11 @@
       @include size(10);
     }
 
-    &_14{
+    &_14 {
       @include size(14);
     }
 
-    &_pr30{
+    &_pr30 {
       padding-right: 30px;
       display: flex;
       flex-direction: column;
@@ -280,20 +333,42 @@
     }
   }
 
-  &__text{
+  &__text {
     color: $red;
     font-size: 30px;
-    line-height: lh(30,39);
+    line-height: lh(30, 39);
+    @include lg-block {
+      font-size: 20px;
+    }
+    @include sm-block {
+      font-size: 18px;
+    }
   }
 
-  &__img{
+  &__img {
     text-align: right;
+    @include lg-block {
+      padding-top: 30px;
+      padding-right: 30px;
+    }
+    @include sm-block {
+      padding-top: 10px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 20px;
+    }
   }
 
-  &__image{
+  &__image {
     height: 310px;
     border-radius: 16px;
     overflow: hidden;
+    @include lg-block {
+      height: 249px;
+    }
+    @include sm-block {
+      height: 122px;
+    }
 
     &-img {
       width: 100%;
@@ -306,21 +381,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include sm-block {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__all {
+    @include lg-block {
+      width: 217px;
+    }
   }
 
   &__link {
     display: flex;
     align-items: center;
 
-    &-txt{
+    &-txt {
       margin-left: 20px;
-      &_next{
+      @include sm-block{
+        display: none;
+      }
+
+      &_next {
         margin-left: 0;
         margin-right: 20px;
       }
     }
 
-    &-svg{
+    &-svg {
       width: 28px;
       height: 28px;
       fill: $red;
