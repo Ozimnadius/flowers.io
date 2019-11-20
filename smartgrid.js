@@ -30,7 +30,7 @@ smartgrid('./css/layout', {
         xs: {
             width: "575.99px",
             fields: "10px",
-            containerWidth: "100%",
+            containerWidth: "320px",
             offset: '10px'
         }
     },

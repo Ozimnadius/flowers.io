@@ -40,31 +40,37 @@ block content
                     //- content
                     .compare__content
                         //- slider
-                        .compare__slider
-                            .swiper-container.compare__container
-                                .swiper-wrapper
-                                    each i in compareItems
-                                        div(data-id=i.id).swiper-slide.cslide
-                                            a(href='product.html').cslide__top
-                                                span.cslide__top-wrap
-                                                    //- status
-                                                    span(class=i.status.dopClass).cslide__status= i.status.txt
-                                                    //- block
-                                                    span.cslide__block
-                                                        span.cslide__img
-                                                            +image(i.src,'','cslide__img-img')
-                                                        span.cslide__title Творческий микс
+                        .compare__content-slider
+                            .compare__slider
+                                .swiper-container.compare__container
+                                    .swiper-wrapper
+                                        each i in compareItems
+                                            div(data-id=i.id).swiper-slide.cslide
+                                                a(href='product.html').cslide__top
+                                                    span.cslide__top-wrap
+                                                        //- status
+                                                        span(class=i.status.dopClass).cslide__status= i.status.txt
+                                                        //- block
+                                                        span.cslide__block
+                                                            span.cslide__img
+                                                                +image(i.src,'','cslide__img-img')
+                                                            span.cslide__title Творческий микс
 
-                                                    //- favorites
-                                                    span.cslide__fav
-                                                        +icon('heart','cslide__fav-svg')
-                                            .cslide__bottom
-                                                span.cslide__del
-                                                    +icon('delete','cslide__del-svg')
-                                                    span.cslide__del-txt Удалить
+                                                        //- favorites
+                                                        span.cslide__fav
+                                                            +icon('heart','cslide__fav-svg')
+                                                .cslide__bottom
+                                                    span.cslide__del
+                                                        +icon('delete','cslide__del-svg')
+                                                        span.cslide__del-txt Удалить
 
                         //- chars
                         .compare__chars
+
+                        //- clear
+                        button(type='submit' formaction='#').compare__clear.compare__clear_m
+                            +icon('del', 'compare__clear-svg')
+                            span.compare__clear-txt Очистить весь список
 
         //- templates
         // chars

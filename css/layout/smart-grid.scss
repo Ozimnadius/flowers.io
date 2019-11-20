@@ -26,7 +26,7 @@ $fields_xs: 10px;
 $containerWidth_lg: 770px;
 $containerWidth_md: 770px;
 $containerWidth_sm: 320px;
-$containerWidth_xs: 100%;
+$containerWidth_xs: 320px;
 
 @mixin wrapper-full(){
     padding-left: $fields;

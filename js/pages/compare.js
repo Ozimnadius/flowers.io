@@ -56,7 +56,22 @@ $(function () {
                 this.removeSlide(this.clickedIndex);
                 this.update();
             }
+        },
+        breakpoints: {
+            // when window width is >= 769.99px
+            769.99: {
+                spaceBetween: 10,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            // when window width is >= 1379.99px
+            1379.99: {
+                spaceBetween: 20,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            }
         }
+
 
     });
 
@@ -198,9 +213,9 @@ $(function () {
             btns = $('.compare__btn'),
             sameChars = $('.chars__item.same');
 
-        if(btn.hasClass('compare__btn_hide')){
+        if (btn.hasClass('compare__btn_hide')) {
             sameChars.addClass('hidden');
-        } else{
+        } else {
             sameChars.removeClass('hidden');
         }
 
@@ -208,5 +223,34 @@ $(function () {
         btn.addClass('active');
 
     });
+
+    if (wWidth < 770) {
+
+        let cont = $('.compare__content'),
+            contHeight = $('.compare__content').outerHeight(),
+            content = $('.compare__content-slider'),
+            contentOffset = content.offset().top,
+            slider = $('.compare__slider'),
+            height = slider.height(),
+            outerHeight = slider.outerHeight(true),
+            offset = contentOffset + height - 100;
+
+        $(window).scroll(function (e) {
+            let scrollTop = $(this).scrollTop(),
+                curHeight = slider.outerHeight(),
+                contOffset = contentOffset + contHeight - curHeight;
+
+            if (scrollTop > contOffset) {
+                content.height('initial');
+                slider.removeClass('fixed');
+            } else if (scrollTop >= offset) {
+                content.height(outerHeight);
+                slider.addClass('fixed');
+            } else {
+                content.height('initial');
+                slider.removeClass('fixed');
+            }
+        });
+    }
 
 });

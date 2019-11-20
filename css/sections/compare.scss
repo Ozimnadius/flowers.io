@@ -1,8 +1,17 @@
 .compare {
   padding-bottom: 75px;
+  @include lg-block{
+    padding-bottom: 45px;
+  }
+  @include sm-block{
+    padding-bottom: 55px;
+  }
 
   &__title {
     margin-bottom: 10px;
+    @include lg-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__controls {
@@ -10,12 +19,31 @@
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 35px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__clear {
     display: flex;
     align-items: center;
     padding-top: 34px;
+    @include lg-block{
+      padding-top: 0;
+      order: 1;
+    }
+    @include sm-block{
+      display: none;
+    }
+
+    &_m{
+      display: none;
+      @include sm-block{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
 
     &-svg {
       width: 15px;
@@ -29,6 +57,10 @@
     opacity: 0.7;
     border-bottom: 3px dotted transparent;
     margin-right: 45px;
+    @include sm-block{
+      margin-right: 30px;
+    }
+
     &:last-child{
       margin-right: 0;
     }
@@ -45,6 +77,9 @@
     padding: 1px;
     border-radius: 63px;
     background: linear-gradient(to right, #FE5B3A 0%, #8F43FE 100%);
+    @include lg-block{
+      display: none;
+    }
 
     &-wrap{
       display: flex;
@@ -107,16 +142,59 @@
 
   &__slider{
     margin-bottom: 50px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
+
+    &.fixed{
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: $bg;
+
+      .compare__container{
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      .cslide{
+
+        &__top{
+          margin-bottom: 10px;
+        }
+
+        &__img{
+          display: none;
+        }
+
+        &__fav{
+          display: none;
+        }
+
+        &__bottom {
+          display: none;
+        }
+      }
+    }
   }
 
   &__container{
     padding: 0 5px;
   }
 
+  &__chars{
+    @include sm-block{
+      margin-bottom: 20px;
+    }
+  }
+
 }
 
 .cslide {
   box-sizing: border-box;
+  height: auto;
 
   &__top{
     position: relative;
@@ -129,6 +207,13 @@
     border-bottom-left-radius: 50% 20px;
     border-bottom-right-radius: 50% 20px;
     margin-bottom: 20px;
+    @include sm-block{
+      padding: 2px;
+      border-top-left-radius: 50% 14px;
+      border-top-right-radius: 50% 14px;
+      border-bottom-left-radius: 50% 14px;
+      border-bottom-right-radius: 50% 14px;
+    }
 
     &:after{
       content: '';
@@ -150,6 +235,9 @@
     &:hover{
       &:after{
         opacity: 1;
+        @include sm-block{
+          opacity: 0;
+        }
       }
     }
 
@@ -163,6 +251,14 @@
       border-bottom-right-radius: 50% 20px;
       position: relative;
       z-index: 20;
+      @include sm-block{
+        border-top-left-radius: 50% 12px;
+        border-top-right-radius: 50% 12px;
+        border-bottom-left-radius: 50% 12px;
+        border-bottom-right-radius: 50% 12px;
+        padding: 20px 10px;
+        padding-bottom: 15px;
+      }
     }
   }
 
@@ -171,6 +267,11 @@
     padding-left: 10px;
     margin-bottom: 15px;
     display: block;
+    @include sm-block{
+      padding-left: 0;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
     &.disabled{
       color: $red;
     }
@@ -179,17 +280,29 @@
   &__block{
     display: flex;
     align-items: center;
+    @include sm-block{
+        flex-direction: column;
+    }
   }
 
   &__img{
+    min-width: 115px;
     width: 115px;
     height: 105px;
     object-fit: cover;
     margin-right: 24px;
+    @include sm-block{
+      margin-right: 0;
+      width: 79px;
+      height: 76px;
+      margin-bottom: 5px;
+    }
+
 
     &-img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
     }
   }
 
@@ -198,6 +311,10 @@
     font-weight: 600;
     line-height: lh(16,22.5);
     text-transform: uppercase;
+    @include sm-block{
+      font-size: 14px;
+      text-align: center;
+    }
   }
 
   &__fav{
@@ -212,6 +329,13 @@
     align-items: center;
     padding-left: 15px;
     @include tr;
+    @include sm-block{
+      width: 36px;
+      height: 30px;
+      background-color: $bg;
+      padding-left: 12px;
+      top: 30px;
+    }
 
     &:hover{
       background: $red;
@@ -226,6 +350,10 @@
       height: 20px;
       fill: $grey1;
       @include tr;
+      @include sm-block{
+        width: 18px;
+        height: 15px;
+      }
     }
   }
 
@@ -275,6 +403,9 @@
   &__item{
     padding: 25px 0;
     border-top: 1px solid $grey1;
+    @include sm-block{
+      padding: 20px 0;
+    }
 
     &.hidden{
       display: none;
@@ -284,6 +415,9 @@
       color: $black3;
       font-weight: 700;
       margin-bottom: 15px;
+      @include sm-block{
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -291,6 +425,7 @@
 .char{
   @include col;
   @include size(6);
+  @include size-lg(12);
 
   &_price{
     color: $red;
@@ -310,5 +445,20 @@
     height: 54px;
     border-radius: 40px;
     margin-bottom: 20px;
+    @include sm-block{
+      width: 100%;
+    }
+  }
+
+  &__one{
+    @include sm-block{
+      font-size: 12px;
+    }
+
+    .btn6__svg{
+      @include sm-block{
+        margin-right: 5px;
+      }
+    }
   }
 }
