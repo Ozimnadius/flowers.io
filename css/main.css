@@ -8741,8 +8741,20 @@ input, textarea {
   right: 40px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .order__wrap_img:after {
+    display: none;
+  }
+}
+
 .order__top {
   margin-bottom: 40px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .order__top {
+    margin-bottom: 20px;
+  }
 }
 
 .order__row {
@@ -8771,10 +8783,24 @@ input, textarea {
   padding-top: 55px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .order__left {
+    width: calc(100%  - 60px);
+    padding-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
 .order__right {
   width: calc(100% / (24 / 14) - 60px);
   margin-left: 30px;
   margin-right: 30px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .order__right {
+    width: calc(100%  - 60px);
+  }
 }
 
 .order__map {
@@ -8994,12 +9020,31 @@ input, textarea {
   }
 }
 
+@media screen and (max-width: 1379.99px) {
+  .order__finish {
+    margin: 0 auto;
+  }
+}
+
 .order__note {
   text-align: right;
   font-size: 24px;
   font-weight: 600;
   color: #eb3a5f;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 1379.99px) {
+  .order__note {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 786.99px) {
+  .order__note {
+    display: none;
+  }
 }
 
 .ofield_select {
@@ -9131,6 +9176,14 @@ input, textarea {
   margin-top: -14px;
 }
 
+@media screen and (max-width: 786.99px) {
+  .ofield__svg_map {
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+  }
+}
+
 .ofield__input {
   font-size: 18px;
   color: #444041;
@@ -9175,6 +9228,12 @@ input, textarea {
 .ofield__input_price {
   font-weight: bold;
   color: #eb3a5f;
+}
+
+@media screen and (max-width: 786.99px) {
+  .ofield__input_price {
+    font-size: 18px;
+  }
 }
 
 .ofield__select {
@@ -9283,13 +9342,31 @@ input, textarea {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 786.99px) {
+  .ofield_2 {
+    margin-bottom: 20px;
+  }
+}
+
 .ofield_2 .ofield__input {
   padding: 22px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .ofield_2 .ofield__input {
+    padding: 15px 22px;
+  }
 }
 
 .ofield_2 .jq-selectbox__select {
   height: auto;
   padding: 22px 54px 22px 22px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .ofield_2 .jq-selectbox__select {
+    padding: 15px 34px 15px 22px;
+  }
 }
 
 .odatepicker {
@@ -9447,8 +9524,21 @@ input, textarea {
   margin-top: 30px;
 }
 
+@media screen and (max-width: 786.99px) {
+  .odelivery__txt {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+}
+
 .odelivery__price {
   font-size: 20px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .odelivery__price {
+    font-size: 16px;
+  }
 }
 
 .odelivery__price-val {
