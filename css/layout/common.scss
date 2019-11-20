@@ -1094,6 +1094,10 @@
     margin-right: 11px;
     @include tr;
 
+    @include sm-block{
+      margin-right: 20px;
+    }
+
     &:after {
       content: '';
       display: block;
@@ -1109,6 +1113,9 @@
     color: $text2;
     font-size: 18px;
     line-height: lh(18, 24.05);
+    @include sm-block{
+      font-size: 16px;
+    }
   }
 
 }

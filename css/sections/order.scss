@@ -1,16 +1,34 @@
 .order {
   padding-bottom: 120px;
+  @include lg-block{
+    padding-bottom: 80px;
+  }
+  @include sm-block{
+    padding-bottom: 60px;
+  }
 
   &__main {
     margin-bottom: 110px;
+    @include lg-block{
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
     margin-bottom: 35px;
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__btns {
     margin-bottom: 40px;
+    @include lg-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__btn {
@@ -20,6 +38,14 @@
     border-radius: 16px;
     display: block;
     padding: 1px;
+    @include size-lg(12);
+    @include lg-block{
+      margin-bottom: 20px;
+    }
+    @include size-sm(12);
+    @include sm-block{
+      margin-bottom: 10px;
+    }
 
     &.active {
       padding: 0;
@@ -34,6 +60,9 @@
 
         &-img {
           padding: 4px;
+          @include sm-block{
+            padding: 2px;
+          }
         }
       }
     }
@@ -45,6 +74,10 @@
       height: 122px;
       display: flex;
       align-items: center;
+      @include sm-block{
+        padding: 15px;
+        flex-direction: column;
+      }
     }
 
     &-img {
@@ -56,6 +89,16 @@
       padding: 2px;
       display: block;
       margin-right: 25px;
+
+      @include sm-block{
+        min-width: 46px;
+        width: 46px;
+        min-height: 46px;
+        height: 46px;
+        margin-right: 0;
+        margin-bottom: 5px;
+        padding: 1px;
+      }
     }
 
     &-imgwrap {
@@ -68,16 +111,33 @@
       border-radius: 50%;
     }
 
+    &-pic{
+      max-height: 100%;
+      @include sm-block{
+        height: 28px;
+      }
+    }
+
     &-txt {
       color: $text2;
       font-size: 24px;
       font-weight: 600;
       line-height: lh(24, 31.2);
+      @include sm-block{
+        font-size: 16px;
+        text-align: center;
+      }
     }
   }
 
   &__content {
     margin-bottom: 100px;
+    @include lg-block{
+      margin-bottom: 80px;
+    }
+    @include sm-block{
+      margin-bottom: 60px;
+    }
   }
 
   &__wrap {
@@ -85,6 +145,11 @@
     border-radius: 16px;
     padding: 35px 40px 40px 40px;
     position: relative;
+
+    @include sm-block{
+      padding: 20px 15px;
+      padding-bottom: 30px;
+    }
 
     &_img{
       padding-bottom: 15px;
@@ -114,6 +179,10 @@
     margin-left: 30px;
     margin-right: 30px;
     margin-bottom: 30px;
+    @include lg-block{
+      width: calc(100% - 60px);
+      margin-bottom: 20px;
+    }
   }
 
   &__left {
@@ -134,12 +203,21 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   }
 
+  &__remind{
+    padding-right: 20px;
+    margin-bottom: 20px;
+  }
+
   &__agree {
     height: 100%;
     padding-right: 110px;
     display: flex;
     align-items: flex-end;
     padding-bottom: 7px;
+    @include sm-block{
+      padding-right: 0;
+      padding-bottom: 0;
+    }
   }
 
   &__personal {
@@ -150,15 +228,29 @@
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
+    @include sm-block{
+       flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__next {
     margin-left: auto;
+    @include sm-block{
+      margin-right: auto;
+    }
   }
 
   &__list {
     display: flex;
     justify-content: center;
+    @include lg-block{
+      padding: 0 60px;
+    }
+    @include sm-block{
+        flex-wrap: wrap;
+      padding: 0;
+    }
   }
 
   &__item {
@@ -166,6 +258,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include sm-block{
+      width: 50%;
+      margin-bottom: 15px;
+    }
 
     &-block {
       width: 151px;
@@ -175,6 +271,19 @@
       background-color: $bg;
       padding: 11px;
       margin-bottom: 25px;
+      @include lg-block{
+        width: 85px;
+        height: 85px;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+        border-radius: 13px;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      @include sm-block{
+        width: 67px;
+        height: 67px;
+        padding: 4px;
+      }
     }
 
     &-wrap {
@@ -184,6 +293,15 @@
       border: 1px solid $grey1;
       background-color: $bg;
       padding: 4px;
+      @include lg-block{
+        border-radius: 10px;
+        background-color: #f0e8cd;
+        padding: 3px;
+      }
+      @include sm-block{
+        padding: 2px;
+      }
+
     }
 
     &-img {
@@ -194,6 +312,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include lg-block{
+        border-radius: 10px;
+        padding: 15px 10px;
+      }
+      @include sm-block{
+        padding: 10px 6px;
+      }
+    }
+
+    &-pic{
+      max-height: 100%;
     }
 
     &-title {
@@ -202,6 +331,12 @@
       font-weight: 600;
       line-height: lh(18, 20.04);
       text-align: center;
+      @include lg-block{
+        font-size: 16px;
+      }
+      @include sm-block{
+        font-size: 14px;
+      }
     }
   }
 
@@ -226,6 +361,10 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
+    @include sm-block{
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__field {
@@ -264,22 +403,38 @@
     margin-top: -18px;
     fill: url(#gradient1);
 
+
     &_name {
       width: 26px;
       height: 37px;
       margin-top: -18.5px;
+      @include sm-block{
+        width: 20px;
+        height: 27px;
+        margin-top: -13.5px;
+      }
     }
 
     &_tel {
       width: 29px;
       height: 29px;
       margin-top: -14.5px;
+      @include sm-block{
+        width: 23px;
+        height: 23px;
+        margin-top: -11.5px;
+      }
     }
 
     &_email {
       width: 26px;
       height: 22px;
       margin-top: -11px;
+      @include sm-block{
+        width: 22px;
+        height: 18px;
+        margin-top: -9px;
+      }
     }
 
     &_date {
@@ -304,6 +459,12 @@
       margin-top: 0;
       top: 22px;
       left: 21px;
+
+      @include sm-block{
+        width: 20px;
+        height: 18px;
+        top: 16px;
+      }
     }
 
     &_map {
@@ -322,6 +483,11 @@
     border-radius: 6px;
     border: 1px solid $grey1;
     background-color: $beige;
+    @include sm-block{
+      padding: 14px;
+      padding-left: 50px;
+      font-size: 16px;
+    }
 
     &_date {
       cursor: pointer;
@@ -336,6 +502,10 @@
       padding-left: 22px;
       text-indent: 43px;
       line-height: lh(18, 25.2);
+      @include sm-block{
+        height: 111px;
+        text-indent: 27px;
+      }
     }
 
     &_price {
@@ -370,7 +540,24 @@
     text-shadow: none;
     color: $black2;
     border-radius: 6px;
+
+    @include sm-block{
+      height: 52px;
+      padding: 0 35px 0 50px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
   }
+
+  .jq-selectbox__select-text{
+    @include sm-block{
+      text-overflow: initial;
+      white-space: initial;
+    }
+  }
+
 
   .jq-selectbox__trigger {
     width: 54px;
@@ -440,7 +627,7 @@
 }
 
 .odatepicker {
-  width: 610px;
+  width: 650px;
   //left: 147px !important;
   //opacity: 1 !important;
   box-shadow: 0px 3px 0px #BE2646;
@@ -450,6 +637,11 @@
   border-radius: 0 0 12px 12px;
   box-sizing: border-box;
   transition: none;
+  @include sm-block{
+    width: 270px;
+    //left: 25px !important;
+    //opacity: 1 !important;
+  }
 
   &.active {
     transition: none;
@@ -464,12 +656,18 @@
 
     &--nav {
       min-height: 74px;
+      @include sm-block{
+        min-height: 40px;
+      }
 
       &-title {
         color: $bg;
         font-size: 20px;
         font-weight: 700;
         text-transform: uppercase;
+        @include sm-block{
+          font-size: 16px;
+        }
 
         i {
           color: inherit;
@@ -501,6 +699,10 @@
     &--content {
       padding: 30px 40px;
       padding-bottom: 10px;
+      @include sm-block{
+        padding: 15px;
+        padding-bottom: 5px;
+      }
     }
 
     &--days {
@@ -512,6 +714,10 @@
     &--cells {
       margin-left: -10px;
       margin-right: -10px;
+      @include sm-block{
+        margin-left: -5px;
+        margin-right: -5px;
+      }
     }
 
     &--cell {
@@ -527,6 +733,15 @@
       font-family: "Proxima Nova";
       font-size: 18px;
       font-weight: 600;
+
+      @include sm-block{
+        width: calc(100% / 5 - 10px);
+        font-size: 16px;
+        height: 37px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+      }
 
       &.-other-month- {
         background: transparent;
