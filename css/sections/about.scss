@@ -1,15 +1,38 @@
 .about{
 
+  @include lg-block{
+    background: url("/images/content/index/banner/bg.png") center top no-repeat;
+    background-size: contain;
+  }
+
   &__title{
     margin-bottom: 40px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__banner{
     margin-bottom: 50px;
+    @include lg-block{
+      margin-bottom: 40px;
+    }
+    @include sm-block{
+      margin-bottom: 25px;
+    }
   }
 
   &__content{
     padding-bottom: 100px;
+    @include lg-block{
+      padding-bottom: 80px;
+    }
+    @include sm-block{
+      padding-bottom: 40px;
+    }
   }
 
   &__wrap{
@@ -21,6 +44,14 @@
     @include size(8);
     position: relative;
     padding-bottom: 600px;
+    @include size-lg(12);
+    @include lg-block{
+      padding-bottom: 0;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      margin-bottom: 15px;
+    }
   }
 
   &__sub {
@@ -29,22 +60,41 @@
     font-weight: 700;
     line-height: lh(36,46.8);
     text-transform: uppercase;
+    @include lg-block{
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    @include sm-block{
+      font-size: 22px;
+      margin-bottom: 0;
+    }
   }
 
   &__img2{
     position: absolute;
     bottom: 80px;
     left: 0;
+    @include lg-block{
+      position: static;
+    }
+    @include sm-block{
+      display: none;
+    }
 
     &-img{
       display: block;
       max-width: initial;
+      @include lg-block{
+        max-width: 100%;
+      }
     }
   }
 
   &__right{
     @include col;
     @include size(8);
+    @include size-lg(12);
+    @include size-sm(24);
   }
 
   &__img3{
@@ -53,17 +103,56 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    @include size-lg(24);
+    @include lg-block{
+      position: static;
+      margin-top: 30px;
+      margin-bottom: 80px;
+    }
+    @include size-sm(24);
+    @include sm-block{
+      margin-top: 5px;
+      margin-bottom: 60px;
+    }
+
+    &-img {
+      display: block;
+
+
+      @include lg-block{
+        display: none;
+      }
+
+      &_t{
+        display: none;
+        width: 100%;
+        @include lg-block{
+          display: block;
+        }
+      }
+    }
   }
 
   &__bottom {
     @include col;
     @include size(15);
+    @include size-lg(20);
+    @include shift-lg(2);
+    @include size-sm(24);
+    @include shift-sm(0);
   }
 
   &__wow{
     padding-top: 100px;
     padding-bottom: 70px;
     background: $beige url("/images/bg/pattern.svg") 0 0;
+    @include lg-block{
+      padding-top: 70px;
+      padding-bottom: 40px;
+    }
+    @include sm-block{
+      padding-top: 30px;
+    }
   }
 
 }
@@ -72,6 +161,10 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    @include sm-block{
+        flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__item {
@@ -79,6 +172,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include lg-block{
+      width: calc(100%/3);
+    }
+    @include sm-block{
+      width: 50%;
+      margin-bottom: 15px;
+    }
 
     &-block {
       width: 151px;
@@ -88,6 +188,20 @@
       background-color: $bg;
       padding: 11px;
       margin-bottom: 25px;
+
+      @include lg-block{
+        width: 85px;
+        height: 85px;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
+        border-radius: 13px;
+        margin-bottom: 15px;
+        padding: 5px;
+      }
+      @include sm-block{
+        width: 67px;
+        height: 67px;
+        padding: 4px;
+      }
     }
 
     &-wrap {
@@ -97,6 +211,14 @@
       border: 1px solid $grey1;
       background-color: #f0e8cd;
       padding: 4px;
+
+      @include lg-block{
+        border-radius: 10px;
+        padding: 3px;
+      }
+      @include sm-block{
+        padding: 2px;
+      }
     }
 
     &-img {
@@ -107,6 +229,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @include lg-block{
+        border-radius: 10px;
+        padding: 15px 10px;
+      }
+      @include sm-block{
+        padding: 10px 6px;
+      }
+    }
+
+    &-pic{
+      max-width: 100%;
+      max-height: 100%;
     }
 
     &-title {
@@ -115,6 +250,9 @@
       font-weight: 600;
       line-height: lh(18, 20.04);
       text-align: center;
+      @include lg-block{
+        font-size: 16px;
+      }
     }
   }
 }

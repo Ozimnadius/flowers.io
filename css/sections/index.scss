@@ -341,6 +341,15 @@
     padding-bottom: 60px;
   }
 
+  &_bgn{
+    .iwow__list{
+      background: none;
+    }
+    @include sm-block{
+      padding-bottom: 0;
+    }
+  }
+
   &__desctop {
     @include lg-block {
       display: none;

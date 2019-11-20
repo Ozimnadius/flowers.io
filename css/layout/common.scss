@@ -1177,28 +1177,39 @@
 
 .banner {
   background: url("/images/content/index/banner/bg.png") center 0 no-repeat;
+  @include lg-block{
+    background: none;
+  }
 
   &__col {
     @include col;
     @include size(20);
     @include shift(2);
+    @include size-lg(24);
+    @include shift-lg(0);
   }
 
   &__img {
-    border-top-left-radius: 50% 25px;
-    border-top-right-radius: 50% 25px;
-    border-bottom-left-radius: 50% 25px;
-    border-bottom-right-radius: 50% 25px;
+    border-radius: 50%/25px;
     border: 10px solid $bg;
     overflow: hidden;
     background: $bg;
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    @include lg-block{
+      border-radius: 50%/23px;
+      border: 8px solid $bg;
+    }
+    @include sm-block{
+      border: 4px solid $bg;
+    }
 
     &-img {
-      border-top-left-radius: 50% 23px;
-      border-top-right-radius: 50% 23px;
-      border-bottom-left-radius: 50% 23px;
-      border-bottom-right-radius: 50% 23px;
+      border-radius: 50%/23px;
+      display: block;
+      @include lg-block{
+        border-radius: 50%/20px;
+
+      }
     }
   }
 
