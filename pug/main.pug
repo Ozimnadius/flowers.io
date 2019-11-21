@@ -352,18 +352,22 @@ html(lang="ru")
                                     option(value='Картой на сайте') Картой на сайте
                                     option(value='Счет в банк') Счет в банк
 
-                    //- fz
-                    .form2__fz
-                        label.fz.fz_r
-                            input(type='checkbox' name='fastFz' checked=true data-btn='form2__submit').fz__input
-                            span.fz__wrap
-                                span.fz__fake
-                                    +icon('check', 'fz__fake-svg')
-                                span.fz__txt Я даю согласие на обработку персональных данных
+                    //- bottom
+                    .form2__bottom
+                        .form2__bottom-left
+                            //- fz
+                            .form2__fz
+                                label.fz.fz_r
+                                    input(type='checkbox' name='fastFz' checked=true data-btn='form2__submit').fz__input
+                                    span.fz__wrap
+                                        span.fz__fake
+                                            +icon('check', 'fz__fake-svg')
+                                        span.fz__txt Я даю согласие на обработку персональных данных
 
-                    //- submit
-                    button(type='submit').btn4.btn4_r.form2__submit
-                        span.btn4__txt Оформить заказ
+                        .form2__bottom-right
+                            //- submit
+                            button(type='submit').btn4.btn4_r.form2__submit
+                                span.btn4__txt Оформить заказ
 
                     //- btn
                     button(type='button').form2__btn.jsLazyman Не хочу ничего заполнять, перезвоните мне
@@ -372,14 +376,14 @@ html(lang="ru")
                     input(type='hidden' name='action' value='fastbuySubmit')
                     input(type='hidden' name='id' value='').form2__id
 
-            form(data-id='lazyman').form
+            form(data-id='lazyman').form.form_lazy
                 //- close
                 button(type='button').form__close
                     +icon('close', 'form__close-svg')
                 //- content
                 .form__content
                     //- title
-                    .form__title мы сделаем всё за вас&nbsp;
+                    .form__title.form__title_lazy мы сделаем всё за вас&nbsp;
                         .form__title_b в течении
                             mark 4 минут
                     //- sub

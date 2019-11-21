@@ -13,7 +13,20 @@
   opacity: 0;
   @include tr;
 
-  &.active{
+  @include sm-block {
+    align-items: flex-start;
+  }
+
+  &__content{
+    @include sm-block{
+      height: 100vh;
+      padding: 20px 0;
+      overflow-y: auto;
+    }
+  }
+
+
+  &.active {
     visibility: visible;
     opacity: 1;
   }
@@ -27,6 +40,28 @@
   position: relative;
   padding: 215px 260px 165px 590px;
   color: $bg;
+
+  @include lg-block{
+    width: 736px;
+    height: 696px;
+    background: url("/images/forms/bg-t.png") 0 0 no-repeat;
+    padding: 215px 155px 10px 160px;
+  }
+  @include sm-block{
+    width: 300px;
+    height: 559px;
+    background: url("/images/forms/bg-m.png") 0 0 no-repeat;
+    padding: 90px 15px 10px 15px;
+  }
+
+  &_lazy{
+    @include sm-block{
+      width: 300px;
+      height: 559px;
+      background: url("/images/forms/bg-m.png") 0 0 no-repeat;
+      padding: 70px 10px 10px 10px;
+    }
+  }
 
   &__content {
     height: 100%;
@@ -45,51 +80,109 @@
     align-items: center;
     @include tr;
 
-    &:hover{
+    @include lg-block{
+      width: 40px;
+      height: 40px;
+      top: 200px;
+      right: 45px;
+    }
+    @include sm-block{
+      top: 15px;
+      right: 15px;
+    }
+
+    &:hover {
       border-color: $y4;
 
-      .form__close-svg{
+      .form__close-svg {
         fill: $y4;
       }
     }
 
-    &-svg{
+    &-svg {
       width: 25px;
       height: 25px;
       fill: $bg;
       @include tr;
+
+      @include lg-block{
+        width: 16px;
+        height: 17px;
+      }
     }
   }
 
-  &__title{
+  &__title {
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
 
-    &_b{
-      font-size: 45px;
+    @include lg-block{
+      font-size: 33px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    @include sm-block{
+      font-size: 26px;
+      margin-bottom: 8px;
     }
 
-    mark{
+    &_b {
+      font-size: 45px;
+      @include lg-block{
+        font-size: 33px;
+      }
+      @include sm-block{
+        font-size: 26px;
+      }
+    }
+
+    &_lazy{
+      @include lg-block{
+        font-size: 26px;
+      }
+      @include sm-block{
+        font-size: 21px;
+      }
+    }
+
+    mark {
       background-color: transparent;
       color: $y4;
     }
   }
 
-  &__sub{
+  &__sub {
     font-size: 24px;
     font-weight: 600;
-    line-height: lh(24,33.6);
+    line-height: lh(24, 33.6);
     margin-bottom: 15px;
+    @include lg-block{
+      font-size: 16px;
+      text-align: center;
+      width: 320px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+    @include sm-block{
+      width: 100%;
+    }
+
   }
 
-  &__fields{
+  &__fields {
     margin-bottom: 25px;
+    @include lg-block{
+      margin-bottom: 10px;
+    }
   }
 
-  &__fz{
+  &__fz {
     margin-bottom: 40px;
+    @include lg-block{
+      margin-bottom: 30px;
+    }
   }
 
   &__submit {
@@ -97,12 +190,17 @@
     height: 60px;
     border-radius: 40px;
 
-    &.disabled{
+    @include lg-block{
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    &.disabled {
       opacity: .5;
       pointer-events: none;
     }
 
-    &:hover{
+    &:hover {
       box-shadow: 0 3px 0 $purple2, 0px 20px 9px -10px rgba($black, 0.6);
       background: $purple1;
     }
@@ -110,7 +208,7 @@
 
   }
 
-  &__success{
+  &__success {
     height: 100%;
     display: flex;
     align-items: center;
@@ -119,18 +217,25 @@
 
 }
 
-.fields{
+.fields {
   @include row-flex;
 }
 
-.field{
+.field {
   @include col;
   margin-bottom: 20px;
   position: relative;
   z-index: 30;
 
-  &:last-child{
+  @include lg-block {
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
     margin-bottom: 0;
+    @include lg-block{
+      margin-bottom: 15px;
+    }
   }
 
   @for $i from 1 through 24 {
@@ -140,28 +245,34 @@
   }
 
 
-
-  &__label{
+  &__label {
     font-weight: 600;
     margin-bottom: 5px;
+    @include lg-block {
+      margin-bottom: 10px;
+    }
   }
 
-  .jq-selectbox{
+  .jq-selectbox {
     width: 100%;
-    &.opened{
 
-      .jq-selectbox__select{
+    &.opened {
+
+      .jq-selectbox__select {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        @include lg-block {
+          border-radius: 6px;
+        }
       }
 
-      .jq-selectbox__trigger-arrow{
+      .jq-selectbox__trigger-arrow {
         transform: rotate(-180deg);
       }
     }
   }
 
-  .jq-selectbox__select{
+  .jq-selectbox__select {
     border-radius: 6px;
     border: 1px solid $grey1;
     background: $bg;
@@ -171,16 +282,20 @@
     color: $black2;
     font-size: 16px;
     font-weight: 400;
-    font: 16px/16px "Proxima Nova",sans-serif;
+    font: 16px/16px "Proxima Nova", sans-serif;
     padding: 21px 44px 21px 22px;
+
+    @include lg-block {
+      padding: 15px 44px 15px 22px;
+    }
   }
 
-  .jq-selectbox__trigger{
+  .jq-selectbox__trigger {
     width: 34px;
     border: none;
   }
 
-  .jq-selectbox__trigger-arrow{
+  .jq-selectbox__trigger-arrow {
     border-top: 11px solid $black3;
     border-right: 6px solid transparent;
     border-left: 6px solid transparent;
@@ -188,7 +303,7 @@
     margin-top: -5.5px;
   }
 
-  .jq-selectbox__dropdown{
+  .jq-selectbox__dropdown {
     margin: 0;
     margin-top: -1px;
     border: 1px solid $grey1;
@@ -197,20 +312,20 @@
     box-shadow: none;
     font-size: 16px;
     font-weight: 400;
-    font: 16px/16px "Proxima Nova",sans-serif;
+    font: 16px/16px "Proxima Nova", sans-serif;
   }
 
-  .jq-selectbox li{
+  .jq-selectbox li {
     padding: 20px 22px;
   }
 
-  .jq-selectbox li.selected,.jq-selectbox li:hover{
-    background: rgba($purple5,.1);
+  .jq-selectbox li.selected, .jq-selectbox li:hover {
+    background: rgba($purple5, .1);
     color: $black2;
   }
 }
 
-.input{
+.input {
   width: 100%;
   border-radius: 6px;
   border: 1px solid $grey1;
@@ -218,35 +333,40 @@
   color: $black2;
   padding: 20px 22px;
 
-  &.error{
+  @include lg-block {
+    padding: 15px 22px;
+  }
+
+  &.error {
     border: 1px solid #EB3A5F;
     color: #EB3A5F;
 
-    &::placeholder{
+    &::placeholder {
       color: #EB3A5F;
     }
   }
 }
 
-.fz{
+.fz {
 
-  &_r{
-    .fz{
+  &_r {
+    .fz {
 
-      &__input{
+      &__input {
         display: none;
 
-        &:checked + .fz__wrap{
-          .fz__fake{
+        &:checked + .fz__wrap {
+          .fz__fake {
             background: $red;
 
           }
         }
       }
 
-      &__fake{
+      &__fake {
         border: 1px solid $red;
-        &-svg{
+
+        &-svg {
           fill: $bg;
         }
       }
@@ -254,26 +374,29 @@
     }
   }
 
-  &__wrap{
+  &__wrap {
     display: flex;
     align-items: flex-end;
+    @include lg-block {
+      align-items: center;
+    }
   }
 
-  &__input{
+  &__input {
     display: none;
 
-    &:checked + .fz__wrap{
-      .fz__fake{
+    &:checked + .fz__wrap {
+      .fz__fake {
         background: $y4;
 
-        &-svg{
+        &-svg {
           opacity: 1;
         }
       }
     }
   }
 
-  &__fake{
+  &__fake {
     min-width: 22px;
     width: 22px;
     height: 22px;
@@ -287,7 +410,7 @@
     @include tr;
 
 
-    &-svg{
+    &-svg {
       width: 15px;
       height: 12px;
       fill: $black2;
@@ -297,7 +420,7 @@
   }
 }
 
-.form2{
+.form2 {
   width: 1416px;
   height: 832px;
   background: url("/images/forms/bg2.png") 0 0 no-repeat;
@@ -305,6 +428,20 @@
   position: relative;
   padding: 115px 110px 140px 790px;
   color: $text2;
+
+  @include lg-block {
+    width: 728px;
+    height: 639px;
+    background: url("/images/forms/bg2-t.png") 0 0 no-repeat;
+    padding: 200px 30px 20px 30px;
+  }
+  @include sm-block {
+    width: 300px;
+    height: 798px;
+    background: url("/images/forms/bg2-m.png") 0 0 no-repeat;
+    padding: 70px 15px 20px 15px;
+
+  }
 
   &__content {
     height: 100%;
@@ -320,7 +457,18 @@
     border-radius: 50%;
     display: block;
 
-    &:before{
+    @include lg-block {
+      width: 40px;
+      height: 40px;
+      top: 145px;
+      right: 50px;
+    }
+    @include sm-block {
+      top: 15px;
+      right: 15px;
+    }
+
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -335,7 +483,7 @@
 
     @include tr;
 
-    &-wrap{
+    &-wrap {
       width: 100%;
       height: 100%;
       position: relative;
@@ -347,57 +495,137 @@
       justify-content: center;
     }
 
-    &-svg{
+    &-svg {
       width: 25px;
       height: 25px;
       fill: url(#gradient1);
       @include tr;
+
+      @include lg-block {
+        width: 17px;
+        height: 17px;
+      }
     }
   }
 
-  &__title{
+  &__title {
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @include lg-block {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 7px;
+    }
+    @include sm-block {
+      font-size: 22px;
+    }
   }
 
-  &__sub{
+  &__sub {
     font-size: 24px;
     font-weight: 600;
-    line-height: lh(24,33.6);
+    line-height: lh(24, 33.6);
     margin-bottom: 25px;
+    @include lg-block {
+      font-size: 16px;
+      text-align: center;
+      width: 470px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+    @include sm-block {
+      width: 100%;
+    }
   }
 
-  &__fields{
+  &__fields {
     margin-bottom: 25px;
+    @include lg-block {
+      margin-bottom: 10px;
+    }
   }
 
-  &__fz{
+  &__bottom {
+    @include lg-block {
+      @include row-flex;
+    }
+
+    &-left {
+      @include lg-block {
+        margin-bottom: 0;
+        @include col;
+        order: 1;
+      }
+      @include size-lg(12);
+      @include size-sm(24);
+    }
+
+    &-right {
+      @include lg-block {
+        @include col;
+      }
+      @include size-lg(12);
+      @include size-sm(24);
+      @include sm-block{
+        order: 2;
+      }
+    }
+  }
+
+  .field {
+    &_9 {
+      @include size-lg(12);
+      @include size-sm(24);
+    }
+
+    &_15 {
+      @include size-lg(12);
+      @include size-sm(24);
+    }
+
+    &_24 {
+      @include size-lg(12);
+      @include size-sm(24);
+    }
+  }
+
+  &__fz {
     margin-bottom: 30px;
+
   }
 
-  &__submit{
+  &__submit {
     width: 280px;
     height: 60px;
     border-radius: 40px;
+    @include lg-block {
+      width: 255px;
+      height: 55px;
+    }
+    @include sm-block{
+      width: 100%;
+    }
 
-    &.disabled{
+
+    &.disabled {
       opacity: .5;
       pointer-events: none;
     }
 
-    &:hover{
+    &:hover {
       box-shadow: 0 3px 0 $purple2, 0px 20px 9px -10px rgba($black, 0.6);
       background: $purple1;
 
-      .btn4__txt{
+      .btn4__txt {
         color: $bg;
       }
     }
   }
 
-  &__btn{
+  &__btn {
     color: $bg;
     font-size: 18px;
     font-weight: 700;
@@ -408,7 +636,24 @@
     right: 80px;
     @include tr;
 
-    &:hover{
+    @include lg-block {
+      font-size: 16px;
+      right: 35px;
+      bottom: 20px;
+    }
+    @include sm-block{
+      font-size: 14px;
+      border-bottom: none;
+      bottom: 20px;
+      left: 10px;
+      right: 10px;
+      text-align: center;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      width: 280px;
+    }
+
+    &:hover {
       color: $y4;
       border-color: $y4;
     }
