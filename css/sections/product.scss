@@ -800,6 +800,11 @@
       width: 100%;
       height: 46px;
       margin-bottom: 20px;
+
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      color: $purple3;
     }
 
     &:before {

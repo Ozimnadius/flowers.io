@@ -1,10 +1,18 @@
 .news {
   padding-bottom: 100px;
+  background: url("/images/content/index/banner/bg.png") center 15px no-repeat;
+
+
   @include lg-block {
     padding-bottom: 80px;
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   @include sm-block {
     padding-bottom: 60px;
+    background-size: initial;
+    background-position: center -300px;
   }
 
   &__title {
@@ -110,11 +118,14 @@
   &__wrap {
     position: absolute;
     z-index: 10;
-    bottom: 25px;
+    bottom: 30px;
     left: 0;
     right: 0;
     padding: 0 50px;
     text-align: center;
+    @include lg-block{
+      bottom: 25px;
+    }
     @include sm-block {
       padding: 0 20px;
       bottom: 10px;
@@ -160,6 +171,13 @@
     visibility: hidden;
     opacity: 0;
     @include tr;
+
+    @include sm-block{
+      width: 100%;
+      margin-left: 0;
+      left: 0;
+      right: 0;
+    }
 
 
     &:before {

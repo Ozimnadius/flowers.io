@@ -125,6 +125,13 @@
       margin: 0;
     }
 
+    &_t{
+      display: none;
+      @include lg-block{
+        display: block;
+      }
+    }
+
     .socials {
       @include lg-block {
         flex-direction: column;

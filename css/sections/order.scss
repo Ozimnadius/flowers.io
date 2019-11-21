@@ -236,6 +236,9 @@
 
   &__personal {
     margin-bottom: 40px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__bottom {
@@ -646,13 +649,16 @@
 
   &_2 {
     margin-bottom: 30px;
-    @include sm-block{
+    @include lg-block{
       margin-bottom: 20px;
     }
 
     .ofield {
       &__input {
         padding: 22px;
+        @include lg-block{
+          padding: 22px 30px;
+        }
         @include sm-block{
           padding: 15px 22px;
         }

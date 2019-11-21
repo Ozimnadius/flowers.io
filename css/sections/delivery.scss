@@ -164,6 +164,10 @@
       order: 1;
       margin-top: 40px;
     }
+    @include sm-block{
+      margin-top: 20px;
+      align-items: center;
+    }
   }
 
   &__map {
@@ -216,9 +220,13 @@
 
     &:before {
       content: '';
-      display: block;
       font-weight: 700;
       margin-bottom: 7px;
+      display: none;
+
+      @include sm-block{
+        display: block;
+      }
     }
 
     &_1 {

@@ -15,7 +15,7 @@ block content
         //- form
         section.basket__main
             .container
-                form.basket__form
+                form(action='order1.html' method='post').basket__form
                     //- title
                     .basket__title.title Корзина
 
@@ -111,7 +111,7 @@ block content
                                     button(type='submit').btotal__buy.btn4.btn4_r
                                         span.btn4__txt Оформить заказ
                                     //- one
-                                    button(type='button').btotal__one
+                                    button(type='button').btotal__one.jsOne
                                         +icon('arrow', 'btotal__one-svg')
                                         span.btotal__one-txt Купить в 1 клик
 
