@@ -2,6 +2,13 @@
   background: url("/images/bg/404.jpg") 0 0 no-repeat;
   padding: 110px 0;
   text-align: center;
+  @include lg-block{
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
+  @include sm-block{
+    padding: 60px 0;
+  }
 
   .container{
     display: flex;
@@ -13,6 +20,13 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
+    @include lg-block{
+      margin-bottom: 40px;
+    }
+    @include sm-block{
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
 
     mark {
       color: $red;
@@ -23,6 +37,9 @@
 
   &__img{
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__txt{
@@ -31,6 +48,9 @@
     line-height: lh(24,26.72);
     max-width: 784px;
     margin-bottom: 40px;
+    @include sm-block{
+      font-size: 18px;
+    }
 
     a{
       color: $red;
@@ -42,6 +62,9 @@
     width: 315px;
     height: 54px;
     border-radius: 40px;
+    @include sm-block{
+      width: 100%;
+    }
   }
 
 }

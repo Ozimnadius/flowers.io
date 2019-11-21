@@ -3371,8 +3371,10 @@ input, textarea {
   }
 }
 
-.ibanner__btn {
-  margin: 0 auto;
+@media screen and (max-width: 786.99px) {
+  .ibanner__btn {
+    margin: 0 auto;
+  }
 }
 
 .ibanner__list {
@@ -4757,7 +4759,12 @@ input, textarea {
   -webkit-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
-  fill: #efd063;
+}
+
+@media screen and (max-width: 786.99px) {
+  .fprice.opened .fprice__angle {
+    fill: #efd063;
+  }
 }
 
 .fprice__top {
@@ -14166,6 +14173,19 @@ input, textarea {
   text-align: center;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .notfound {
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
+}
+
+@media screen and (max-width: 786.99px) {
+  .notfound {
+    padding: 60px 0;
+  }
+}
+
 .notfound .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14185,6 +14205,19 @@ input, textarea {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 1379.99px) {
+  .notfound__title {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 786.99px) {
+  .notfound__title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+}
+
 .notfound__title mark {
   color: #eb3a5f;
   background-color: transparent;
@@ -14194,12 +14227,24 @@ input, textarea {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 786.99px) {
+  .notfound__img {
+    margin-bottom: 20px;
+  }
+}
+
 .notfound__txt {
   font-size: 24px;
   font-weight: 400;
   line-height: 1.11333;
   max-width: 784px;
   margin-bottom: 40px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .notfound__txt {
+    font-size: 18px;
+  }
 }
 
 .notfound__txt a {
@@ -14211,6 +14256,12 @@ input, textarea {
   width: 315px;
   height: 54px;
   border-radius: 40px;
+}
+
+@media screen and (max-width: 786.99px) {
+  .notfound__btn {
+    width: 100%;
+  }
 }
 
 .popup {

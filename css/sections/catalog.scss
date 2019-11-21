@@ -347,7 +347,10 @@
 
     .fprice__angle {
       transform: rotate(-180deg);
-      fill: $y2;
+      @include sm-block{
+        fill: $y2;
+      }
+
     }
   }
 
