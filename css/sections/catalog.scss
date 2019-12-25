@@ -644,6 +644,10 @@
       }
     }
 
+    .item__quickview{
+      opacity: 1;
+    }
+
 
   }
 
@@ -772,6 +776,33 @@
       max-height: 100%;
     }
   }
+
+  &__quickview{
+    width: 174px;
+    height: 40px;
+    background: rgba(#D488BE,.9);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    position: absolute;
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -87px;
+    opacity: 0;
+    @include tr;
+    @include md-block{
+      display: none;
+    }
+
+  }
+
 
   &__title {
     position: relative;

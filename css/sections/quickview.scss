@@ -1,0 +1,92 @@
+.qw{
+  width: 900px;
+  border-radius: 15px;
+  background-color: $beige;
+
+  padding: 0 20px;
+  padding-top: 60px;
+
+  &__top{
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__title{
+    color: #222222;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__close{
+    position: absolute;
+    top: 50%;
+    margin-top: -9.5px;
+    right: 30px;
+
+    &:hover{
+      .qw__close-svg{
+        fill: $black;
+      }
+    }
+
+    &-svg{
+      width: 19px;
+      height: 19px;
+      fill: #b7b7b7;
+      @include tr;
+    }
+  }
+
+  &__bottom {
+
+  }
+
+  &__row{
+    align-items: flex-start;
+  }
+
+  &__left{
+    @include col;
+    @include size(9.5);
+    @include shift-left(2.5);
+    position: relative;
+  }
+
+  &__img{
+    &-wrap{
+      height: 437px;
+    }
+  }
+
+  &__right{
+    @include col;
+    @include size(12);
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &__wrapper{
+    height: 395px;
+    overflow-y: auto;
+    padding-right: 20px;
+
+    &::-webkit-scrollbar{
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #c7c7c7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background-color: #565656;
+    }
+  }
+
+  &__btns{
+    margin-bottom: 20px;
+  }
+
+}

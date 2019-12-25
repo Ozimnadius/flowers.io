@@ -25,6 +25,7 @@ $(function () {
         }
     });
 
+
     let swiperPop = new Swiper('.pop__container', {
         spaceBetween: 20,
         slidesPerView: 4,

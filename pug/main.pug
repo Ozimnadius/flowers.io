@@ -418,6 +418,95 @@ html(lang="ru")
                     input(type='hidden' name='action' value='lazymanSubmit')
                     input(type='hidden' name='id' value='').form__id
 
+            .qw
+                //- top
+                .qw__top
+                    .qw__title НАСТОЯЩЕЕ ЧУВСТВО
+                    button(type='button').qw__close.jsClose
+                        +icon('close2','qw__close-svg')
+                //- bottom
+                .qw__bottom
+                    .row.qw__row
+                        //- left
+                        .qw__left
+                            .product__img
+                                .product__img-wrap.qw__img-wrap
+                                    +image('images/content/product/image.jpg', '','product__img-img')
+                                .product__controls
+                                    button(type='button').product__control.jsFavorites
+                                        +icon('heart','product__control-svg')
+                                        span.product__control-txt В избранное
+                                    button(type='button').product__control.jsCompare
+                                        +icon('compare','product__control-svg')
+                                        span.product__control-txt В сравнение
+
+                            .product__images
+                                each i in [1,2,3]
+                                    div(data-src='images/content/product/image.jpg' class=i == 2 ? 'active' : '').product__image
+                                        .product__image-wrap
+                                            +image('images/content/product/' + i + '.jpg','','product__image-img')
+
+                        //- right
+                        .qw__right
+                            //- prices
+                            .product__prices
+                                .product__price
+                                    .price
+                                        span.price__val 2 295&nbsp;
+                                        span.price__cur руб./ шт.
+                                .product__oldprice
+                                    .price.price_old
+                                        span.price__val -3 140&nbsp;
+                                        span.price__cur руб.
+
+
+
+
+
+                            //- notice
+                            .product__notice * Цена букета “Премиум”
+                            //- wrapper
+                            .qw__wrapper
+                                //- vars
+                                .product__vars
+                                    each i,x in productPrices
+                                        label(data-id=x + 1).product__var
+                                            input(type='radio' name='price' checked=i.active).product__var-input
+                                            span.product__var-wrap
+                                                span.product__var-left
+                                                    span.product__var-fake
+                                                    span.product__var-title= i.title
+                                                    span.product__var-count= i.count
+                                                span.product__var-right
+                                                    span.product__var-price= i.price
+                                //- btns
+                                .product__btns.qw__btns
+                                    button(type='button').product__buy.btn4.btn4_r.jsBuy
+                                        span.btn4__txt Заказать букет
+                                    button(type='button' data-id='24').product__one.jsOne
+                                        +icon('arrow','product__one-svg')
+                                        span.product__one-txt Купить в 1 клик
+                                //- status
+                                .product__status Есть в наличии
+                                //.product__status.product__status_not Нет в наличии
+                                //- chars
+                                .product__chars
+                                    .product__char
+                                        .product__char-name Размеры:
+                                        .product__char-val
+                                            | Высота: 50 см
+                                            br
+                                            | Диаметр: 45 см
+                                    .product__char
+                                        .product__char-name Состав:
+                                        .product__char-val
+                                            | Благородный букет из бронзовых
+                                            br
+                                            | орхидей, пионовидных роз, каркадэ
+
+
+
+
         //- mmenu
         .mmenu
             //- close

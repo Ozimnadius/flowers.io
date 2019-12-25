@@ -54,7 +54,7 @@ $(function () {
 
     });
 
-    $('body').on('click', '.form__close, .form2__close', function (e) {
+    $('body').on('click', '.form__close, .form2__close, .jsClose', function (e) {
         e.preventDefault();
         popup.removeClass('active');
     });
@@ -178,6 +178,34 @@ $(function () {
             }
         });
 
+
+    });
+
+    $('body').on('click', '.jsQuickview', function (e) {
+        e.preventDefault();
+
+        let data = {
+            id: '2',
+            action: 'quickview'
+        };
+
+        $.ajax({
+            dataType: "json",
+            type: "POST",
+            url: 'ajax.php',
+            data: data,
+            success: function (result) {
+                if (result.status) {
+                    popupContent.html(result.html);
+                    popup.addClass('active');
+                } else {
+                    alert('Что-то пошло не так, попробуйте еще раз!!!');
+                }
+            },
+            error: function (result) {
+                alert('Что-то пошло не так, попробуйте еще раз!!!');
+            }
+        });
 
     });
 });
